@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Viktoriya, renarde arctique">
+  <defs><clipPath id="vk-c"><circle cx="60" cy="60" r="60"/></clipPath></defs>
+  <g clip-path="url(#vk-c)">
+    <rect width="120" height="120" fill="#CDE7E0"/>
+    <path d="M14 122 Q20 90 60 88 Q100 90 106 122 Z" fill="#F7F9FB" stroke="#B8C4D4" stroke-width="1.5"/>
+    <path d="M36 96 Q60 108 84 96 L86 104 Q60 118 34 104 Z" fill="#2E8B83"/>
+    <path d="M74 102 L82 122 L92 120 L82 100 Z" fill="#26766F"/>
+    <path d="M37 50 L33 16 L56 38 Z" fill="#F7F9FB" stroke="#B8C4D4" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M83 50 L87 16 L64 38 Z" fill="#F7F9FB" stroke="#B8C4D4" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M39 42 L37 24 L50 37 Z" fill="#C9D3E0"/>
+    <path d="M81 42 L83 24 L70 37 Z" fill="#C9D3E0"/>
+    <path d="M28 62 Q32 36 60 35 Q88 36 92 62 Q80 86 60 90 Q40 86 28 62 Z" fill="#F7F9FB" stroke="#B8C4D4" stroke-width="1.5"/>
+    <path d="M28 62 Q36 70 46 70 Q40 78 44 84 Q32 76 28 62 Z" fill="#E3E9F1"/>
+    <path d="M92 62 Q84 70 74 70 Q80 78 76 84 Q88 76 92 62 Z" fill="#E3E9F1"/>
+    <ellipse cx="48" cy="58" rx="4.2" ry="5.2" fill="#1B1F2A"/>
+    <ellipse cx="72" cy="58" rx="4.2" ry="5.2" fill="#1B1F2A"/>
+    <circle cx="49.4" cy="56.2" r="1.4" fill="#FFFFFF"/>
+    <circle cx="73.4" cy="56.2" r="1.4" fill="#FFFFFF"/>
+    <path d="M42 50 Q47 47 52 49" fill="none" stroke="#9AA8BA" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M68 48 Q73 45 78 47" fill="none" stroke="#9AA8BA" stroke-width="1.6" stroke-linecap="round"/>
+    <ellipse cx="60" cy="72" rx="4.6" ry="3.4" fill="#1B1F2A"/>
+    <path d="M60 75 L60 79 M55 80 Q60 83 65 80" fill="none" stroke="#1B1F2A" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+</svg>

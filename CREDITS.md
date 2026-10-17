@@ -3,7 +3,7 @@
 | Élément | Licence | Crédit |
 | --- | --- | --- |
 | Code de Superpuffin | GPL-3.0 | Contributeurs du projet |
-| Contenu (leçons, exercices, personnages) | CC BY-SA 4.0 | Contributeurs du projet |
+| Contenu (leçons, exercices, personnages et leurs dessins, static/personnages/) | CC BY-SA 4.0 | Contributeurs du projet |
 | Données BÍN (vérification des formes, au build) | CC BY-SA 4.0 | Beygingarlýsing íslensks nútímamáls. Stofnun Árna Magnússonar í íslenskum fræðum. Höfundur og ritstjóri Kristín Bjarnadóttir. |
 | ts-fsrs (à venir) | MIT | open-spaced-repetition |
 | Voix Talrómur Salka et Ugla : Viktoriya, Kolla, Bára | CC BY 4.0 | Université de Reykjavík (Háskólinn í Reykjavík) et auteurs du corpus Talrómur |

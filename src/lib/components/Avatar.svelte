@@ -1,49 +1,37 @@
 <script lang="ts">
-	// Pastille provisoire en attendant les dessins des six personnages (question ouverte du cahier).
+	// Portrait d'un personnage (static/personnages/*.svg), décoratif : le nom est écrit à côté.
+	import { asset } from '$app/paths';
 	import { NOMS_PERSONNAGES } from '#lib/i18n.ts';
+
 	let { qui, grand = false }: { qui: string; grand?: boolean } = $props();
+
+	type CheminAsset = Parameters<typeof asset>[0];
+	const connu = $derived(qui in NOMS_PERSONNAGES);
+	const src = $derived(asset(`/personnages/${qui}.svg` as CheminAsset));
 </script>
 
-<span class="avatar {qui}" class:grand aria-hidden="true">{NOMS_PERSONNAGES[qui]?.[0] ?? '?'}</span>
+{#if connu}
+	<img class="avatar" class:grand {src} alt="" aria-hidden="true" width="64" height="64" decoding="async" />
+{:else}
+	<span class="avatar inconnu" class:grand aria-hidden="true">?</span>
+{/if}
 
 <style>
 	.avatar {
 		flex: none;
-		display: inline-grid;
-		place-items: center;
-		width: 2.4rem;
-		height: 2.4rem;
+		display: block;
+		width: 2.6rem;
+		height: 2.6rem;
 		border-radius: 50%;
-		font-family: var(--police-titre);
-		font-weight: 800;
-		font-size: 1.1rem;
-		color: #fff;
-		box-shadow: inset 0 0 0 2px rgb(255 255 255 / 0.25);
 	}
 	.grand {
-		width: 4rem;
-		height: 4rem;
-		font-size: 1.8rem;
+		width: 4.2rem;
+		height: 4.2rem;
 	}
-	.superpuffin {
-		background: var(--c-superpuffin);
-		color: #0b1e3f;
-	}
-	.viktoriya {
-		background: var(--c-viktoriya);
-		color: #0b1e3f;
-	}
-	.bara {
-		background: var(--c-bara);
-	}
-	.austri {
-		background: var(--c-austri);
-	}
-	.kolla {
-		background: var(--c-kolla);
-		color: #0b1e3f;
-	}
-	.blesi {
-		background: var(--c-blesi);
+	.inconnu {
+		display: grid;
+		place-items: center;
+		background: var(--ligne);
+		font-weight: 800;
 	}
 </style>

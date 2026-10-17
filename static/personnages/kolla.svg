@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Kolla, brebis">
+  <defs><clipPath id="ko-c"><circle cx="60" cy="60" r="60"/></clipPath></defs>
+  <g clip-path="url(#ko-c)">
+    <rect width="120" height="120" fill="#D9EBC4"/>
+    <g fill="#FBF6EA" stroke="#E2D8C0" stroke-width="1.5">
+      <circle cx="24" cy="112" r="16"/><circle cx="46" cy="106" r="16"/><circle cx="74" cy="106" r="16"/><circle cx="96" cy="112" r="16"/>
+      <circle cx="60" cy="116" r="16"/>
+      <circle cx="38" cy="40" r="13"/><circle cx="60" cy="32" r="15"/><circle cx="82" cy="40" r="13"/>
+      <circle cx="30" cy="56" r="11"/><circle cx="90" cy="56" r="11"/>
+    </g>
+    <ellipse cx="28" cy="62" rx="12" ry="5" transform="rotate(15 28 62)" fill="#E9D6BD"/>
+    <ellipse cx="92" cy="62" rx="12" ry="5" transform="rotate(-15 92 62)" fill="#E9D6BD"/>
+    <ellipse cx="60" cy="68" rx="19" ry="23" fill="#E9D6BD"/>
+    <circle cx="48" cy="44" r="8" fill="#FBF6EA"/><circle cx="60" cy="42" r="9" fill="#FBF6EA"/><circle cx="72" cy="44" r="8" fill="#FBF6EA"/>
+    <ellipse cx="46" cy="76" rx="5" ry="3.2" fill="#F2A7A0" opacity="0.8"/>
+    <ellipse cx="74" cy="76" rx="5" ry="3.2" fill="#F2A7A0" opacity="0.8"/>
+    <circle cx="52" cy="64" r="3.4" fill="#1B1F2A"/><circle cx="68" cy="64" r="3.4" fill="#1B1F2A"/>
+    <circle cx="53" cy="63" r="1" fill="#FFFFFF"/><circle cx="69" cy="63" r="1" fill="#FFFFFF"/>
+    <path d="M56 76 Q60 79 64 76 Q60 80 56 76 Z" fill="#4A3426"/>
+    <path d="M54 82 Q60 92 66 82 Z" fill="#7A3B3B"/>
+    <path d="M57 86 Q60 89 63 86" fill="#E58E8E"/>
+  </g>
+</svg>

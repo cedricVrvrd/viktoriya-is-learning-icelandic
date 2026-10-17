@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Superpuffin, macareux">
+  <defs><clipPath id="sp-c"><circle cx="60" cy="60" r="60"/></clipPath></defs>
+  <g clip-path="url(#sp-c)">
+    <rect width="120" height="120" fill="#BFE3F7"/>
+    <path d="M24 122 L38 78 Q60 70 82 78 L98 122 Z" fill="#DC1E35"/>
+    <path d="M30 122 L42 84 Q60 78 78 84 L90 122 Z" fill="#B3162A"/>
+    <ellipse cx="60" cy="104" rx="28" ry="26" fill="#1B1F2A"/>
+    <ellipse cx="60" cy="110" rx="17" ry="19" fill="#FFFFFF"/>
+    <circle cx="58" cy="58" r="28" fill="#1B1F2A"/>
+    <ellipse cx="55" cy="61" rx="20" ry="18" fill="#F3F4F2"/>
+    <path d="M44 51 L52 47 L56 51 Z" fill="#5C6F86"/>
+    <path d="M45 61 L52 59 L50 64 Z" fill="#5C6F86"/>
+    <circle cx="51" cy="55" r="4.2" fill="#1B1F2A"/>
+    <circle cx="51" cy="55" r="5.2" fill="none" stroke="#DC1E35" stroke-width="1.4"/>
+    <circle cx="52.4" cy="53.8" r="1.2" fill="#FFFFFF"/>
+    <path d="M62 50 Q92 56 90 67 Q84 76 62 76 Z" fill="#F26B1D"/>
+    <path d="M62 50 L69 51.5 L69 75 L62 76 Z" fill="#5C6F86"/>
+    <path d="M73 53 Q78 64 73 75" fill="none" stroke="#F7C844" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M62 63.5 L86 64.5" stroke="#B3162A" stroke-width="1.2"/>
+    <circle cx="63" cy="75" r="2.4" fill="#F7C844"/>
+    <rect x="31" y="33" width="54" height="5" rx="2.5" fill="#8A5A3B"/>
+    <circle cx="47" cy="35" r="7" fill="#9EDCF5" stroke="#8A5A3B" stroke-width="2.5"/>
+    <circle cx="65" cy="34" r="7" fill="#9EDCF5" stroke="#8A5A3B" stroke-width="2.5"/>
+    <path d="M44 32 L48 30" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M62 31 L66 29" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+</svg>
