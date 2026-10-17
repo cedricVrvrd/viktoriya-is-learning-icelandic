@@ -23,7 +23,7 @@ function collecter(noeud, cle, sortie) {
 
 const lister = (d) =>
 	readdirSync(d, { withFileTypes: true }).flatMap((e) =>
-		e.isDirectory() ? lister(join(d, e.name)) : e.name.endsWith('.yaml') && e.name !== 'hors-bin.yaml' ? [join(d, e.name)] : []
+		e.isDirectory() ? lister(join(d, e.name)) : e.name.endsWith('.yaml') && !['hors-bin.yaml', 'prononciation.yaml'].includes(e.name) ? [join(d, e.name)] : []
 	);
 
 // Mots absents de BÍN, acceptés avec une justification (noms de personnages, interjections…).

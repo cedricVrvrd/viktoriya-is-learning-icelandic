@@ -81,15 +81,26 @@ jobs:
         run: |
           command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg)
           python3 -m venv .venv-audio
-          .venv-audio/bin/pip install --quiet piper-tts==1.8.0
+          .venv-audio/bin/pip install --quiet piper-tts==1.8.0 pyyaml==6.0.3
 
       - name: Générer l'audio
         run: |
           node scripts/plan-audio.ts > .audio-plan.json
           .venv-audio/bin/python scripts/generer-audio.py .audio-plan.json static/audio .piper
 
+      # Voix Steinn de Grammatek (Apache-2.0) + dictionnaire de prononciation d'ice-g2p :
+      # versions figées, vérifiées par empreinte dans le script.
+      - name: Cache Grammatek
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .grammatek
+          key: grammatek-${{ hashFiles('scripts/preparer-grammatek.sh') }}
+
+      - name: Préparer la voix Grammatek
+        run: bash scripts/preparer-grammatek.sh .grammatek
+
       - name: Page d'essais de voix
-        run: .venv-audio/bin/python scripts/essais-audio.py static/essais-audio .piper
+        run: .venv-audio/bin/python scripts/essais-audio.py static/essais-audio .piper .grammatek .audio-plan.json
 
       - name: Build (le schéma du contenu est validé ici)
         run: npm run build

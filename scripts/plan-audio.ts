@@ -9,7 +9,7 @@ const lister = (d: string): string[] =>
 	readdirSync(d, { withFileTypes: true }).flatMap((e): string[] =>
 		e.isDirectory()
 			? lister(join(d, e.name))
-			: e.name.endsWith('.yaml') && e.name !== 'hors-bin.yaml'
+			: e.name.endsWith('.yaml') && !['hors-bin.yaml', 'prononciation.yaml'].includes(e.name)
 				? [join(d, e.name)]
 				: []
 	);

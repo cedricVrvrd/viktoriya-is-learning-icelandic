@@ -1,0 +1,12 @@
+# Prononciations des mots absents du dictionnaire de prononciation standard (ice-g2p, Grammatek).
+# Notation SAMPA islandaise, symboles séparés par des espaces, comme dans ce dictionnaire.
+# Chaque entrée est à faire valider par un locuteur natif.
+- mot: heitirðu
+  sampa: "h ei: t I r D Y"
+  note: "forme contractée de « heitir þú » ; à valider"
+- mot: superpuffin
+  sampa: "s u: p E r p_h a f I n"
+  note: "nom du personnage, lu à l'islandaise ; à valider"
+- mot: viktoriya
+  sampa: "v I x t O r i j a"
+  note: "même prononciation que « Viktoría » dans le dictionnaire"
