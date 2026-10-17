@@ -67,6 +67,13 @@ jobs:
 
       - name: Build (le schéma du contenu est validé ici)
         run: npm run build
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}
+
+      - name: Liens du site publié
+        run: node scripts/verifier-liens.mjs
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}
 
       - name: Préparer la publication
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'

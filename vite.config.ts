@@ -46,7 +46,8 @@ export default defineConfig({
 		contenu(),
 		sveltekit({
 			adapter: adapter({ pages: apercu ? 'apercu' : 'build', assets: apercu ? 'apercu' : 'build', strict: true }),
-			paths: { relative: true },
+			// GitHub Pages sert le site sous /<nom du dépôt>/ : BASE_PATH est fourni par le workflow.
+			paths: { base: (process.env.BASE_PATH ?? '') as '' | `/${string}`, relative: true },
 			output: apercu ? { bundleStrategy: 'inline' } : undefined,
 			serviceWorker: apercu ? { register: false } : undefined,
 			// Routeur par # : l'appli marche quelle que soit l'adresse qui la sert (GitHub Pages, aperçu).
