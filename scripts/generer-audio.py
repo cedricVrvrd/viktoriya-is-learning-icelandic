@@ -1,6 +1,6 @@
-"""Génère les fichiers audio manquants avec Piper et les voix Talrómur.
+"""Génère les fichiers audio manquants : voix Grammatek (phonèmes islandais) et voix Piper Talrómur.
 
-Usage : python3 scripts/generer-audio.py .audio-plan.json static/audio .piper
+Usage : python3 scripts/generer-audio.py .audio-plan.json static/audio .piper .grammatek
 
 - Lit le plan produit par scripts/plan-audio.ts (fichier, texte, voix, vitesse).
 - Ne synthétise que les fichiers absents : les autres viennent du cache de la CI.
@@ -19,7 +19,10 @@ from pathlib import Path
 
 from piper import PiperVoice, SynthesisConfig
 
-plan_json, dossier_audio, dossier_voix = (Path(a) for a in sys.argv[1:4])
+sys.path.insert(0, str(Path(__file__).parent))
+from voix_grammatek import VoixGrammatek  # noqa: E402
+
+plan_json, dossier_audio, dossier_voix, dossier_grammatek = (Path(a) for a in sys.argv[1:5])
 plan = json.loads(plan_json.read_text(encoding="utf-8"))
 dossier_audio.mkdir(parents=True, exist_ok=True)
 
@@ -30,6 +33,7 @@ for orphelin in dossier_audio.glob("*.mp3"):
         print(f"supprimé (plus utilisé) : {orphelin.name}")
 
 voix_chargees: dict[str, PiperVoice] = {}
+grammatek: VoixGrammatek | None = None
 
 
 def voix(nom: str) -> PiperVoice:
@@ -49,10 +53,15 @@ for tache in plan:
     sortie = dossier_audio / Path(tache["fichier"]).name
     if sortie.exists():
         continue
-    reglage = SynthesisConfig(length_scale=tache["vitesse"], normalize_audio=True)
     with tempfile.NamedTemporaryFile(suffix=".wav") as tmp:
-        with wave.open(tmp.name, "wb") as wav:
-            voix(tache["voix"]).synthesize_wav(tache["texte"], wav, syn_config=reglage)
+        if tache["voix"] == "grammatek-steinn":
+            # Sans marques d'accent : version jugée la plus juste à l'écoute.
+            grammatek = grammatek or VoixGrammatek(dossier_grammatek, Path("contenu/prononciation.yaml"))
+            grammatek.ecrire_wav(tache["texte"], Path(tmp.name), vitesse=tache["vitesse"], accents=False)
+        else:
+            reglage = SynthesisConfig(length_scale=tache["vitesse"], normalize_audio=True)
+            with wave.open(tmp.name, "wb") as wav:
+                voix(tache["voix"]).synthesize_wav(tache["texte"], wav, syn_config=reglage)
         subprocess.run(
             ["ffmpeg", "-loglevel", "error", "-y", "-i", tmp.name,
              "-ac", "1", "-codec:a", "libmp3lame", "-q:a", "5", str(sortie)],

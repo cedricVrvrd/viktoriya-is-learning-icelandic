@@ -36,8 +36,8 @@ const textes = {
 	reecouter: { fr: 'Réécouter le dialogue', en: 'Play the dialogue again' },
 	texte_cache: { fr: 'Texte affiché après ta réponse', en: 'Text shown after you answer' },
 	credits_voix: {
-		fr: 'Voix : Talrómur, Université de Reykjavík (CC BY 4.0), avec Piper.',
-		en: 'Voices: Talrómur, Reykjavík University (CC BY 4.0), using Piper.'
+		fr: 'Voix : Steinn de Grammatek (Apache 2.0) ; Salka et Ugla, Talrómur, Université de Reykjavík (CC BY 4.0) ; moteur Piper.',
+		en: 'Voices: Steinn by Grammatek (Apache 2.0); Salka and Ugla, Talrómur, Reykjavík University (CC BY 4.0); Piper engine.'
 	},
 	erreur_marquee: { fr: 'erreur', en: 'mistake' },
 	accents_rouges: { fr: 'Les lettres en rouge sont à corriger.', en: 'Letters in red need fixing.' },
