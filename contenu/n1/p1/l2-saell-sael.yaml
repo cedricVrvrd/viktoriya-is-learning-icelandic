@@ -1,0 +1,279 @@
+# Superpuffin — Niveau 1, Partie 1, Leçon 2
+# Licence du contenu : CC BY-SA 4.0
+# Texte écrit de zéro à partir de la fiche de structure N1-P1.
+# Aucun texte, dialogue, exercice ni personnage du manuel Íslenska fyrir alla.
+
+schema: superpuffin/lecon@1
+id: n1-p1-l2
+niveau: 1
+partie: 1
+ordre: 2
+duree_minutes: 4
+titre:
+  fr: "Sæll ou sæl ?"
+  en: "Sæll or sæl?"
+objectif:
+  fr: "Saluer poliment, selon l'heure et la personne."
+  en: "Greet politely, by time of day and by who you talk to."
+personnages: [kolla, austri, viktoriya]
+
+# ---------------------------------------------------------------------------
+# Mots nouveaux (8 expressions). Rappels de la leçon 1 : halló, já, nei, takk, en.
+# ---------------------------------------------------------------------------
+mots:
+  - id: w-godan-daginn
+    lemme: "góðan daginn"
+    categorie: expression
+    fr: "bonjour"
+    en: "good morning, hello"
+    note:
+      fr: "La formule la plus courante, surtout le matin."
+      en: "The most common greeting, especially in the morning."
+  - id: w-godan-dag
+    lemme: "góðan dag"
+    categorie: expression
+    fr: "bonjour (plus soutenu)"
+    en: "good day (more formal)"
+  - id: w-gott-kvold
+    lemme: "gott kvöld"
+    categorie: expression
+    fr: "bonsoir"
+    en: "good evening"
+  - id: w-goda-kvoldid
+    lemme: "góða kvöldið"
+    categorie: expression
+    fr: "bonsoir (plus chaleureux)"
+    en: "good evening (warmer)"
+  - id: w-komdu-saell
+    lemme: "komdu sæll"
+    categorie: expression
+    registre: soutenu
+    fr: "bonjour (à un homme)"
+    en: "hello (to a man)"
+  - id: w-komdu-sael
+    lemme: "komdu sæl"
+    categorie: expression
+    registre: soutenu
+    fr: "bonjour (à une femme)"
+    en: "hello (to a woman)"
+  - id: w-vertu-saell
+    lemme: "vertu sæll"
+    categorie: expression
+    registre: soutenu
+    fr: "au revoir (à un homme)"
+    en: "goodbye (to a man)"
+  - id: w-vertu-sael
+    lemme: "vertu sæl"
+    categorie: expression
+    registre: soutenu
+    fr: "au revoir (à une femme)"
+    en: "goodbye (to a woman)"
+
+# ---------------------------------------------------------------------------
+# Phrases. Identifiants globaux à la Partie 1, à la suite de la leçon 1.
+# ---------------------------------------------------------------------------
+phrases:
+  - id: ph-n1p1-012
+    is: "Góðan daginn, Austri!"
+    fr: "Bonjour, Austri !"
+    en: "Good morning, Austri!"
+  - id: ph-n1p1-013
+    is: "Góðan dag, Kolla. Komdu sæl!"
+    fr: "Bonjour, Kolla. Bonjour à toi !"
+    en: "Good day, Kolla. Hello to you!"
+  - id: ph-n1p1-014
+    is: "Komdu sæll!"
+    fr: "Bonjour ! (à un homme)"
+    en: "Hello! (to a man)"
+  - id: ph-n1p1-015
+    is: "Komdu sæl, Austri!"
+    fr: "(erreur) Bonjour, Austri !"
+    en: "(mistake) Hello, Austri!"
+    erreur_volontaire: true
+  - id: ph-n1p1-016
+    is: "Nei, nei! Komdu sæll, Austri!"
+    fr: "Non, non ! Bonjour, Austri ! (à un homme)"
+    en: "No, no! Hello, Austri! (to a man)"
+  - id: ph-n1p1-017
+    is: "Komdu sæll, Austri!"
+    fr: "Bonjour, Austri !"
+    en: "Hello, Austri!"
+  - id: ph-n1p1-018
+    is: "Komdu sæl, Viktoriya!"
+    fr: "Bonjour, Viktoriya ! (à une femme)"
+    en: "Hello, Viktoriya! (to a woman)"
+  - id: ph-n1p1-019
+    is: "Vertu sæl, Kolla!"
+    fr: "Au revoir, Kolla ! (à une femme)"
+    en: "Goodbye, Kolla! (to a woman)"
+  - id: ph-n1p1-020
+    is: "Vertu sæll!"
+    fr: "Au revoir ! (à un homme)"
+    en: "Goodbye! (to a man)"
+  - id: ph-n1p1-021
+    is: "Gott kvöld, Austri!"
+    fr: "Bonsoir, Austri !"
+    en: "Good evening, Austri!"
+  - id: ph-n1p1-022
+    is: "Góða kvöldið, Kolla!"
+    fr: "Bonsoir, Kolla !"
+    en: "Good evening, Kolla!"
+  - id: ph-n1p1-023
+    is: "Vertu sæll, Austri!"
+    fr: "Au revoir, Austri !"
+    en: "Goodbye, Austri!"
+
+# ---------------------------------------------------------------------------
+# Scène : le lendemain matin, à la ferme de Kolla.
+# ---------------------------------------------------------------------------
+scene:
+  lieu: ferme-kolla
+  didascalie:
+    fr: "Le lendemain matin, à la ferme de Kolla, au-dessus du fjord. Austri arrive, le nez rouge de froid. Viktoriya suit, bien décidée à être polie."
+    en: "Next morning at Kolla's farm above the fjord. Austri arrives, his nose red with cold. Viktoriya follows, determined to be polite."
+  repliques:
+    - { locuteur: kolla,     phrase: ph-n1p1-012 }
+    - { locuteur: austri,    phrase: ph-n1p1-013 }
+    - { locuteur: kolla,     phrase: ph-n1p1-014 }
+    - { locuteur: viktoriya, phrase: ph-n1p1-015 }
+    - { locuteur: kolla,     phrase: ph-n1p1-016 }
+    - { locuteur: viktoriya, phrase: ph-n1p1-017 }
+    - { locuteur: austri,    phrase: ph-n1p1-018 }
+    - { locuteur: austri,    phrase: ph-n1p1-019 }
+    - { locuteur: kolla,     phrase: ph-n1p1-020 }
+
+# ---------------------------------------------------------------------------
+# Carte de grammaire, introduite par Viktoriya.
+# ---------------------------------------------------------------------------
+explication:
+  id: gr-saell-sael
+  introduite_par: viktoriya
+  question:
+    fr: "Pourquoi sæll pour Austri, et sæl pour Kolla ?"
+    en: "Why sæll for Austri, but sæl for Kolla?"
+  reponse:
+    fr: "Sæll veut dire « heureux ». Il s'accorde avec la personne à qui tu parles : sæll pour un homme, sæl pour une femme. Komdu sæll, c'est « viens heureux » ; vertu sæll, « reste heureux »."
+    en: "Sæll means “happy”. It agrees with the person you are talking to: sæll for a man, sæl for a woman. Komdu sæll is “come happy”; vertu sæll, “stay happy”."
+  tableau:
+    - { is: "komdu sæll", fr: "bonjour, à un homme", en: "hello, to a man" }
+    - { is: "komdu sæl", fr: "bonjour, à une femme", en: "hello, to a woman" }
+    - { is: "vertu sæll", fr: "au revoir, à un homme", en: "goodbye, to a man" }
+    - { is: "vertu sæl", fr: "au revoir, à une femme", en: "goodbye, to a woman" }
+
+# ---------------------------------------------------------------------------
+# Exercices (10).
+# ---------------------------------------------------------------------------
+exercices:
+  - id: ex-n1p1l2-01
+    type: reconnaitre
+    support: audio_et_texte
+    question: ph-n1p1-012
+    consigne:
+      fr: "Que dit Kolla ?"
+      en: "What does Kolla say?"
+    choix:
+      - { fr: "Bonjour, Austri !", en: "Good morning, Austri!", correct: true }
+      - { fr: "Bonsoir, Austri !", en: "Good evening, Austri!" }
+      - { fr: "Au revoir, Austri !", en: "Goodbye, Austri!" }
+
+  - id: ex-n1p1l2-02
+    type: associer
+    consigne:
+      fr: "Relie les paires."
+      en: "Match the pairs."
+    paires:
+      - { mot: w-godan-daginn }
+      - { mot: w-gott-kvold }
+      - { mot: w-komdu-saell }
+      - { mot: w-vertu-sael }
+
+  - id: ex-n1p1l2-03
+    type: accorder
+    consigne:
+      fr: "Tu salues Austri. Choisis la bonne forme."
+      en: "You greet Austri. Pick the right form."
+    phrase_a_trous: "Komdu ___, Austri!"
+    choix:
+      - { is: "sæll", correct: true }
+      - { is: "sæl" }
+    explication: gr-saell-sael
+
+  - id: ex-n1p1l2-04
+    type: accorder
+    consigne:
+      fr: "Tu salues Kolla. Choisis la bonne forme."
+      en: "You greet Kolla. Pick the right form."
+    phrase_a_trous: "Komdu ___, Kolla!"
+    choix:
+      - { is: "sæl", correct: true }
+      - { is: "sæll" }
+    explication: gr-saell-sael
+
+  - id: ex-n1p1l2-05
+    type: accorder
+    consigne:
+      fr: "Tu dis au revoir à Viktoriya. Choisis la bonne forme."
+      en: "You say goodbye to Viktoriya. Pick the right form."
+    phrase_a_trous: "Vertu ___, Viktoriya!"
+    choix:
+      - { is: "sæl", correct: true }
+      - { is: "sæll" }
+    explication: gr-saell-sael
+
+  - id: ex-n1p1l2-06
+    type: retrouver
+    consigne:
+      fr: "Comment dit-on : « Bonsoir ! »"
+      en: "How do you say: “Good evening!”"
+    choix:
+      - { is: "Gott kvöld!", correct: true }
+      - { is: "Góðan dag!" }
+      - { is: "Vertu sæll!" }
+
+  - id: ex-n1p1l2-07
+    type: ecouter_dialogue
+    repliques:
+      - { locuteur: kolla,  phrase: ph-n1p1-021 }
+      - { locuteur: austri, phrase: ph-n1p1-022 }
+    consigne:
+      fr: "C'est le matin ou le soir ?"
+      en: "Is it morning or evening?"
+    choix:
+      - { fr: "Le soir", en: "Evening", correct: true }
+      - { fr: "Le matin", en: "Morning" }
+
+  - id: ex-n1p1l2-08
+    type: construire
+    consigne:
+      fr: "Remets dans l'ordre : « Au revoir, Austri ! »"
+      en: "Put in order: “Goodbye, Austri!”"
+    blocs: ["Vertu", "sæll", ",", "Austri", "!"]
+    reponse: ph-n1p1-023
+
+  - id: ex-n1p1l2-09
+    type: produire
+    consigne:
+      fr: "Salue Austri poliment, en islandais."
+      en: "Greet Austri politely, in Icelandic."
+    reponses_acceptees: ["Komdu sæll!", "Komdu sæll, Austri!"]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+  - id: ex-n1p1l2-10
+    type: produire
+    consigne:
+      fr: "Dis au revoir poliment à Kolla, en islandais."
+      en: "Say goodbye politely to Kolla, in Icelandic."
+    reponses_acceptees: ["Vertu sæl!", "Vertu sæl, Kolla!"]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+fin:
+  locuteur: kolla
+  message:
+    fr: "Bravo ! Et la prochaine fois, c'est « komdu sæl » pour moi : je suis une dame, figure-toi."
+    en: "Well done! And next time, it's “komdu sæl” for me: I'm a lady, you know."

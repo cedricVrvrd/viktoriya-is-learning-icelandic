@@ -134,7 +134,8 @@
 		display: inline-block;
 		min-width: 4.5ch;
 		border-bottom: 3px solid var(--ligne);
-		margin: 0 0.25ch;
+		/* les espaces viennent de la phrase : « Komdu ___, Austri! » ne doit pas devenir « sæll , » */
+		margin: 0;
 		color: var(--texte-doux);
 	}
 	.trou.rempli {

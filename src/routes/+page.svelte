@@ -10,10 +10,17 @@
 	let enCours = $state<string | null>(null);
 
 	// Leçons prévues par la fiche de structure N1-P1, pas encore écrites.
-	const AVENIR: Record<Langue, string[]> = {
-		fr: ['Sæll ou sæl ?', 'D’où viens-tu ?', 'Ça va ?', 'Tu parles quoi ?', 'C’est quoi, ça ?', 'Qui est-ce ?', 'Point de passage'],
-		en: ['Sæll or sæl?', 'Where are you from?', 'How are you?', 'What do you speak?', 'What’s that?', 'Who’s that?', 'Checkpoint']
-	};
+	const AVENIR: { ordre: number | null; fr: string; en: string }[] = [
+		{ ordre: 2, fr: 'Sæll ou sæl ?', en: 'Sæll or sæl?' },
+		{ ordre: 3, fr: 'D’où viens-tu ?', en: 'Where are you from?' },
+		{ ordre: 4, fr: 'Ça va ?', en: 'How are you?' },
+		{ ordre: 5, fr: 'Tu parles quoi ?', en: 'What do you speak?' },
+		{ ordre: 6, fr: 'C’est quoi, ça ?', en: 'What’s that?' },
+		{ ordre: 7, fr: 'Qui est-ce ?', en: 'Who’s that?' },
+		{ ordre: null, fr: 'Point de passage', en: 'Checkpoint' }
+	];
+	// Seules les leçons pas encore écrites restent « bientôt ».
+	const aVenir = $derived(AVENIR.filter((a) => a.ordre === null || !data.lecons.some((l) => l.ordre === a.ordre)));
 
 	onMount(() => {
 		if (!navigator.language.toLowerCase().startsWith('fr')) langue = 'en';
@@ -61,11 +68,11 @@
 					</div>
 				</li>
 			{/each}
-			{#each AVENIR[langue] as titre, i (titre)}
+			{#each aVenir as a (a.en)}
 				<li class="etape verrou">
-					<span class="numero">{i === AVENIR[langue].length - 1 ? '★' : i + 2}</span>
+					<span class="numero">{a.ordre ?? '★'}</span>
 					<div class="corps">
-						<h2>{titre}</h2>
+						<h2>{a[langue]}</h2>
 						<p>{t(langue, 'bientot')}</p>
 					</div>
 				</li>

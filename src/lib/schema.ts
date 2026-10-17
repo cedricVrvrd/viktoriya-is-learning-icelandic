@@ -23,7 +23,7 @@ const idExercice = z.string().regex(/^ex-[a-z0-9-]+$/);
 const mot = z.strictObject({
 	id: idMot,
 	lemme: texte,
-	categorie: z.enum(['nom', 'verbe', 'pronom', 'interjection', 'interrogatif', 'conjonction', 'adverbe', 'adjectif']),
+	categorie: z.enum(['nom', 'verbe', 'pronom', 'interjection', 'interrogatif', 'conjonction', 'adverbe', 'adjectif', 'expression']),
 	formes: z.array(texte).optional(),
 	registre: z.enum(['familier', 'soutenu']).optional(),
 	fr: texte,
