@@ -1,0 +1,8 @@
+# Mots du contenu absents de BÍN, acceptés par le test. Chaque entrée doit être justifiée.
+# BÍN décrit les mots qui se déclinent ou se conjuguent : certains mots invariables ou noms propres n'y sont pas.
+- mot: Superpuffin
+  raison: nom du personnage principal, invariable
+- mot: Viktoriya
+  raison: prénom étranger du personnage, invariable
+- mot: heitirðu
+  raison: forme contractée de « heitir þú », propre à l'oral ; BÍN ne liste pas les contractions

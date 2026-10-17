@@ -1,0 +1,32 @@
+{
+  "name": "superpuffin",
+  "version": "0.1.0",
+  "private": true,
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "node scripts/verifier-securite.mjs && vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "securite": "node scripts/verifier-securite.mjs",
+    "verifier:bin": "node scripts/verifier-bin.mjs .bin/KRISTINsnid.csv"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "^4.0.0",
+    "@sveltejs/kit": "^3.1.0",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^26.6.5",
+    "js-yaml": "^5.5.0",
+    "svelte": "^5.57.2",
+    "svelte-check": "^4.7.7",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.4",
+    "zod": "^4.6.7"
+  },
+  "imports": {
+    "#lib": "./src/lib",
+    "#lib/*": "./src/lib/*"
+  }
+}

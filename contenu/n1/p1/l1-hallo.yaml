@@ -1,0 +1,295 @@
+# Superpuffin — Niveau 1, Partie 1, Leçon 1
+# Licence du contenu : CC BY-SA 4.0
+# Texte écrit de zéro à partir de la fiche de structure N1-P1.
+# Aucun texte, dialogue, exercice ni personnage du manuel Íslenska fyrir alla.
+#
+# Règles du format (seront imposées par le schéma zod) :
+# - texte brut uniquement : aucun HTML, aucun Markdown ;
+# - chaque mot, phrase et exercice a un identifiant fixe, jamais réutilisé ;
+# - corriger une phrase garde son identifiant (la mémoire de révision suit l'id) ;
+# - toute chaîne islandaise est vérifiée contre BÍN au build.
+
+schema: superpuffin/lecon@1
+id: n1-p1-l1
+niveau: 1
+partie: 1
+ordre: 1
+duree_minutes: 4
+titre:
+  fr: "Halló !"
+  en: "Halló!"
+objectif:
+  fr: "Saluer et dire comment on s'appelle."
+  en: "Say hello and tell someone your name."
+personnages: [superpuffin, viktoriya]
+
+# ---------------------------------------------------------------------------
+# Mots nouveaux (10). « formes » = formes rencontrées dans cette leçon.
+# ---------------------------------------------------------------------------
+mots:
+  - id: w-hallo
+    lemme: "halló"
+    categorie: interjection
+    fr: "salut, bonjour"
+    en: "hello"
+  - id: w-hae
+    lemme: "hæ"
+    categorie: interjection
+    registre: familier
+    fr: "salut"
+    en: "hi"
+  - id: w-eg
+    lemme: "ég"
+    categorie: pronom
+    fr: "je"
+    en: "I"
+  - id: w-thu
+    lemme: "þú"
+    categorie: pronom
+    fr: "tu"
+    en: "you"
+  - id: w-heita
+    lemme: "heita"
+    categorie: verbe
+    formes: ["heiti", "heitir"]
+    fr: "s'appeler"
+    en: "to be called"
+  - id: w-hvad
+    lemme: "hvað"
+    categorie: interrogatif
+    fr: "quoi, comment"
+    en: "what"
+  - id: w-en
+    lemme: "en"
+    categorie: conjonction
+    fr: "mais, et (dans « en þú ? »)"
+    en: "but, and (in “en þú?”)"
+    note:
+      fr: "Faux ami : ne veut jamais dire « en »."
+      en: "Means “but”, or “and” when turning the question back."
+  - id: w-ja
+    lemme: "já"
+    categorie: adverbe
+    fr: "oui"
+    en: "yes"
+  - id: w-nei
+    lemme: "nei"
+    categorie: adverbe
+    fr: "non"
+    en: "no"
+  - id: w-takk
+    lemme: "takk"
+    categorie: interjection
+    fr: "merci"
+    en: "thanks"
+
+# ---------------------------------------------------------------------------
+# Phrases. Chacune reçoit son audio au build (voix choisie par locuteur).
+# ---------------------------------------------------------------------------
+phrases:
+  - id: ph-n1p1-001
+    is: "Halló!"
+    fr: "Salut !"
+    en: "Hello!"
+  - id: ph-n1p1-002
+    is: "Hæ!"
+    fr: "Salut !"
+    en: "Hi!"
+  - id: ph-n1p1-003
+    is: "Ég heiti Superpuffin."
+    fr: "Je m'appelle Superpuffin."
+    en: "My name is Superpuffin."
+  - id: ph-n1p1-004
+    is: "Hvað heitir þú?"
+    fr: "Comment tu t'appelles ?"
+    en: "What's your name?"
+  - id: ph-n1p1-005
+    is: "Ég heitir Viktoriya."
+    fr: "(erreur) Je m'appelle Viktoriya."
+    en: "(mistake) My name is Viktoriya."
+    erreur_volontaire: true
+  - id: ph-n1p1-006
+    is: "Nei, nei! Ég heiti, þú heitir."
+    fr: "Non, non ! Je m'appelle, tu t'appelles."
+    en: "No, no! I'm called, you're called."
+  - id: ph-n1p1-007
+    is: "Ég heiti Viktoriya."
+    fr: "Je m'appelle Viktoriya."
+    en: "My name is Viktoriya."
+  - id: ph-n1p1-008
+    is: "Takk! En þú? Heitir þú Superpuffin?"
+    fr: "Merci ! Et toi ? Tu t'appelles Superpuffin ?"
+    en: "Thanks! And you? Is your name Superpuffin?"
+  - id: ph-n1p1-009
+    is: "Já! Ég heiti Superpuffin."
+    fr: "Oui ! Je m'appelle Superpuffin."
+    en: "Yes! My name is Superpuffin."
+  - id: ph-n1p1-010
+    is: "Heitir þú Kolla?"
+    fr: "Tu t'appelles Kolla ?"
+    en: "Is your name Kolla?"
+  - id: ph-n1p1-011
+    is: "Nei, ég heiti Viktoriya."
+    fr: "Non, je m'appelle Viktoriya."
+    en: "No, my name is Viktoriya."
+
+# ---------------------------------------------------------------------------
+# Scène d'ouverture : le ferry accoste à Seyðisfjörður.
+# ---------------------------------------------------------------------------
+scene:
+  lieu: seydisfjordur-port
+  didascalie:
+    fr: "Le ferry accoste à Seyðisfjörður. Viktoriya descend avec sa valise. Un macareux pique droit sur elle… et rate son atterrissage."
+    en: "The ferry docks in Seyðisfjörður. Viktoriya steps off with her suitcase. A puffin dives straight at her… and misses the landing."
+  repliques:
+    - { locuteur: superpuffin, phrase: ph-n1p1-001 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-002 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-003 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-004 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-005 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-006 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-007 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-008 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-009 }
+
+# ---------------------------------------------------------------------------
+# Carte de grammaire, introduite par Viktoriya (son rôle dans le cahier).
+# ---------------------------------------------------------------------------
+explication:
+  id: gr-heita-sg12
+  introduite_par: viktoriya
+  question:
+    fr: "Pourquoi heiti, et pas heitir ?"
+    en: "Why heiti and not heitir?"
+  reponse:
+    fr: "Le verbe change selon la personne. Avec ég : heiti. Avec þú : heitir. Astuce : avec þú, le verbe prend un r de plus."
+    en: "The verb changes with the person. With ég: heiti. With þú: heitir. Tip: þú takes the longer form, with an extra r."
+  tableau:
+    - { is: "ég heiti",   fr: "je m'appelle",   en: "I am called" }
+    - { is: "þú heitir",  fr: "tu t'appelles",  en: "you are called" }
+
+# ---------------------------------------------------------------------------
+# Exercices (10). Les erreurs reviennent en fin de leçon, sans pénalité.
+# ---------------------------------------------------------------------------
+exercices:
+  - id: ex-n1p1l1-01
+    type: reconnaitre
+    support: audio_et_texte
+    question: ph-n1p1-002
+    consigne:
+      fr: "Que veut dire Viktoriya ?"
+      en: "What does Viktoriya mean?"
+    choix:
+      - { fr: "Salut !",  en: "Hi!",      correct: true }
+      - { fr: "Merci !",  en: "Thanks!" }
+      - { fr: "Non !",    en: "No!" }
+
+  - id: ex-n1p1l1-02
+    type: reconnaitre
+    support: audio_et_texte
+    question: ph-n1p1-003
+    consigne:
+      fr: "Que dit le macareux ?"
+      en: "What does the puffin say?"
+    choix:
+      - { fr: "Je m'appelle Superpuffin.",      en: "My name is Superpuffin.",   correct: true }
+      - { fr: "Tu t'appelles Superpuffin ?",    en: "Is your name Superpuffin?" }
+      - { fr: "Merci, Superpuffin.",            en: "Thanks, Superpuffin." }
+
+  - id: ex-n1p1l1-03
+    type: associer
+    consigne:
+      fr: "Relie les paires."
+      en: "Match the pairs."
+    paires:
+      - { mot: w-ja }
+      - { mot: w-nei }
+      - { mot: w-eg }
+      - { mot: w-thu }
+      - { mot: w-takk }
+
+  - id: ex-n1p1l1-04
+    type: retrouver
+    consigne:
+      fr: "Comment dit-on : « Comment tu t'appelles ? »"
+      en: "How do you say: “What's your name?”"
+    choix:
+      - { is: "Hvað heitir þú?", correct: true }
+      - { is: "Hvað heiti þú?" }
+      - { is: "Ég heiti þú?" }
+
+  - id: ex-n1p1l1-05
+    type: accorder
+    consigne:
+      fr: "Choisis la bonne forme."
+      en: "Pick the right form."
+    phrase_a_trous: "Ég ___ Viktoriya."
+    choix:
+      - { is: "heiti", correct: true }
+      - { is: "heitir" }
+    explication: gr-heita-sg12
+
+  - id: ex-n1p1l1-06
+    type: accorder
+    consigne:
+      fr: "Choisis la bonne forme."
+      en: "Pick the right form."
+    phrase_a_trous: "Hvað ___ þú?"
+    choix:
+      - { is: "heitir", correct: true }
+      - { is: "heiti" }
+    explication: gr-heita-sg12
+
+  - id: ex-n1p1l1-07
+    type: construire
+    consigne:
+      fr: "Remets dans l'ordre : « Tu t'appelles Kolla ? »"
+      en: "Put in order: “Is your name Kolla?”"
+    blocs: ["Heitir", "þú", "Kolla", "?"]
+    reponse: ph-n1p1-010
+    note:
+      fr: "Pour poser une question, le verbe passe en premier."
+      en: "To ask a yes/no question, the verb comes first."
+
+  - id: ex-n1p1l1-08
+    type: ecouter_dialogue
+    repliques:
+      - { locuteur: superpuffin, phrase: ph-n1p1-010 }
+      - { locuteur: viktoriya,   phrase: ph-n1p1-011 }
+    consigne:
+      fr: "La renarde s'appelle-t-elle Kolla ?"
+      en: "Is the fox called Kolla?"
+    choix:
+      - { fr: "Non, elle s'appelle Viktoriya.", en: "No, she's called Viktoriya.", correct: true }
+      - { fr: "Oui, elle s'appelle Kolla.",     en: "Yes, she's called Kolla." }
+
+  - id: ex-n1p1l1-09
+    type: produire
+    consigne:
+      fr: "Écris en islandais : « Comment tu t'appelles ? »"
+      en: "Write in Icelandic: “What's your name?”"
+    reponses_acceptees: ["Hvað heitir þú?", "Hvað heitirðu?"]
+    tolerance:
+      accents: signaler          # validé, lettre fautive en rouge
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+  - id: ex-n1p1l1-10
+    type: produire
+    consigne:
+      fr: "Présente-toi : écris « Je m'appelle » puis ton prénom."
+      en: "Introduce yourself: write “My name is” then your first name."
+    debut_attendu: "Ég heiti"
+    suite_libre: prenom          # n'importe quel prénom, texte brut, 40 caractères max
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+# Fin de leçon : Superpuffin réussit enfin un atterrissage (animation),
+# petite aurore en mode sombre.
+fin:
+  locuteur: superpuffin
+  message:
+    fr: "Bravo ! Toi, tu as atterri. Moi, presque."
+    en: "Well done! You landed. I almost did."

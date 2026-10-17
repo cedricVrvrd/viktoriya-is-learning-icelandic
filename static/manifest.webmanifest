@@ -1,0 +1,11 @@
+{
+	"name": "Superpuffin — apprendre l'islandais",
+	"short_name": "Superpuffin",
+	"start_url": "./",
+	"scope": "./",
+	"display": "standalone",
+	"background_color": "#0B1E3F",
+	"theme_color": "#02529C",
+	"lang": "fr",
+	"icons": [{ "src": "icone.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
