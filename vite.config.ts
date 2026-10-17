@@ -1,10 +1,11 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import adapter from '@sveltejs/adapter-static';
 import { defineConfig, type Plugin } from 'vite';
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { load as lireYaml, CORE_SCHEMA } from 'js-yaml';
 import { lecon } from './src/lib/schema';
+import { fichierAudio, reglagesDesPhrases } from './scripts/audio-plan.ts';
 
 /** Lit et valide tout le contenu au build. Le bundle client ne reçoit que du JSON validé. */
 function contenu(): Plugin {
@@ -29,7 +30,17 @@ function contenu(): Plugin {
 					const details = r.error.issues.map((i) => `  - ${i.path.join('.') || '(racine)'} : ${i.message}`);
 					throw new Error(`Contenu invalide dans ${chemin}\n${details.join('\n')}`);
 				}
-				return r.data;
+				// Relie chaque phrase à son fichier audio, s'il a été généré (static/audio, voir le workflow).
+				const reglages = reglagesDesPhrases(r.data);
+				const phrases = r.data.phrases.map((p) => {
+					const fichier = fichierAudio(p.is, reglages.get(p.id)!);
+					if (existsSync(join('static', fichier))) return { ...p, audio: fichier };
+					// En CI (EXIGER_AUDIO=1), une phrase sans audio fait échouer le build.
+					if (process.env.EXIGER_AUDIO === '1')
+						throw new Error(`Audio manquant pour ${p.id} « ${p.is} » (${fichier}) dans ${chemin}`);
+					return p;
+				});
+				return { ...r.data, phrases };
 			});
 			lecons.sort((a, b) => a.niveau - b.niveau || a.partie - b.partie || a.ordre - b.ordre);
 			return `export default JSON.parse(${JSON.stringify(JSON.stringify(lecons))});`;

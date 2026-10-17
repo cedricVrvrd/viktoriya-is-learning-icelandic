@@ -3,3 +3,7 @@ node_modules/
 build/
 apercu/
 .bin/
+static/audio/
+.piper/
+.venv-audio/
+.audio-plan.json

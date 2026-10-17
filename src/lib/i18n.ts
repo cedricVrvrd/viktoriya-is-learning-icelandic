@@ -29,8 +29,15 @@ const textes = {
 	minutes: { fr: 'min', en: 'min' },
 	bientot: { fr: 'Bientôt', en: 'Coming soon' },
 	prototype: {
-		fr: 'Prototype : une seule leçon, sans audio ni sauvegarde de la progression.',
-		en: 'Prototype: one lesson, no audio, progress is not saved yet.'
+		fr: 'Prototype : une seule leçon, progression non sauvegardée.',
+		en: 'Prototype: one lesson, progress is not saved yet.'
+	},
+	ecouter: { fr: 'Écouter', en: 'Listen' },
+	reecouter: { fr: 'Réécouter le dialogue', en: 'Play the dialogue again' },
+	texte_cache: { fr: 'Texte affiché après ta réponse', en: 'Text shown after you answer' },
+	credits_voix: {
+		fr: 'Voix : Talrómur, Université de Reykjavík (CC BY 4.0), avec Piper.',
+		en: 'Voices: Talrómur, Reykjavík University (CC BY 4.0), using Piper.'
 	},
 	erreur_marquee: { fr: 'erreur', en: 'mistake' },
 	accents_rouges: { fr: 'Les lettres en rouge sont à corriger.', en: 'Letters in red need fixing.' },

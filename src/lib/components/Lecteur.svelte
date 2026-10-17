@@ -79,7 +79,8 @@
 			<div class="dialogue" aria-live="polite">
 				{#each lecon.scene.repliques.slice(0, visibles) as r, i (i)}
 					{@const p = phrases.get(r.phrase)}
-					{#if p}<Bulle locuteur={r.locuteur} phrase={p} {langue} />{/if}
+					<!-- la dernière réplique affichée se joue toute seule : on vient de toucher « Suivant » -->
+					{#if p}<Bulle locuteur={r.locuteur} phrase={p} {langue} auto={i === visibles - 1} />{/if}
 				{/each}
 			</div>
 			<div class="action">

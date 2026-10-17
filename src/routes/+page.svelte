@@ -72,6 +72,7 @@
 			{/each}
 		</ol>
 		<p class="avertissement">{t(langue, 'prototype')}</p>
+		<p class="avertissement">{t(langue, 'credits_voix')}</p>
 	</div>
 {/if}
 

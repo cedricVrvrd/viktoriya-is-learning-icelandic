@@ -6,7 +6,8 @@
 | Contenu (leçons, exercices, personnages) | CC BY-SA 4.0 | Contributeurs du projet |
 | Données BÍN (vérification des formes, au build) | CC BY-SA 4.0 | Beygingarlýsing íslensks nútímamáls. Stofnun Árna Magnússonar í íslenskum fræðum. Höfundur og ritstjóri Kristín Bjarnadóttir. |
 | ts-fsrs (à venir) | MIT | open-spaced-repetition |
-| Voix Piper Talrómur (à venir) | CC BY 4.0 | Université de Reykjavík et auteurs |
+| Voix Talrómur (Búi, Salka, Steinn, Ugla) | CC BY 4.0 | Université de Reykjavík (Háskólinn í Reykjavík) et auteurs du corpus Talrómur |
+| Moteur Piper (piper1-gpl), au build seulement, non distribué | GPL-3.0 | Open Home Foundation et contributeurs |
 
 ## Source d'inspiration
 

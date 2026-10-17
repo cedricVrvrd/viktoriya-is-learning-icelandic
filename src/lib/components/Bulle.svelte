@@ -1,9 +1,25 @@
 <script lang="ts">
 	import Avatar from './Avatar.svelte';
+	import BoutonAudio from './BoutonAudio.svelte';
 	import { NOMS_PERSONNAGES, t, type Langue } from '#lib/i18n.ts';
 	import type { Phrase } from '#lib/schema.ts';
 
-	let { locuteur, phrase, langue }: { locuteur: string; phrase: Phrase; langue: Langue } = $props();
+	let {
+		locuteur,
+		phrase,
+		langue,
+		auto = false,
+		masquer = false
+	}: {
+		locuteur: string;
+		phrase: Phrase;
+		langue: Langue;
+		/** Jouer l'audio dès l'affichage. */
+		auto?: boolean;
+		/** Exercice d'écoute : le texte n'apparaît qu'après la réponse. */
+		masquer?: boolean;
+	} = $props();
+	const cache = $derived(masquer && !!phrase.audio);
 	let traduction = $state(false);
 	// Viktoriya est le double de l'apprenant : ses répliques sont à droite.
 	const droite = $derived(locuteur === 'viktoriya');
@@ -13,11 +29,20 @@
 	<Avatar qui={locuteur} />
 	<div class="bulle" class:erreur={phrase.erreur_volontaire}>
 		<span class="nom">{NOMS_PERSONNAGES[locuteur]}</span>
-		<p class="is" lang="is">
-			{phrase.is}
-			{#if phrase.erreur_volontaire}<span class="marque">{t(langue, 'erreur_marquee')}</span>{/if}
-		</p>
-		{#if traduction}
+		<div class="ligne">
+			{#if phrase.audio}<BoutonAudio fichier={phrase.audio} {langue} {auto} />{/if}
+			{#if cache}
+				<p class="cache" aria-label={t(langue, 'texte_cache')}>• • •</p>
+			{:else}
+				<p class="is" lang="is">
+					{phrase.is}
+					{#if phrase.erreur_volontaire}<span class="marque">{t(langue, 'erreur_marquee')}</span>{/if}
+				</p>
+			{/if}
+		</div>
+		{#if cache}
+			<!-- traduction disponible après la réponse -->
+		{:else if traduction}
 			<p class="trad">{phrase[langue]}</p>
 		{:else}
 			<button class="voir" type="button" onclick={() => (traduction = true)}>{t(langue, 'traduction')}</button>
@@ -45,6 +70,20 @@
 	.droite .bulle {
 		border-radius: 18px 18px 4px 18px;
 		background: var(--surface);
+	}
+	.ligne {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-top: 0.15rem;
+	}
+	.ligne p {
+		margin: 0;
+		min-width: 0;
+	}
+	.cache {
+		letter-spacing: 0.2em;
+		color: var(--texte-doux);
 	}
 	.nom {
 		font-size: 0.75rem;

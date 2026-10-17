@@ -65,10 +65,34 @@ jobs:
       - name: Formes islandaises contre BÍN
         run: npm run verifier:bin
 
+      # Audio : Piper (GPL-3.0, build seulement) + voix Talrómur (Université de Reykjavík, CC BY 4.0).
+      # Le cache garde les voix et les MP3 déjà produits : seules les phrases nouvelles ou modifiées
+      # sont synthétisées.
+      - name: Cache audio
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            .piper
+            static/audio
+          key: audio-${{ hashFiles('contenu/**/*.yaml', 'scripts/audio-plan.ts', 'scripts/generer-audio.py') }}
+          restore-keys: audio-
+
+      - name: Préparer Piper
+        run: |
+          command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg)
+          python3 -m venv .venv-audio
+          .venv-audio/bin/pip install --quiet piper-tts==1.8.0
+
+      - name: Générer l'audio
+        run: |
+          node scripts/plan-audio.ts > .audio-plan.json
+          .venv-audio/bin/python scripts/generer-audio.py .audio-plan.json static/audio .piper
+
       - name: Build (le schéma du contenu est validé ici)
         run: npm run build
         env:
           BASE_PATH: /${{ github.event.repository.name }}
+          EXIGER_AUDIO: '1'
 
       - name: Liens du site publié
         run: node scripts/verifier-liens.mjs

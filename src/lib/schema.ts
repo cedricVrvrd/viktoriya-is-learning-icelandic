@@ -165,7 +165,11 @@ export const lecon = z
 	});
 
 
-export type Lecon = z.infer<typeof lecon>;
+/** Leçon telle qu'écrite dans le YAML. */
+export type LeconContenu = z.infer<typeof lecon>;
+/** Phrase telle que l'appli la reçoit : reliée à son fichier audio quand il existe. */
+export type Phrase = LeconContenu['phrases'][number] & { audio?: string };
+/** Leçon telle que l'appli la reçoit. */
+export type Lecon = Omit<LeconContenu, 'phrases'> & { phrases: Phrase[] };
 export type Exercice = Lecon['exercices'][number];
-export type Phrase = Lecon['phrases'][number];
 export type Personnage = (typeof PERSONNAGES)[number];

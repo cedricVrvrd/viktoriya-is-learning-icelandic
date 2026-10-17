@@ -21,6 +21,8 @@ APERCU=1 npx vite build && python3 scripts/apercu-fragment.py apercu/index.html 
   Unicode NFC, champs inconnus refusés, renvois vérifiés. Une leçon invalide fait échouer le build.
 - `src/lib/correction.ts` : correction des réponses tapées (accent manquant = validé, lettre en rouge).
 - `src/lib/components/` : lecteur de leçon, exercices, mini-clavier islandais.
+- `scripts/audio-plan.ts`, `scripts/generer-audio.py` : audio de chaque phrase (Piper + voix Talrómur),
+  généré en CI, un fichier par empreinte de (voix, vitesse, texte).
 - `scripts/verifier-securite.mjs` : refuse `{@html}`, `innerHTML`, `eval` dans le code.
 
 ## Publication
