@@ -11,6 +11,6 @@ body = s[debut_body:s.rindex('</body>')]
 for pat in [r'<meta charset[^>]*>\s*', r'<meta name="viewport"[^>]*>\s*', r'<link rel="manifest"[^>]*>\s*',
             r'<link rel="icon"[^>]*>\s*', r'<title>.*?</title>\s*']:
     head = re.sub(pat, '', head, flags=re.S)
-frag = '<title>Superpuffin</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n' + head.strip() + '\n' + body.strip() + '\n'
+frag = '<title>Viktoriya is learning Icelandic</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n' + head.strip() + '\n' + body.strip() + '\n'
 open(dst, 'w', encoding='utf-8').write(frag)
 print(f'{dst} : {len(frag)} octets')

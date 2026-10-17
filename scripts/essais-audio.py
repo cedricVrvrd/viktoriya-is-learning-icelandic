@@ -79,7 +79,7 @@ entete = "".join(f"<th>{html.escape(titre)}</th>" for _, titre in COLONNES)
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="content-security-policy" content="default-src 'self'; style-src 'unsafe-inline'">
 <meta name="robots" content="noindex">
-<title>Essais de voix — Superpuffin</title>
+<title>Essais de voix — Viktoriya is learning Icelandic</title>
 <style>
 body{{font:16px/1.45 system-ui,sans-serif;margin:0;padding:16px;background:#fff;color:#0b1e3f}}
 h1{{font-size:1.4rem}}

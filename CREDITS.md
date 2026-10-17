@@ -2,7 +2,7 @@
 
 | Élément | Licence | Crédit |
 | --- | --- | --- |
-| Code de Superpuffin | GPL-3.0 | Contributeurs du projet |
+| Code de Viktoriya is learning Icelandic | GPL-3.0 | Contributeurs du projet |
 | Contenu (leçons, exercices, personnages et leurs dessins, static/personnages/) | CC BY-SA 4.0 | Contributeurs du projet |
 | Données BÍN (vérification des formes, au build) | CC BY-SA 4.0 | Beygingarlýsing íslensks nútímamáls. Stofnun Árna Magnússonar í íslenskum fræðum. Höfundur og ritstjóri Kristín Bjarnadóttir. |
 | ts-fsrs (à venir) | MIT | open-spaced-repetition |

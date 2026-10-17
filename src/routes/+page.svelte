@@ -33,7 +33,7 @@
 </script>
 
 <svelte:head>
-	<title>Superpuffin</title>
+	<title>Viktoriya is learning Icelandic</title>
 	<meta name="description" content="Apprendre l'islandais, gratuitement, en leçons courtes." />
 </svelte:head>
 
@@ -42,7 +42,7 @@
 {:else}
 	<div class="accueil">
 		<header class="haut">
-			<span class="marque">Superpuffin</span>
+			<span class="marque">Viktoriya <span class="suite">is learning Icelandic</span></span>
 			<div class="langues" role="group" aria-label={t(langue, 'langue')}>
 				<button type="button" aria-pressed={langue === 'fr'} onclick={() => (langue = 'fr')}>FR</button>
 				<button type="button" aria-pressed={langue === 'en'} onclick={() => (langue = 'en')}>EN</button>
@@ -97,11 +97,20 @@
 		justify-content: space-between;
 	}
 	.marque {
+		display: flex;
+		flex-direction: column;
 		font-family: var(--police-titre);
 		font-weight: 900;
 		font-size: 1.5rem;
+		line-height: 1.05;
 		color: var(--primaire);
 		letter-spacing: -0.01em;
+	}
+	.suite {
+		font-size: 0.95rem;
+		font-weight: 700;
+		letter-spacing: 0;
+		color: var(--texte-doux);
 	}
 	.langues {
 		display: flex;

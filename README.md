@@ -1,4 +1,4 @@
-# Superpuffin
+# Viktoriya is learning Icelandic
 
 Application gratuite et open source pour apprendre l'islandais (francophones et anglophones).
 Prototype : Niveau 1, Partie 1, leçon 1.
