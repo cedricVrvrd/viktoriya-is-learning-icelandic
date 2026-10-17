@@ -88,6 +88,9 @@ jobs:
           node scripts/plan-audio.ts > .audio-plan.json
           .venv-audio/bin/python scripts/generer-audio.py .audio-plan.json static/audio .piper
 
+      - name: Page d'essais de voix
+        run: .venv-audio/bin/python scripts/essais-audio.py static/essais-audio .piper
+
       - name: Build (le schéma du contenu est validé ici)
         run: npm run build
         env:

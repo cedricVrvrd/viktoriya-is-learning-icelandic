@@ -7,7 +7,10 @@ import { version } from '$app/env';
 
 const sw = self as unknown as ServiceWorkerGlobalScope;
 const CACHE = `superpuffin-${version}`;
-const RESSOURCES = [...immutable, ...assets, ...prerendered].map((r) =>
+// La page d'essais de voix n'est pas mise en cache hors ligne.
+const RESSOURCES = [...immutable, ...assets, ...prerendered]
+	.filter((r) => !r.path.includes('essais-audio/'))
+	.map((r) =>
 	new URL(r.path.replace(/^\//, ''), sw.registration.scope).href
 );
 
