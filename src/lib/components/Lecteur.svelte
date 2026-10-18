@@ -153,6 +153,7 @@
 					<div><dt>{t(langue, 'xp')}</dt><dd>{xp}</dd></div>
 					<div><dt>{t(langue, 'reussite')}</dt><dd>{premierCoup} / {total}</dd></div>
 				</dl>
+				{#if test}<p class="avertissement-test">{t(langue, 'fin_test')}</p>{/if}
 				<button class="bouton" type="button" onclick={onquitter}>{t(langue, 'continuer')}</button>
 			</section>
 		{/if}
@@ -340,6 +341,14 @@
 	.faux {
 		background: var(--erreur-fond);
 		border-color: var(--rouge);
+	}
+	.avertissement-test {
+		margin: 0;
+		padding: 0.6rem 0.9rem;
+		border: 2px dashed var(--ligne);
+		border-radius: var(--rayon);
+		color: var(--texte-doux);
+		font-size: 0.95rem;
 	}
 	.passer-test {
 		appearance: none;

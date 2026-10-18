@@ -38,6 +38,9 @@ class VoixGrammatek:
         jetons = self.phonetiseur.phrase(texte)
         if not accents:
             jetons = [j for j in jetons if j not in ("ˈ", "ˌ")]
+        # Un blanc avant le premier phonème : sans lui, le modèle avale la consonne initiale
+        # (« líka » entendu « íka »). Mesuré : attaque du l de 12 à environ 40 ms.
+        jetons = [" ", *jetons]
         ids = phonemes_to_ids(jetons, self.voix.config.phoneme_id_map)
         audio = self.voix.phoneme_ids_to_audio(ids, SynthesisConfig(length_scale=vitesse))
         return np.asarray(audio[0] if isinstance(audio, tuple) else audio, dtype=np.float32)
