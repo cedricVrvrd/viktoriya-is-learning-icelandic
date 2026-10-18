@@ -1,0 +1,301 @@
+# Viktoriya is learning Icelandic — Niveau 1, Partie 2, Leçon 5
+# Licence du contenu : CC BY-SA 4.0
+# Texte écrit de zéro à partir de la fiche de structure N1-P2.
+# Aucun texte, dialogue, exercice ni personnage du manuel Íslenska fyrir alla.
+
+schema: superpuffin/lecon@1
+id: n1-p2-l5
+niveau: 1
+partie: 2
+ordre: 5
+duree_minutes: 5
+titre:
+  fr: "Dans mon sac"
+  en: "In my bag"
+objectif:
+  fr: "Nommer les objets et les personnes de la classe, avec « le » et « la »."
+  en: "Name the things and people in the classroom, with “the”."
+personnages: [bara, viktoriya]
+
+# ---------------------------------------------------------------------------
+# Mots nouveaux (10).
+# ---------------------------------------------------------------------------
+mots:
+  - id: w-kennari
+    lemme: "kennari"
+    categorie: nom
+    genre: m
+    formes: ["kennarinn"]
+    fr: "professeur"
+    en: "teacher"
+  - id: w-nemandi
+    lemme: "nemandi"
+    categorie: nom
+    genre: m
+    formes: ["nemandinn"]
+    fr: "élève"
+    en: "student"
+  - id: w-penni
+    lemme: "penni"
+    categorie: nom
+    genre: m
+    formes: ["penninn"]
+    fr: "stylo"
+    en: "pen"
+  - id: w-blyantur
+    lemme: "blýantur"
+    categorie: nom
+    genre: m
+    formes: ["blýanturinn"]
+    fr: "crayon"
+    en: "pencil"
+  - id: w-taska
+    lemme: "taska"
+    categorie: nom
+    genre: f
+    formes: ["taskan"]
+    fr: "sac, cartable"
+    en: "bag"
+  - id: w-mappa
+    lemme: "mappa"
+    categorie: nom
+    genre: f
+    formes: ["mappan"]
+    fr: "classeur, pochette"
+    en: "folder"
+  - id: w-tafla
+    lemme: "tafla"
+    categorie: nom
+    genre: f
+    formes: ["taflan"]
+    fr: "tableau (de la classe)"
+    en: "board"
+  - id: w-tolva
+    lemme: "tölva"
+    categorie: nom
+    genre: f
+    formes: ["tölvan"]
+    fr: "ordinateur"
+    en: "computer"
+    note:
+      fr: "Féminin, alors qu'« ordinateur » est masculin."
+      en: "Feminine in Icelandic."
+  - id: w-stilabok
+    lemme: "stílabók"
+    categorie: nom
+    genre: f
+    formes: ["stílabókin"]
+    fr: "cahier"
+    en: "exercise book"
+  - id: w-ordabok
+    lemme: "orðabók"
+    categorie: nom
+    genre: f
+    formes: ["orðabókin"]
+    fr: "dictionnaire"
+    en: "dictionary"
+
+# ---------------------------------------------------------------------------
+# Phrases.
+# ---------------------------------------------------------------------------
+phrases:
+  - id: ph-n1p2-051
+    is: "Gott kvöld! Ég er kennarinn og þú ert nemandi."
+    fr: "Bonsoir ! Je suis la professeure et tu es une élève."
+    en: "Good evening! I'm the teacher and you're a student."
+  - id: ph-n1p2-052
+    is: "Já! Og hér er taskan."
+    fr: "Oui ! Et voici le sac."
+    en: "Yes! And here's the bag."
+  - id: ph-n1p2-053
+    is: "Frábært! Hvað er þetta?"
+    fr: "Génial ! Qu'est-ce que c'est ?"
+    en: "Great! What's this?"
+  - id: ph-n1p2-054
+    is: "Þetta er penni. Og þetta er blýantur."
+    fr: "C'est un stylo. Et ça, c'est un crayon."
+    en: "This is a pen. And this is a pencil."
+  - id: ph-n1p2-055
+    is: "Og þetta?"
+    fr: "Et ça ?"
+    en: "And this?"
+  - id: ph-n1p2-056
+    is: "Þetta er stílabók og orðabók. Og tölvinn!"
+    fr: "(erreur) C'est un cahier et un dictionnaire. Et l'ordinateur !"
+    en: "(mistake) This is an exercise book and a dictionary. And the computer!"
+    erreur_volontaire: true
+  - id: ph-n1p2-057
+    is: "Tölvan! Tölva er eins og bók: hún."
+    fr: "Tölvan ! Tölva, c'est comme bók : féminin."
+    en: "Tölvan! Tölva is like bók: feminine."
+  - id: ph-n1p2-058
+    is: "Tölvan. Takk!"
+    fr: "Tölvan. Merci !"
+    en: "Tölvan. Thanks!"
+  - id: ph-n1p2-059
+    is: "Hvar er taflan?"
+    fr: "Où est le tableau ?"
+    en: "Where is the board?"
+  - id: ph-n1p2-060
+    is: "Þetta er blýantur og penni."
+    fr: "C'est un crayon et un stylo."
+    en: "This is a pencil and a pen."
+
+# ---------------------------------------------------------------------------
+# Scène d'ouverture : Bára fait vider les sacs.
+# ---------------------------------------------------------------------------
+scene:
+  lieu: ecole-salle-de-classe
+  didascalie:
+    fr: "Deuxième cours du soir. Bára demande à chacun de poser sur la table ce qu'il a dans son sac. Viktoriya commence."
+    en: "Second evening class. Bára asks everyone to put what's in their bag on the table. Viktoriya goes first."
+  repliques:
+    - { locuteur: bara,      phrase: ph-n1p2-051 }
+    - { locuteur: viktoriya, phrase: ph-n1p2-052 }
+    - { locuteur: bara,      phrase: ph-n1p2-053 }
+    - { locuteur: viktoriya, phrase: ph-n1p2-054 }
+    - { locuteur: bara,      phrase: ph-n1p2-055 }
+    - { locuteur: viktoriya, phrase: ph-n1p2-056 }
+    - { locuteur: bara,      phrase: ph-n1p2-057 }
+    - { locuteur: viktoriya, phrase: ph-n1p2-058 }
+
+# ---------------------------------------------------------------------------
+# Carte de grammaire : réemploi de l'article collé (Partie 1), indices de genre.
+# ---------------------------------------------------------------------------
+explication:
+  id: gr-kyn-skolans
+  introduite_par: viktoriya
+  question:
+    fr: "Tölva, c'est « ordinateur »… pourquoi pas masculin ?"
+    en: "How do I know if a word is masculine or feminine?"
+  reponse:
+    fr: "Le genre ne suit pas le français, mais la fin du mot aide souvent. Un nom en -i ou en -ur est souvent masculin (penni, kennari, blýantur), un nom en -a souvent féminin (taska, tafla, tölva). Un mot composé prend le genre de son dernier morceau : orðabók et stílabók sont féminins, comme bók."
+    en: "Gender has to be learnt, but the ending often helps. A noun in -i or -ur is often masculine (penni, kennari, blýantur), a noun in -a often feminine (taska, tafla, tölva). A compound takes the gender of its last part: orðabók and stílabók are feminine, like bók."
+  tableau:
+    - { is: "penni → penninn",            fr: "le stylo (masculin)",          en: "the pen (masculine)" }
+    - { is: "blýantur → blýanturinn",     fr: "le crayon (masculin)",         en: "the pencil (masculine)" }
+    - { is: "taska → taskan",             fr: "le sac (féminin)",             en: "the bag (feminine)" }
+    - { is: "tölva → tölvan",             fr: "l'ordinateur (féminin)",       en: "the computer (feminine)" }
+    - { is: "orðabók → orðabókin",        fr: "le dictionnaire (féminin)",    en: "the dictionary (feminine)" }
+
+# ---------------------------------------------------------------------------
+# Exercices (10).
+# ---------------------------------------------------------------------------
+exercices:
+  - id: ex-n1p2l5-01
+    type: reconnaitre
+    support: audio_et_texte
+    question: ph-n1p2-051
+    consigne:
+      fr: "Qui est Bára ?"
+      en: "Who is Bára?"
+    choix:
+      - { fr: "La professeure", en: "The teacher", correct: true }
+      - { fr: "Une élève",      en: "A student" }
+      - { fr: "La voisine",     en: "The neighbour" }
+
+  - id: ex-n1p2l5-02
+    type: associer
+    consigne:
+      fr: "Relie les paires."
+      en: "Match the pairs."
+    paires:
+      - { mot: w-penni }
+      - { mot: w-blyantur }
+      - { mot: w-taska }
+      - { mot: w-tafla }
+      - { mot: w-tolva }
+
+  - id: ex-n1p2l5-03
+    type: accorder
+    consigne:
+      fr: "Choisis la bonne forme : « Où est l'ordinateur ? »"
+      en: "Pick the right form: “Where is the computer?”"
+    phrase_a_trous: "Hvar er ___?"
+    choix:
+      - { is: "tölvan", correct: true }
+      - { is: "tölvinn" }
+      - { is: "tölvið" }
+    explication: gr-kyn-skolans
+
+  - id: ex-n1p2l5-04
+    type: reconnaitre
+    support: audio
+    question: ph-n1p2-059
+    consigne:
+      fr: "Écoute. Que demande-t-on ?"
+      en: "Listen. What is being asked?"
+    choix:
+      - { fr: "Où est le tableau ?",   en: "Where is the board?", correct: true }
+      - { fr: "Où est le sac ?",       en: "Where is the bag?" }
+      - { fr: "Qu'est-ce que c'est ?", en: "What's this?" }
+
+  - id: ex-n1p2l5-05
+    type: ecouter_dialogue
+    repliques:
+      - { locuteur: viktoriya, phrase: ph-n1p2-056 }
+      - { locuteur: bara,      phrase: ph-n1p2-057 }
+    consigne:
+      fr: "Pourquoi Bára corrige-t-elle Viktoriya ?"
+      en: "Why does Bára correct Viktoriya?"
+    choix:
+      - { fr: "Tölva est féminin, comme bók.",   en: "Tölva is feminine, like bók.", correct: true }
+      - { fr: "Viktoriya n'a pas d'ordinateur.", en: "Viktoriya has no computer." }
+      - { fr: "Viktoriya parle trop vite.",      en: "Viktoriya speaks too fast." }
+
+  - id: ex-n1p2l5-06
+    type: retrouver
+    consigne:
+      fr: "Comment dit-on « le dictionnaire » ?"
+      en: "How do you say “the dictionary”?"
+    choix:
+      - { is: "orðabókin", correct: true }
+      - { is: "stílabókin" }
+      - { is: "orðið" }
+
+  - id: ex-n1p2l5-07
+    type: retrouver
+    consigne:
+      fr: "Comment dit-on « l'élève » ?"
+      en: "How do you say “the student”?"
+    choix:
+      - { is: "nemandinn", correct: true }
+      - { is: "kennarinn" }
+      - { is: "nafnið" }
+
+  - id: ex-n1p2l5-08
+    type: construire
+    consigne:
+      fr: "Remets dans l'ordre : « C'est un crayon et un stylo. »"
+      en: "Put in order: “This is a pencil and a pen.”"
+    blocs: ["Þetta", "er", "blýantur", "og", "penni", "."]
+    reponse: ph-n1p2-060
+
+  - id: ex-n1p2l5-09
+    type: produire
+    consigne:
+      fr: "Écris en islandais : « Où est le sac ? »"
+      en: "Write in Icelandic: “Where is the bag?”"
+    reponses_acceptees: ["Hvar er taskan?"]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+  - id: ex-n1p2l5-10
+    type: dictee
+    consigne:
+      fr: "Écoute les noms des lettres, puis écris le mot."
+      en: "Listen to the letter names, then write the word."
+    a_epeler: "penni"
+    sens: { fr: "stylo", en: "pen" }
+    tolerance:
+      accents: exiger
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+fin:
+  locuteur: bara
+  message:
+    fr: "Bravo ! Ton sac n'a plus de secret. Au prochain cours, on apprend à dire quand on ne comprend pas."
+    en: "Well done! Your bag holds no secrets now. Next class, we learn how to say you don't understand."
