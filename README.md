@@ -1,7 +1,7 @@
 # Viktoriya is learning Icelandic
 
 Application gratuite et open source pour apprendre l'islandais (francophones et anglophones).
-Prototype : Niveau 1, Partie 1, leçon 1.
+Prototype : Niveau 1, Partie 1 en construction.
 
 ## Commandes
 
@@ -19,6 +19,9 @@ APERCU=1 npx vite build && python3 scripts/apercu-fragment.py apercu/index.html 
 
 - `contenu/` : leçons en YAML. Validées par `src/lib/schema.ts` au build : texte brut seulement,
   Unicode NFC, champs inconnus refusés, renvois vérifiés. Une leçon invalide fait échouer le build.
+- `src/lib/progression.svelte.ts`, `src/lib/stockage.ts` : progression sur l'appareil (IndexedDB),
+  série quotidienne, révisions espacées FSRS (une carte par mot), export/import validé par
+  `src/lib/progression-schema.ts`.
 - `src/lib/correction.ts` : correction des réponses tapées (accent manquant = validé, lettre en rouge).
 - `src/lib/components/` : lecteur de leçon, exercices, mini-clavier islandais.
 - `scripts/audio-plan.ts`, `scripts/generer-audio.py` : audio de chaque phrase (Piper + voix Talrómur),

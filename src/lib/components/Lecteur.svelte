@@ -10,8 +10,14 @@
 	import { NOMS_PERSONNAGES, t, type Langue } from '#lib/i18n.ts';
 	import type { Exercice, Lecon } from '#lib/schema.ts';
 	import type { Issue } from '#lib/types.ts';
+	import type { Bilan } from '#lib/progression.svelte.ts';
 
-	let { lecon, langue, onquitter }: { lecon: Lecon; langue: Langue; onquitter: () => void } = $props();
+	let {
+		lecon,
+		langue,
+		onquitter,
+		onfini
+	}: { lecon: Lecon; langue: Langue; onquitter: () => void; onfini?: (b: Bilan) => void } = $props();
 
 	type Etape = { ex: Exercice; retour: boolean };
 	let phase = $state<'scene' | 'grammaire' | 'exercices' | 'fin'>('scene');
@@ -43,8 +49,10 @@
 
 	function continuer() {
 		issue = null;
-		if (position + 1 >= file.length) phase = 'fin';
-		else position += 1;
+		if (position + 1 >= file.length) {
+			phase = 'fin';
+			onfini?.({ premierCoup, total, xp });
+		} else position += 1;
 		window.scrollTo({ top: 0 });
 	}
 

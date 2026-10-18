@@ -2,7 +2,7 @@
 // Règles de sécurité : texte brut uniquement (aucun < ni >), Unicode NFC, longueur bornée,
 // tout champ inconnu est rejeté (objets stricts).
 import { z } from 'zod';
-import { assembler } from './correction';
+import { assembler } from './correction.ts';
 
 const texte = z
 	.string()

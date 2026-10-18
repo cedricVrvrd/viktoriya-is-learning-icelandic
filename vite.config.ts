@@ -42,6 +42,14 @@ function contenu(): Plugin {
 				});
 				return { ...r.data, phrases };
 			});
+			// Identifiants uniques entre leçons : ils servent de clés à la mémoire de révision.
+			for (const genre of ['mots', 'phrases', 'exercices'] as const) {
+				const ids = lecons.flatMap((l) => l[genre].map((x) => x.id));
+				const doublons = [...new Set(ids.filter((id, i) => ids.indexOf(id) !== i))];
+				if (doublons.length) throw new Error(`Identifiants de ${genre} en double entre leçons : ${doublons.join(', ')}`);
+			}
+			const lids = lecons.map((l) => l.id);
+			if (new Set(lids).size !== lids.length) throw new Error('Deux leçons ont le même identifiant');
 			lecons.sort((a, b) => a.niveau - b.niveau || a.partie - b.partie || a.ordre - b.ordre);
 			return `export default JSON.parse(${JSON.stringify(JSON.stringify(lecons))});`;
 		}

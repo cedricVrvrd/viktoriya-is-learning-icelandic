@@ -5,7 +5,7 @@
 | Code de Viktoriya is learning Icelandic | GPL-3.0 | Contributeurs du projet |
 | Contenu (leçons, exercices, personnages et leurs dessins, static/personnages/) | CC BY-SA 4.0 | Contributeurs du projet |
 | Données BÍN (vérification des formes, au build) | CC BY-SA 4.0 | Beygingarlýsing íslensks nútímamáls. Stofnun Árna Magnússonar í íslenskum fræðum. Höfundur og ritstjóri Kristín Bjarnadóttir. |
-| ts-fsrs (à venir) | MIT | open-spaced-repetition |
+| ts-fsrs (révisions espacées) | MIT | open-spaced-repetition |
 | Voix Talrómur Salka et Ugla : Viktoriya, Kolla, Bára | CC BY 4.0 | Université de Reykjavík (Háskólinn í Reykjavík) et auteurs du corpus Talrómur |
 | Voix Steinn de Grammatek (is-steinn-xs-ipa) : Superpuffin, Austri, Blesi | Apache-2.0 | Grammatek ehf., programme islandais de technologies de la langue |
 | Dictionnaire de prononciation d'ice-g2p (phonèmes de la voix Grammatek) | Apache-2.0 | Grammatek ehf. |
