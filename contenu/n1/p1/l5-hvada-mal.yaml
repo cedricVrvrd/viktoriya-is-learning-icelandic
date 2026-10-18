@@ -1,0 +1,265 @@
+# Viktoriya is learning Icelandic — Niveau 1, Partie 1, Leçon 5
+# Licence du contenu : CC BY-SA 4.0
+# Texte écrit de zéro à partir de la fiche de structure N1-P1.
+# Aucun texte, dialogue, exercice ni personnage du manuel Íslenska fyrir alla.
+
+schema: superpuffin/lecon@1
+id: n1-p1-l5
+niveau: 1
+partie: 1
+ordre: 5
+duree_minutes: 5
+titre:
+  fr: "Tu parles quoi ?"
+  en: "What do you speak?"
+objectif:
+  fr: "Dire quelles langues on parle et le demander."
+  en: "Say which languages you speak, and ask others."
+personnages: [viktoriya, bara]
+
+mots:
+  - id: w-tala
+    lemme: "tala"
+    categorie: verbe
+    formes: ["tala", "talar"]
+    fr: "parler"
+    en: "to speak"
+  - id: w-hvada
+    lemme: "hvaða"
+    categorie: interrogatif
+    fr: "quel, quelle"
+    en: "which"
+  - id: w-mal
+    lemme: "mál"
+    categorie: nom
+    genre: n
+    fr: "langue (langage)"
+    en: "language"
+  - id: w-tala-islensku
+    lemme: "tala íslensku"
+    categorie: expression
+    fr: "parler islandais"
+    en: "speak Icelandic"
+  - id: w-tala-fronsku
+    lemme: "tala frönsku"
+    categorie: expression
+    fr: "parler français"
+    en: "speak French"
+  - id: w-tala-ensku
+    lemme: "tala ensku"
+    categorie: expression
+    fr: "parler anglais"
+    en: "speak English"
+  - id: w-tala-donsku
+    lemme: "tala dönsku"
+    categorie: expression
+    fr: "parler danois"
+    en: "speak Danish"
+  - id: w-tala-spaensku
+    lemme: "tala spænsku"
+    categorie: expression
+    fr: "parler espagnol"
+    en: "speak Spanish"
+  - id: w-tala-thysku
+    lemme: "tala þýsku"
+    categorie: expression
+    fr: "parler allemand"
+    en: "speak German"
+  - id: w-sma
+    lemme: "smá"
+    categorie: adverbe
+    fr: "un peu"
+    en: "a little"
+  - id: w-og
+    lemme: "og"
+    categorie: conjonction
+    fr: "et"
+    en: "and"
+
+phrases:
+  - id: ph-n1p1-045
+    is: "Komdu sæl, Viktoriya. Hvaða mál talar þú?"
+    fr: "Bonjour, Viktoriya. Quelles langues parles-tu ?"
+    en: "Hello, Viktoriya. Which languages do you speak?"
+  - id: ph-n1p1-046
+    is: "Ég tala franska."
+    fr: "(erreur) Je parle français."
+    en: "(mistake) I speak French."
+    erreur_volontaire: true
+  - id: ph-n1p1-047
+    is: "Nei, nei. Þú talar frönsku."
+    fr: "Non, non. Tu parles français."
+    en: "No, no. You speak French."
+  - id: ph-n1p1-048
+    is: "Já! Ég tala frönsku, ensku og smá íslensku."
+    fr: "Oui ! Je parle français, anglais et un peu islandais."
+    en: "Yes! I speak French, English and a little Icelandic."
+  - id: ph-n1p1-049
+    is: "En þú, Bára? Hvaða mál talar þú?"
+    fr: "Et toi, Bára ? Quelles langues parles-tu ?"
+    en: "And you, Bára? Which languages do you speak?"
+  - id: ph-n1p1-050
+    is: "Ég tala íslensku, dönsku og smá ensku."
+    fr: "Je parle islandais, danois et un peu anglais."
+    en: "I speak Icelandic, Danish and a little English."
+  - id: ph-n1p1-051
+    is: "Hvaða mál talar þú?"
+    fr: "Quelles langues parles-tu ?"
+    en: "Which languages do you speak?"
+  - id: ph-n1p1-052
+    is: "Talar þú þýsku, Bára?"
+    fr: "Tu parles allemand, Bára ?"
+    en: "Do you speak German, Bára?"
+  - id: ph-n1p1-053
+    is: "Nei, en ég tala dönsku."
+    fr: "Non, mais je parle danois."
+    en: "No, but I speak Danish."
+  - id: ph-n1p1-054
+    is: "Ég tala smá íslensku."
+    fr: "Je parle un peu islandais."
+    en: "I speak a little Icelandic."
+
+scene:
+  lieu: fjord-rivage
+  didascalie:
+    fr: "Au bout du fjord, une grande baleine fait surface tout doucement. C'est Bára. Elle parle lentement, comme quelqu'un qui a tout son temps."
+    en: "At the end of the fjord, a great whale surfaces very slowly. It's Bára. She speaks slowly, like someone with all the time in the world."
+  repliques:
+    - { locuteur: bara,      phrase: ph-n1p1-045 }
+    - { locuteur: viktoriya, phrase: ph-n1p1-046 }
+    - { locuteur: bara,      phrase: ph-n1p1-047 }
+    - { locuteur: viktoriya, phrase: ph-n1p1-048 }
+    - { locuteur: viktoriya, phrase: ph-n1p1-049 }
+    - { locuteur: bara,      phrase: ph-n1p1-050 }
+
+explication:
+  id: gr-tala-langue
+  introduite_par: viktoriya
+  question:
+    fr: "Pourquoi frönsku, et pas franska ?"
+    en: "Why frönsku and not franska?"
+  reponse:
+    fr: "Après tala, le nom de la langue prend une forme en -u : íslenska devient íslensku, enska devient ensku. Dans franska, le a devient aussi ö : frönsku. Retiens tala + langue comme un bloc. Et tala suit la règle de heita : ég tala, þú talar."
+    en: "After tala, the language name takes a form ending in -u: íslenska becomes íslensku, enska becomes ensku. In franska, the a also turns into ö: frönsku. Learn tala + language as one block. And tala follows the heita rule: ég tala, þú talar."
+  tableau:
+    - { is: "ég tala", fr: "je parle", en: "I speak" }
+    - { is: "þú talar", fr: "tu parles", en: "you speak" }
+    - { is: "franska → tala frönsku", fr: "le français → parler français", en: "French → speak French" }
+    - { is: "íslenska → tala íslensku", fr: "l'islandais → parler islandais", en: "Icelandic → speak Icelandic" }
+
+exercices:
+  - id: ex-n1p1l5-01
+    type: reconnaitre
+    support: audio_et_texte
+    question: ph-n1p1-051
+    consigne:
+      fr: "Que veut dire cette question ?"
+      en: "What does this question mean?"
+    choix:
+      - { fr: "Quelles langues parles-tu ?", en: "Which languages do you speak?", correct: true }
+      - { fr: "Comment ça va ?", en: "How are you?" }
+      - { fr: "D'où viens-tu ?", en: "Where are you from?" }
+
+  - id: ex-n1p1l5-02
+    type: associer
+    consigne:
+      fr: "Relie les paires."
+      en: "Match the pairs."
+    paires:
+      - { mot: w-tala-islensku }
+      - { mot: w-tala-fronsku }
+      - { mot: w-tala-ensku }
+      - { mot: w-tala-donsku }
+      - { mot: w-tala-thysku }
+
+  - id: ex-n1p1l5-03
+    type: accorder
+    consigne:
+      fr: "Choisis la bonne forme."
+      en: "Pick the right form."
+    phrase_a_trous: "Ég ___ íslensku."
+    choix:
+      - { is: "tala", correct: true }
+      - { is: "talar" }
+    explication: gr-tala-langue
+
+  - id: ex-n1p1l5-04
+    type: accorder
+    consigne:
+      fr: "Choisis la bonne forme."
+      en: "Pick the right form."
+    phrase_a_trous: "Þú ___ ensku."
+    choix:
+      - { is: "talar", correct: true }
+      - { is: "tala" }
+    explication: gr-tala-langue
+
+  - id: ex-n1p1l5-05
+    type: accorder
+    consigne:
+      fr: "Viktoriya parle français. Choisis la bonne forme."
+      en: "Viktoriya speaks French. Pick the right form."
+    phrase_a_trous: "Ég tala ___."
+    choix:
+      - { is: "frönsku", correct: true }
+      - { is: "franska" }
+    explication: gr-tala-langue
+
+  - id: ex-n1p1l5-06
+    type: ecouter_dialogue
+    repliques:
+      - { locuteur: viktoriya, phrase: ph-n1p1-052 }
+      - { locuteur: bara,      phrase: ph-n1p1-053 }
+    consigne:
+      fr: "Quelle langue parle Bára ?"
+      en: "Which language does Bára speak?"
+    choix:
+      - { fr: "Le danois", en: "Danish", correct: true }
+      - { fr: "L'allemand", en: "German" }
+      - { fr: "Le français", en: "French" }
+
+  - id: ex-n1p1l5-07
+    type: retrouver
+    consigne:
+      fr: "Comment dit-on : « un peu » ?"
+      en: "How do you say: “a little”?"
+    choix:
+      - { is: "smá", correct: true }
+      - { is: "og" }
+      - { is: "mál" }
+
+  - id: ex-n1p1l5-08
+    type: construire
+    consigne:
+      fr: "Remets dans l'ordre : « Je parle un peu islandais. »"
+      en: "Put in order: “I speak a little Icelandic.”"
+    blocs: ["Ég", "tala", "smá", "íslensku", "."]
+    reponse: ph-n1p1-054
+
+  - id: ex-n1p1l5-09
+    type: produire
+    consigne:
+      fr: "Écris en islandais : « Quelles langues parles-tu ? »"
+      en: "Write in Icelandic: “Which languages do you speak?”"
+    reponses_acceptees: ["Hvaða mál talar þú?"]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+  - id: ex-n1p1l5-10
+    type: produire
+    consigne:
+      fr: "Écris en islandais : « Je parle français et un peu islandais. »"
+      en: "Write in Icelandic: “I speak French and a little Icelandic.”"
+    reponses_acceptees: ["Ég tala frönsku og smá íslensku."]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+fin:
+  locuteur: bara
+  message:
+    fr: "Très bien, petite renarde. Moi, j'ai appris le danois il y a bien longtemps… Les baleines ont le temps."
+    en: "Very good, little fox. I learned Danish a very long time ago… Whales have time."

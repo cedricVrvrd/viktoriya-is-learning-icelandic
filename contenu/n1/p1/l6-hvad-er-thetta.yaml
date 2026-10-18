@@ -1,0 +1,284 @@
+# Viktoriya is learning Icelandic — Niveau 1, Partie 1, Leçon 6
+# Licence du contenu : CC BY-SA 4.0
+# Texte écrit de zéro à partir de la fiche de structure N1-P1.
+# Aucun texte, dialogue, exercice ni personnage du manuel Íslenska fyrir alla.
+
+schema: superpuffin/lecon@1
+id: n1-p1-l6
+niveau: 1
+partie: 1
+ordre: 6
+duree_minutes: 5
+titre:
+  fr: "C'est quoi, ça ?"
+  en: "What's that?"
+objectif:
+  fr: "Nommer des personnes et des objets, avec « le » et « la »."
+  en: "Name people and things, with “the”."
+personnages: [blesi, viktoriya, superpuffin]
+
+mots:
+  - id: w-thetta-er
+    lemme: "þetta er"
+    categorie: expression
+    fr: "c'est, voici"
+    en: "this is"
+  - id: w-hvad-er-thetta
+    lemme: "hvað er þetta?"
+    categorie: expression
+    fr: "qu'est-ce que c'est ?"
+    en: "what is this?"
+  - id: w-madur
+    lemme: "maður"
+    categorie: nom
+    genre: m
+    formes: ["maðurinn"]
+    fr: "homme"
+    en: "man"
+  - id: w-kona
+    lemme: "kona"
+    categorie: nom
+    genre: f
+    formes: ["konan"]
+    fr: "femme"
+    en: "woman"
+  - id: w-barn
+    lemme: "barn"
+    categorie: nom
+    genre: n
+    formes: ["barnið"]
+    fr: "enfant"
+    en: "child"
+  - id: w-stoll
+    lemme: "stóll"
+    categorie: nom
+    genre: m
+    formes: ["stóllinn"]
+    fr: "chaise"
+    en: "chair"
+  - id: w-bok
+    lemme: "bók"
+    categorie: nom
+    genre: f
+    formes: ["bókin"]
+    fr: "livre"
+    en: "book"
+  - id: w-bord
+    lemme: "borð"
+    categorie: nom
+    genre: n
+    formes: ["borðið"]
+    fr: "table"
+    en: "table"
+  - id: w-kaffi
+    lemme: "kaffi"
+    categorie: nom
+    genre: n
+    formes: ["kaffið"]
+    fr: "café"
+    en: "coffee"
+  - id: w-bolli
+    lemme: "bolli"
+    categorie: nom
+    genre: m
+    formes: ["bollinn"]
+    fr: "tasse"
+    en: "cup"
+
+phrases:
+  - id: ph-n1p1-055
+    is: "Halló, Viktoriya! Hvað er þetta?"
+    fr: "Salut, Viktoriya ! Qu'est-ce que c'est ?"
+    en: "Hi, Viktoriya! What's this?"
+  - id: ph-n1p1-056
+    is: "Þetta er bók. Bókin!"
+    fr: "C'est un livre. Le livre !"
+    en: "It's a book. The book!"
+  - id: ph-n1p1-057
+    is: "Já! Og þetta?"
+    fr: "Oui ! Et ça ?"
+    en: "Yes! And this?"
+  - id: ph-n1p1-058
+    is: "Þetta er borð. Borðin!"
+    fr: "(erreur) C'est une table. La table !"
+    en: "(mistake) It's a table. The table!"
+    erreur_volontaire: true
+  - id: ph-n1p1-059
+    is: "Nei, nei! Borðið!"
+    fr: "Non, non ! La table : borðið !"
+    en: "No, no! The table: borðið!"
+  - id: ph-n1p1-060
+    is: "Og þetta er kaffi. Kaffið!"
+    fr: "Et ça, c'est du café. Le café !"
+    en: "And this is coffee. The coffee!"
+  - id: ph-n1p1-061
+    is: "Frábært! Og þetta er bolli. Bollinn!"
+    fr: "Génial ! Et ça, c'est une tasse. La tasse !"
+    en: "Great! And this is a cup. The cup!"
+  - id: ph-n1p1-062
+    is: "Þetta er kaffi."
+    fr: "C'est du café."
+    en: "This is coffee."
+  - id: ph-n1p1-063
+    is: "Hvað er þetta, Superpuffin?"
+    fr: "Qu'est-ce que c'est, Superpuffin ?"
+    en: "What's this, Superpuffin?"
+  - id: ph-n1p1-064
+    is: "Þetta er bolli."
+    fr: "C'est une tasse."
+    en: "It's a cup."
+  - id: ph-n1p1-065
+    is: "Þetta er bók."
+    fr: "C'est un livre."
+    en: "It's a book."
+
+scene:
+  lieu: cafe-seydisfjordur
+  didascalie:
+    fr: "Dans le petit café du port, Blesi entre au galop, essoufflé. Il a inventé un jeu : nommer tout ce qu'il montre, le plus vite possible."
+    en: "In the little harbour café, Blesi gallops in, out of breath. He has made up a game: name everything he points at, as fast as possible."
+  repliques:
+    - { locuteur: blesi,       phrase: ph-n1p1-055 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-056 }
+    - { locuteur: blesi,       phrase: ph-n1p1-057 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-058 }
+    - { locuteur: blesi,       phrase: ph-n1p1-059 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-060 }
+    - { locuteur: blesi,       phrase: ph-n1p1-061 }
+
+explication:
+  id: gr-genres-article
+  introduite_par: viktoriya
+  question:
+    fr: "Bókin, borðið, bollinn… pourquoi pas la même fin ?"
+    en: "Bókin, borðið, bollinn… why not the same ending?"
+  reponse:
+    fr: "L'islandais a trois genres, et « le, la » se colle à la fin du nom : -inn au masculin, -in au féminin, -ið au neutre. Si le nom finit déjà par une voyelle, on ajoute seulement -nn, -n ou -ð. Attention : le genre ne suit pas le français. Borð (la table) est neutre, bók (le livre) est féminin."
+    en: "Icelandic has three genders, and “the” is glued to the end of the noun: -inn for masculine, -in for feminine, -ið for neuter. If the noun already ends in a vowel, just add -nn, -n or -ð. Careful: gender doesn't follow English or French. Borð (table) is neuter, bók (book) is feminine."
+  tableau:
+    - { is: "stóll → stóllinn", fr: "masculin : la chaise", en: "masculine: the chair" }
+    - { is: "bolli → bollinn", fr: "masculin : la tasse", en: "masculine: the cup" }
+    - { is: "bók → bókin", fr: "féminin : le livre", en: "feminine: the book" }
+    - { is: "kona → konan", fr: "féminin : la femme", en: "feminine: the woman" }
+    - { is: "borð → borðið", fr: "neutre : la table", en: "neuter: the table" }
+    - { is: "kaffi → kaffið", fr: "neutre : le café", en: "neuter: the coffee" }
+
+exercices:
+  - id: ex-n1p1l6-01
+    type: reconnaitre
+    support: audio_et_texte
+    question: ph-n1p1-062
+    consigne:
+      fr: "Que veut dire cette phrase ?"
+      en: "What does this sentence mean?"
+    choix:
+      - { fr: "C'est du café.", en: "This is coffee.", correct: true }
+      - { fr: "C'est une tasse.", en: "This is a cup." }
+      - { fr: "C'est une table.", en: "This is a table." }
+
+  - id: ex-n1p1l6-02
+    type: associer
+    consigne:
+      fr: "Relie les paires."
+      en: "Match the pairs."
+    paires:
+      - { mot: w-madur }
+      - { mot: w-kona }
+      - { mot: w-stoll }
+      - { mot: w-bok }
+      - { mot: w-bord }
+
+  - id: ex-n1p1l6-03
+    type: accorder
+    consigne:
+      fr: "« Le livre » : complète l'article."
+      en: "“The book”: complete the article."
+    phrase_a_trous: "bók___"
+    choix:
+      - { is: "in", correct: true }
+      - { is: "inn" }
+      - { is: "ið" }
+    explication: gr-genres-article
+
+  - id: ex-n1p1l6-04
+    type: accorder
+    consigne:
+      fr: "« La table » : complète l'article."
+      en: "“The table”: complete the article."
+    phrase_a_trous: "borð___"
+    choix:
+      - { is: "ið", correct: true }
+      - { is: "in" }
+      - { is: "inn" }
+    explication: gr-genres-article
+
+  - id: ex-n1p1l6-05
+    type: accorder
+    consigne:
+      fr: "« La chaise » : complète l'article."
+      en: "“The chair”: complete the article."
+    phrase_a_trous: "stóll___"
+    choix:
+      - { is: "inn", correct: true }
+      - { is: "in" }
+      - { is: "ið" }
+    explication: gr-genres-article
+
+  - id: ex-n1p1l6-06
+    type: retrouver
+    consigne:
+      fr: "Comment dit-on : « Qu'est-ce que c'est ? »"
+      en: "How do you say: “What is this?”"
+    choix:
+      - { is: "Hvað er þetta?", correct: true }
+      - { is: "Hvaðan ert þú?" }
+      - { is: "Hvað segir þú?" }
+
+  - id: ex-n1p1l6-07
+    type: ecouter_dialogue
+    repliques:
+      - { locuteur: blesi,       phrase: ph-n1p1-063 }
+      - { locuteur: superpuffin, phrase: ph-n1p1-064 }
+    consigne:
+      fr: "Qu'est-ce que Superpuffin montre ?"
+      en: "What is Superpuffin showing?"
+    choix:
+      - { fr: "Une tasse", en: "A cup", correct: true }
+      - { fr: "Un livre", en: "A book" }
+      - { fr: "Une chaise", en: "A chair" }
+
+  - id: ex-n1p1l6-08
+    type: construire
+    consigne:
+      fr: "Remets dans l'ordre : « C'est un livre. »"
+      en: "Put in order: “It's a book.”"
+    blocs: ["Þetta", "er", "bók", "."]
+    reponse: ph-n1p1-065
+
+  - id: ex-n1p1l6-09
+    type: produire
+    consigne:
+      fr: "Écris en islandais : « C'est une chaise. »"
+      en: "Write in Icelandic: “It's a chair.”"
+    reponses_acceptees: ["Þetta er stóll."]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+  - id: ex-n1p1l6-10
+    type: produire
+    consigne:
+      fr: "Écris en islandais, en un seul mot : « la table »."
+      en: "Write in Icelandic, as one word: “the table”."
+    reponses_acceptees: ["borðið"]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+fin:
+  locuteur: blesi
+  message:
+    fr: "Pas mal ! Mais moi, j'aurais fini deux fois plus vite. Au tölt, bien sûr."
+    en: "Not bad! But I'd have finished twice as fast. At a tölt, of course."

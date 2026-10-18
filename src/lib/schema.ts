@@ -23,7 +23,8 @@ const idExercice = z.string().regex(/^ex-[a-z0-9-]+$/);
 const mot = z.strictObject({
 	id: idMot,
 	lemme: texte,
-	categorie: z.enum(['nom', 'verbe', 'pronom', 'interjection', 'interrogatif', 'conjonction', 'adverbe', 'adjectif', 'expression']),
+	categorie: z.enum(['nom', 'verbe', 'pronom', 'interjection', 'interrogatif', 'conjonction', 'adverbe', 'adjectif', 'preposition', 'expression']),
+	genre: z.enum(['m', 'f', 'n']).optional(),
 	formes: z.array(texte).optional(),
 	registre: z.enum(['familier', 'soutenu']).optional(),
 	fr: texte,
@@ -100,6 +101,53 @@ const exercice = z.discriminatedUnion('type', [
 	})
 ]);
 
+type ExerciceBrut = z.infer<typeof exercice>;
+type PhraseBrute = z.infer<typeof phrase>;
+
+/** Vérifie les renvois d'une liste d'exercices (phrases, mots, explication, bonne réponse unique). */
+function verifierExercices(
+	exercices: ExerciceBrut[],
+	phrasesListe: PhraseBrute[],
+	mots: Set<string>,
+	explicationId: string | null,
+	erreur: (m: string) => void
+) {
+	const phrases = new Map(phrasesListe.map((p) => [p.id, p]));
+	const verifPhrase = (id: string, ou: string) => {
+		if (!phrases.has(id)) erreur(`${ou} : phrase inconnue ${id}`);
+	};
+	for (const ex of exercices) {
+		if ('choix' in ex) {
+			const bons = ex.choix.filter((c) => c.correct).length;
+			if (bons !== 1) erreur(`${ex.id} : il faut exactement une bonne réponse (${bons})`);
+			const islandais = ex.type === 'retrouver' || ex.type === 'accorder';
+			for (const c of ex.choix) {
+				if (islandais ? !c.is : !(c.fr && c.en))
+					erreur(`${ex.id} : choix incomplet (${islandais ? 'is' : 'fr + en'} requis)`);
+			}
+		}
+		if (ex.type === 'reconnaitre') verifPhrase(ex.question, ex.id);
+		if (ex.type === 'ecouter_dialogue') ex.repliques.forEach((r) => verifPhrase(r.phrase, ex.id));
+		if (ex.type === 'associer')
+			ex.paires.forEach((p) => mots.has(p.mot) || erreur(`${ex.id} : mot inconnu ${p.mot}`));
+		if (ex.type === 'accorder' && ex.explication && ex.explication !== explicationId)
+			erreur(`${ex.id} : explication inconnue ${ex.explication}`);
+		if (ex.type === 'construire') {
+			verifPhrase(ex.reponse, ex.id);
+			const attendu = phrases.get(ex.reponse)?.is;
+			if (attendu && assembler(ex.blocs) !== attendu)
+				erreur(`${ex.id} : les blocs ne reconstituent pas « ${attendu} »`);
+		}
+		if (ex.type === 'produire' && !ex.reponses_acceptees && !(ex.debut_attendu && ex.suite_libre))
+			erreur(`${ex.id} : réponses attendues manquantes`);
+	}
+}
+
+function doublons(ids: string[], erreur: (m: string) => void) {
+	const d = ids.filter((id, i) => ids.indexOf(id) !== i);
+	if (d.length) erreur(`Identifiants en double : ${d.join(', ')}`);
+}
+
 export const lecon = z
 	.strictObject({
 		schema: z.literal('superpuffin/lecon@1'),
@@ -126,44 +174,52 @@ export const lecon = z
 	})
 	.superRefine((l, ctx) => {
 		const erreur = (message: string) => ctx.addIssue({ code: 'custom', message });
-		const ids = [...l.mots, ...l.phrases, ...l.exercices].map((x) => x.id);
-		const doublons = ids.filter((id, i) => ids.indexOf(id) !== i);
-		if (doublons.length) erreur(`Identifiants en double : ${doublons.join(', ')}`);
-
-		const phrases = new Map(l.phrases.map((p) => [p.id, p]));
-		const mots = new Set(l.mots.map((m) => m.id));
-		const verifPhrase = (id: string, ou: string) => {
-			if (!phrases.has(id)) erreur(`${ou} : phrase inconnue ${id}`);
-		};
-		l.scene.repliques.forEach((r) => verifPhrase(r.phrase, 'scène'));
-
-		for (const ex of l.exercices) {
-			if ('choix' in ex) {
-				const bons = ex.choix.filter((c) => c.correct).length;
-				if (bons !== 1) erreur(`${ex.id} : il faut exactement une bonne réponse (${bons})`);
-				const islandais = ex.type === 'retrouver' || ex.type === 'accorder';
-				for (const c of ex.choix) {
-					if (islandais ? !c.is : !(c.fr && c.en))
-						erreur(`${ex.id} : choix incomplet (${islandais ? 'is' : 'fr + en'} requis)`);
-				}
-			}
-			if (ex.type === 'reconnaitre') verifPhrase(ex.question, ex.id);
-			if (ex.type === 'ecouter_dialogue') ex.repliques.forEach((r) => verifPhrase(r.phrase, ex.id));
-			if (ex.type === 'associer')
-				ex.paires.forEach((p) => mots.has(p.mot) || erreur(`${ex.id} : mot inconnu ${p.mot}`));
-			if (ex.type === 'accorder' && ex.explication && ex.explication !== l.explication.id)
-				erreur(`${ex.id} : explication inconnue ${ex.explication}`);
-			if (ex.type === 'construire') {
-				verifPhrase(ex.reponse, ex.id);
-				const attendu = phrases.get(ex.reponse)?.is;
-				if (attendu && assembler(ex.blocs) !== attendu)
-					erreur(`${ex.id} : les blocs ne reconstituent pas « ${attendu} »`);
-			}
-			if (ex.type === 'produire' && !ex.reponses_acceptees && !(ex.debut_attendu && ex.suite_libre))
-				erreur(`${ex.id} : réponses attendues manquantes`);
-		}
+		doublons([...l.mots, ...l.phrases, ...l.exercices].map((x) => x.id), erreur);
+		const ids = new Set(l.phrases.map((p) => p.id));
+		l.scene.repliques.forEach((r) => ids.has(r.phrase) || erreur(`scène : phrase inconnue ${r.phrase}`));
+		verifierExercices(l.exercices, l.phrases, new Set(l.mots.map((m) => m.id)), l.explication.id, erreur);
 	});
 
+const message = z.strictObject({ locuteur: personnage, message: bilingue });
+
+/**
+ * Point de passage : quiz de fin de Partie, sans scène ni mots nouveaux.
+ * L'identifiant de chaque exercice dit quelle leçon il vérifie (ex-n1p1pp-l3-02 → leçon 3),
+ * pour proposer une révision ciblée en cas d'échec.
+ */
+export const pointDePassage = z
+	.strictObject({
+		schema: z.literal('superpuffin/point-de-passage@1'),
+		id: z.string().regex(/^n\d+-p\d+-pp$/),
+		niveau: z.number().int().min(1).max(4),
+		partie: z.number().int().min(1),
+		duree_minutes: z.number().int().min(1).max(15),
+		titre: bilingue,
+		objectif: bilingue,
+		seuil: z.number().min(0.5).max(1),
+		personnages: z.array(personnage).min(1),
+		phrases: z.array(phrase),
+		intro: message,
+		reussite: message,
+		echec: message,
+		exercices: z.array(exercice).min(5)
+	})
+	.superRefine((pp, ctx) => {
+		const erreur = (m: string) => ctx.addIssue({ code: 'custom', message: m });
+		doublons([...pp.phrases, ...pp.exercices].map((x) => x.id), erreur);
+		for (const ex of pp.exercices) {
+			if (!new RegExp(`^ex-n${pp.niveau}p${pp.partie}pp-l\\d+-\\d+$`).test(ex.id))
+				erreur(`${ex.id} : identifiant attendu de la forme ex-n${pp.niveau}p${pp.partie}pp-l<leçon>-<n>`);
+			if (ex.type === 'associer') erreur(`${ex.id} : pas d'exercice « associer » dans un point de passage`);
+		}
+		verifierExercices(pp.exercices, pp.phrases, new Set(), null, erreur);
+	});
+
+/** Leçon visée par un exercice de point de passage : ex-n1p1pp-l3-02 → n1-p1-l3. */
+export function leconVisee(exId: string): string | null {
+	const m = /^ex-n(\d+)p(\d+)pp-l(\d+)-\d+$/.exec(exId);
+	return m ? `n${m[1]}-p${m[2]}-l${m[3]}` : null;
+}
 
 /** Leçon telle qu'écrite dans le YAML. */
 export type LeconContenu = z.infer<typeof lecon>;
@@ -172,4 +228,6 @@ export type Phrase = LeconContenu['phrases'][number] & { audio?: string };
 /** Leçon telle que l'appli la reçoit. */
 export type Lecon = Omit<LeconContenu, 'phrases'> & { phrases: Phrase[] };
 export type Exercice = Lecon['exercices'][number];
+export type PointDePassageContenu = z.infer<typeof pointDePassage>;
+export type PointDePassage = Omit<PointDePassageContenu, 'phrases'> & { phrases: Phrase[] };
 export type Personnage = (typeof PERSONNAGES)[number];

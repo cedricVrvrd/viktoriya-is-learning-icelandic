@@ -8,7 +8,7 @@ import {
 	type CarteEnregistree,
 	type Progression
 } from './progression-schema.ts';
-import type { Lecon } from './schema.ts';
+import type { Lecon, PointDePassage } from './schema.ts';
 
 const planificateur = fsrs(generatorParameters({ enable_fuzz: true }));
 
@@ -127,6 +127,29 @@ export async function finirRevision(xp: number, maintenant = new Date()) {
 }
 
 export const leconTerminee = (id: string) => id in etat.p.lecons;
+
+export type BilanPassage = { justes: number; total: number; xp: number };
+
+/**
+ * Fin du point de passage. Réussi : la Partie est validée. Échoué : les mots des leçons
+ * ratées redeviennent dus tout de suite (révision ciblée), sans pénalité sur leur mémoire.
+ */
+export async function finirPointDePassage(pp: PointDePassage, bilan: BilanPassage, motsARevoir: string[], maintenant = new Date()) {
+	const score = bilan.total ? bilan.justes / bilan.total : 0;
+	if (score >= pp.seuil) {
+		const avant = etat.p.lecons[pp.id];
+		etat.p.lecons[pp.id] = { terminee: maintenant.toISOString(), reussite: Math.max(avant?.reussite ?? 0, score) };
+	} else {
+		for (const id of motsARevoir) {
+			const c = etat.p.cartes[id];
+			if (c && new Date(c.due) > maintenant) c.due = maintenant.toISOString();
+		}
+	}
+	etat.p.xp += bilan.xp;
+	noterActivite(maintenant);
+	await sauver();
+	return score >= pp.seuil;
+}
 
 // --- Export / import -----------------------------------------------------------
 

@@ -6,3 +6,13 @@
   raison: prénom étranger du personnage, invariable
 - mot: heitirðu
   raison: forme contractée de « heitir þú », propre à l'oral ; BÍN ne liste pas les contractions
+- mot: Pétursson
+  raison: patronyme (Pétur + s + son), exemple de la carte culture ; BÍN ne recense pas tous les patronymes
+- mot: Pétursdóttir
+  raison: patronyme (Pétur + s + dóttir), exemple de la carte culture
+- mot: son
+  raison: suffixe patronymique, affiché seul dans un exercice à trou (Péturs___)
+- mot: in
+  raison: terminaison de l'article défini féminin, affichée seule dans un exercice à trou (bók___)
+- mot: ið
+  raison: terminaison de l'article défini neutre, affichée seule dans un exercice à trou (borð___)

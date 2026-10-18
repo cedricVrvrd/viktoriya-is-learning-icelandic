@@ -1,0 +1,207 @@
+# Viktoriya is learning Icelandic — Niveau 1, Partie 1, Point de passage
+# Licence du contenu : CC BY-SA 4.0
+# Quiz de fin de Partie : reprend les leçons 1 à 7. Seuil : 80 % de bonnes réponses du premier coup.
+# L'identifiant de chaque exercice indique la leçon vérifiée (ex-n1p1pp-l3-01 → leçon 3) :
+# en cas d'échec, les mots des leçons ratées sont remis en révision.
+
+schema: superpuffin/point-de-passage@1
+id: n1-p1-pp
+niveau: 1
+partie: 1
+duree_minutes: 7
+titre:
+  fr: "Point de passage"
+  en: "Checkpoint"
+objectif:
+  fr: "Tenir une première conversation : saluer, se présenter, présenter quelqu'un."
+  en: "Hold a first conversation: greet, introduce yourself, introduce someone."
+seuil: 0.8
+personnages: [superpuffin, kolla, blesi]
+
+intro:
+  locuteur: superpuffin
+  message:
+    fr: "Point de passage ! Montre à toute la bande ce que tu as appris. Il faut 80 % de bonnes réponses du premier coup pour valider la Partie 1. Pas de panique : ici, une erreur ne revient pas, on compte, c'est tout."
+    en: "Checkpoint! Show the whole gang what you've learned. You need 80% right first time to pass Part 1. Don't panic: mistakes don't come back here, we just count."
+reussite:
+  locuteur: superpuffin
+  message:
+    fr: "Partie 1 validée ! Tu sais saluer, te présenter et présenter toute la bande. Et moi, pour fêter ça, j'ai réussi mon atterrissage. Presque."
+    en: "Part 1 passed! You can greet, introduce yourself and introduce the whole gang. To celebrate, I nailed my landing. Almost."
+echec:
+  locuteur: superpuffin
+  message:
+    fr: "Presque ! Les mots des leçons ci-dessous t'attendent dans les révisions. Revois-les, puis retente ta chance : moi aussi, je m'entraîne encore à atterrir."
+    en: "Almost! The words from the lessons below are waiting for you in Review. Go over them, then try again: I'm still practising my landings too."
+
+phrases:
+  - id: ph-n1p1-075
+    is: "Hvað heitir þú?"
+    fr: "Comment tu t'appelles ?"
+    en: "What's your name?"
+  - id: ph-n1p1-076
+    is: "Hvaðan ert þú, Blesi?"
+    fr: "D'où viens-tu, Blesi ?"
+    en: "Where are you from, Blesi?"
+  - id: ph-n1p1-077
+    is: "Ég kem frá Íslandi."
+    fr: "Je viens d'Islande."
+    en: "I come from Iceland."
+  - id: ph-n1p1-078
+    is: "Ég tala íslensku og smá dönsku."
+    fr: "Je parle islandais et un peu danois."
+    en: "I speak Icelandic and a little Danish."
+  - id: ph-n1p1-079
+    is: "Hver er þetta?"
+    fr: "Qui est-ce ?"
+    en: "Who is this?"
+
+exercices:
+  - id: ex-n1p1pp-l1-01
+    type: reconnaitre
+    support: audio_et_texte
+    question: ph-n1p1-075
+    consigne:
+      fr: "Que veut dire cette question ?"
+      en: "What does this question mean?"
+    choix:
+      - { fr: "Comment tu t'appelles ?", en: "What's your name?", correct: true }
+      - { fr: "Comment ça va ?", en: "How are you?" }
+      - { fr: "Qui est-ce ?", en: "Who is this?" }
+
+  - id: ex-n1p1pp-l2-01
+    type: accorder
+    consigne:
+      fr: "Tu dis au revoir à Austri. Choisis la bonne forme."
+      en: "You say goodbye to Austri. Pick the right form."
+    phrase_a_trous: "Vertu ___, Austri!"
+    choix:
+      - { is: "sæll", correct: true }
+      - { is: "sæl" }
+
+  - id: ex-n1p1pp-l2-02
+    type: retrouver
+    consigne:
+      fr: "Il est 20 heures. Comment dis-tu « bonsoir » ?"
+      en: "It's 8 pm. How do you say “good evening”?"
+    choix:
+      - { is: "Gott kvöld!", correct: true }
+      - { is: "Góðan daginn!" }
+      - { is: "Bless!" }
+
+  - id: ex-n1p1pp-l3-01
+    type: accorder
+    consigne:
+      fr: "Tu viens d'Espagne. Choisis la bonne forme."
+      en: "You're from Spain. Pick the right form."
+    phrase_a_trous: "Ég er frá ___."
+    choix:
+      - { is: "Spáni", correct: true }
+      - { is: "Spánn" }
+
+  - id: ex-n1p1pp-l3-02
+    type: ecouter_dialogue
+    repliques:
+      - { locuteur: kolla, phrase: ph-n1p1-076 }
+      - { locuteur: blesi, phrase: ph-n1p1-077 }
+    consigne:
+      fr: "D'où vient Blesi ?"
+      en: "Where is Blesi from?"
+    choix:
+      - { fr: "D'Islande", en: "From Iceland", correct: true }
+      - { fr: "Du Danemark", en: "From Denmark" }
+      - { fr: "D'Angleterre", en: "From England" }
+
+  - id: ex-n1p1pp-l4-01
+    type: retrouver
+    consigne:
+      fr: "Tu vas très bien. Que réponds-tu ?"
+      en: "You're feeling great. What do you answer?"
+    choix:
+      - { is: "Allt fínt.", correct: true }
+      - { is: "Allt sæmilegt." }
+      - { is: "Sjáumst." }
+
+  - id: ex-n1p1pp-l4-02
+    type: accorder
+    consigne:
+      fr: "Choisis la bonne forme."
+      en: "Pick the right form."
+    phrase_a_trous: "Ég ___ allt sæmilegt."
+    choix:
+      - { is: "segi", correct: true }
+      - { is: "segir" }
+
+  - id: ex-n1p1pp-l5-01
+    type: accorder
+    consigne:
+      fr: "Tu parles anglais. Choisis la bonne forme."
+      en: "You speak English. Pick the right form."
+    phrase_a_trous: "Ég tala ___."
+    choix:
+      - { is: "ensku", correct: true }
+      - { is: "enska" }
+
+  - id: ex-n1p1pp-l5-02
+    type: reconnaitre
+    support: audio_et_texte
+    question: ph-n1p1-078
+    consigne:
+      fr: "Que veut dire cette phrase ?"
+      en: "What does this sentence mean?"
+    choix:
+      - { fr: "Je parle islandais et un peu danois.", en: "I speak Icelandic and a little Danish.", correct: true }
+      - { fr: "Je parle un peu islandais et danois.", en: "I speak a little Icelandic and Danish." }
+      - { fr: "Je parle islandais et allemand.", en: "I speak Icelandic and German." }
+
+  - id: ex-n1p1pp-l6-01
+    type: accorder
+    consigne:
+      fr: "« L'enfant » : complète l'article."
+      en: "“The child”: complete the article."
+    phrase_a_trous: "barn___"
+    choix:
+      - { is: "ið", correct: true }
+      - { is: "in" }
+      - { is: "inn" }
+
+  - id: ex-n1p1pp-l7-01
+    type: accorder
+    consigne:
+      fr: "Il ou elle ? Choisis le bon mot."
+      en: "He or she? Pick the right word."
+    phrase_a_trous: "Þetta er Bára. ___ talar dönsku."
+    choix:
+      - { is: "Hún", correct: true }
+      - { is: "Hann" }
+
+  - id: ex-n1p1pp-l7-02
+    type: construire
+    consigne:
+      fr: "Remets dans l'ordre : « Qui est-ce ? »"
+      en: "Put in order: “Who is this?”"
+    blocs: ["Hver", "er", "þetta", "?"]
+    reponse: ph-n1p1-079
+
+  - id: ex-n1p1pp-l1-02
+    type: produire
+    consigne:
+      fr: "Présente-toi : écris « Je m'appelle » puis ton prénom."
+      en: "Introduce yourself: write “My name is” then your first name."
+    debut_attendu: "Ég heiti"
+    suite_libre: prenom
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+  - id: ex-n1p1pp-l3-03
+    type: produire
+    consigne:
+      fr: "Écris en islandais : « D'où viens-tu ? »"
+      en: "Write in Icelandic: “Where are you from?”"
+    reponses_acceptees: ["Hvaðan ert þú?", "Hvaðan kemur þú?"]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer

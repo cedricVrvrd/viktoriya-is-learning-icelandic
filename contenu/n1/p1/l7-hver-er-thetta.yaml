@@ -1,0 +1,254 @@
+# Viktoriya is learning Icelandic — Niveau 1, Partie 1, Leçon 7
+# Licence du contenu : CC BY-SA 4.0
+# Texte écrit de zéro à partir de la fiche de structure N1-P1.
+# Aucun texte, dialogue, exercice ni personnage du manuel Íslenska fyrir alla.
+
+schema: superpuffin/lecon@1
+id: n1-p1-l7
+niveau: 1
+partie: 1
+ordre: 7
+duree_minutes: 5
+titre:
+  fr: "Qui est-ce ?"
+  en: "Who's that?"
+objectif:
+  fr: "Présenter quelqu'un : son nom, son origine, ses langues."
+  en: "Introduce someone: their name, where they're from, what they speak."
+personnages: [bara, viktoriya, austri]
+
+mots:
+  - id: w-hver
+    lemme: "hver"
+    categorie: interrogatif
+    fr: "qui"
+    en: "who"
+  - id: w-hver-er-thetta
+    lemme: "hver er þetta?"
+    categorie: expression
+    fr: "qui est-ce ?"
+    en: "who is this?"
+  - id: w-hann
+    lemme: "hann"
+    categorie: pronom
+    fr: "il"
+    en: "he"
+  - id: w-hun
+    lemme: "hún"
+    categorie: pronom
+    fr: "elle"
+    en: "she"
+  - id: w-strakur
+    lemme: "strákur"
+    categorie: nom
+    genre: m
+    fr: "garçon"
+    en: "boy"
+  - id: w-stelpa
+    lemme: "stelpa"
+    categorie: nom
+    genre: f
+    fr: "fille (enfant)"
+    en: "girl"
+  - id: w-sonur
+    lemme: "sonur"
+    categorie: nom
+    genre: m
+    fr: "fils"
+    en: "son"
+  - id: w-dottir
+    lemme: "dóttir"
+    categorie: nom
+    genre: f
+    fr: "fille (de ses parents)"
+    en: "daughter"
+  - id: w-pabbi
+    lemme: "pabbi"
+    categorie: nom
+    genre: m
+    fr: "papa"
+    en: "dad"
+
+phrases:
+  - id: ph-n1p1-066
+    is: "Bára, hver er þetta?"
+    fr: "Bára, qui est-ce ?"
+    en: "Bára, who's that?"
+  - id: ph-n1p1-067
+    is: "Þetta er Austri. Hann er frá Íslandi."
+    fr: "C'est Austri. Il vient d'Islande."
+    en: "That's Austri. He's from Iceland."
+  - id: ph-n1p1-068
+    is: "Og hver er þetta?"
+    fr: "Et qui est-ce ?"
+    en: "And who's that?"
+  - id: ph-n1p1-069
+    is: "Þetta er Kolla. Hún talar íslensku."
+    fr: "C'est Kolla. Elle parle islandais."
+    en: "That's Kolla. She speaks Icelandic."
+  - id: ph-n1p1-070
+    is: "Og hvaðan er hún?"
+    fr: "Et d'où vient-elle ?"
+    en: "And where is she from?"
+  - id: ph-n1p1-071
+    is: "Hún er líka frá Íslandi."
+    fr: "Elle aussi vient d'Islande."
+    en: "She's from Iceland too."
+  - id: ph-n1p1-072
+    is: "Hver er þetta, Bára?"
+    fr: "Qui est-ce, Bára ?"
+    en: "Who's that, Bára?"
+  - id: ph-n1p1-073
+    is: "Þetta er stelpa. Hún heitir Ragna."
+    fr: "C'est une fille. Elle s'appelle Ragna."
+    en: "That's a girl. Her name is Ragna."
+  - id: ph-n1p1-074
+    is: "Hún er frá Íslandi."
+    fr: "Elle vient d'Islande."
+    en: "She's from Iceland."
+
+scene:
+  lieu: fjord-rivage
+  didascalie:
+    fr: "Le soir, au bord du fjord. Viktoriya et Bára regardent passer les habitants sur le chemin du village."
+    en: "Evening, by the fjord. Viktoriya and Bára watch the locals walk by on the village path."
+  repliques:
+    - { locuteur: viktoriya, phrase: ph-n1p1-066 }
+    - { locuteur: bara,      phrase: ph-n1p1-067 }
+    - { locuteur: viktoriya, phrase: ph-n1p1-068 }
+    - { locuteur: bara,      phrase: ph-n1p1-069 }
+    - { locuteur: viktoriya, phrase: ph-n1p1-070 }
+    - { locuteur: bara,      phrase: ph-n1p1-071 }
+
+# Carte culture, racontée par Bára (son rôle dans le cahier des charges).
+explication:
+  id: gr-son-dottir
+  introduite_par: bara
+  question:
+    fr: "Pourquoi tant de noms en -son et en -dóttir ?"
+    en: "Why so many names ending in -son and -dóttir?"
+  reponse:
+    fr: "En Islande, le nom de famille se fait avec le prénom du père (parfois de la mère), suivi de -son (fils) ou de -dóttir (fille). Le fils de Pétur s'appelle Pétursson, sa fille Pétursdóttir : frère et sœur n'ont pas le même nom ! C'est pourquoi on s'appelle par son prénom, même avec un inconnu. Et pour parler de quelqu'un : hann pour un homme, hún pour une femme."
+    en: "In Iceland, the last name is made from the father's first name (sometimes the mother's), followed by -son (son) or -dóttir (daughter). Pétur's son is called Pétursson, his daughter Pétursdóttir: brother and sister don't share a last name! That's why people use first names, even with strangers. And to talk about someone: hann for a man, hún for a woman."
+  tableau:
+    - { is: "Pétur", fr: "le père", en: "the father" }
+    - { is: "Pétursson", fr: "son fils", en: "his son" }
+    - { is: "Pétursdóttir", fr: "sa fille", en: "his daughter" }
+    - { is: "hann / hún", fr: "il / elle", en: "he / she" }
+
+exercices:
+  - id: ex-n1p1l7-01
+    type: reconnaitre
+    support: audio_et_texte
+    question: ph-n1p1-067
+    consigne:
+      fr: "Que dit Bára ?"
+      en: "What does Bára say?"
+    choix:
+      - { fr: "C'est Austri. Il vient d'Islande.", en: "That's Austri. He's from Iceland.", correct: true }
+      - { fr: "C'est Austri. Il parle islandais.", en: "That's Austri. He speaks Icelandic." }
+      - { fr: "Voici Austri. Il va en Islande.", en: "Here's Austri. He's going to Iceland." }
+
+  - id: ex-n1p1l7-02
+    type: associer
+    consigne:
+      fr: "Relie les paires."
+      en: "Match the pairs."
+    paires:
+      - { mot: w-hann }
+      - { mot: w-hun }
+      - { mot: w-strakur }
+      - { mot: w-sonur }
+      - { mot: w-pabbi }
+
+  - id: ex-n1p1l7-03
+    type: accorder
+    consigne:
+      fr: "Il ou elle ? Choisis le bon mot."
+      en: "He or she? Pick the right word."
+    phrase_a_trous: "Þetta er Kolla. ___ talar íslensku."
+    choix:
+      - { is: "Hún", correct: true }
+      - { is: "Hann" }
+    explication: gr-son-dottir
+
+  - id: ex-n1p1l7-04
+    type: accorder
+    consigne:
+      fr: "Il ou elle ? Choisis le bon mot."
+      en: "He or she? Pick the right word."
+    phrase_a_trous: "Þetta er Austri. ___ er frá Íslandi."
+    choix:
+      - { is: "Hann", correct: true }
+      - { is: "Hún" }
+    explication: gr-son-dottir
+
+  - id: ex-n1p1l7-05
+    type: accorder
+    consigne:
+      fr: "Le fils de Pétur s'appelle…"
+      en: "Pétur's son is called…"
+    phrase_a_trous: "Péturs___"
+    choix:
+      - { is: "son", correct: true }
+      - { is: "dóttir" }
+    explication: gr-son-dottir
+
+  - id: ex-n1p1l7-06
+    type: retrouver
+    consigne:
+      fr: "Comment dit-on : « Qui est-ce ? »"
+      en: "How do you say: “Who is this?”"
+    choix:
+      - { is: "Hver er þetta?", correct: true }
+      - { is: "Hvað er þetta?" }
+      - { is: "Hvaðan er hann?" }
+
+  - id: ex-n1p1l7-07
+    type: ecouter_dialogue
+    repliques:
+      - { locuteur: austri, phrase: ph-n1p1-072 }
+      - { locuteur: bara,   phrase: ph-n1p1-073 }
+    consigne:
+      fr: "Comment s'appelle la fille ?"
+      en: "What's the girl's name?"
+    choix:
+      - { fr: "Ragna", en: "Ragna", correct: true }
+      - { fr: "Kolla", en: "Kolla" }
+      - { fr: "Bára", en: "Bára" }
+
+  - id: ex-n1p1l7-08
+    type: construire
+    consigne:
+      fr: "Remets dans l'ordre : « Elle vient d'Islande. »"
+      en: "Put in order: “She's from Iceland.”"
+    blocs: ["Hún", "er", "frá", "Íslandi", "."]
+    reponse: ph-n1p1-074
+
+  - id: ex-n1p1l7-09
+    type: produire
+    consigne:
+      fr: "Écris en islandais : « Qui est-ce ? »"
+      en: "Write in Icelandic: “Who is this?”"
+    reponses_acceptees: ["Hver er þetta?"]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+  - id: ex-n1p1l7-10
+    type: produire
+    consigne:
+      fr: "Écris en islandais : « Il vient d'Islande. »"
+      en: "Write in Icelandic: “He's from Iceland.”"
+    reponses_acceptees: ["Hann er frá Íslandi.", "Hann kemur frá Íslandi."]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+fin:
+  locuteur: bara
+  message:
+    fr: "Te voilà prête à présenter toute la bande. Il ne reste plus que le point de passage : Superpuffin t'y attend."
+    en: "Now you can introduce the whole gang. Only the checkpoint is left: Superpuffin is waiting for you there."

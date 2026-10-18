@@ -13,7 +13,7 @@
 		ontermine
 	}: {
 		ex: Extract<Exercice, { type: 'construire' }>;
-		lecon: Lecon;
+		lecon: Pick<Lecon, 'phrases'>;
 		langue: Langue;
 		fige: boolean;
 		ontermine: (i: Issue) => void;

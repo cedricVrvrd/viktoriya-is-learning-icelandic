@@ -53,7 +53,7 @@ export const fichierAudio = (texte: string, r: Reglage) => `audio/${empreinte(te
 type Replique = { locuteur: string; phrase: string };
 type LeconBrute = {
 	phrases: { id: string; is: string }[];
-	scene: { repliques: Replique[] };
+	scene?: { repliques: Replique[] };
 	exercices: { type: string; repliques?: Replique[] }[];
 };
 
@@ -64,7 +64,7 @@ type LeconBrute = {
 export function reglagesDesPhrases(lecon: LeconBrute): Map<string, Reglage> {
 	const reglages = new Map<string, Reglage>();
 	const repliques = [
-		...lecon.scene.repliques,
+		...(lecon.scene?.repliques ?? []),
 		...lecon.exercices.flatMap((e) => e.repliques ?? [])
 	];
 	for (const r of repliques) {

@@ -1,0 +1,257 @@
+# Viktoriya is learning Icelandic — Niveau 1, Partie 1, Leçon 3
+# Licence du contenu : CC BY-SA 4.0
+# Texte écrit de zéro à partir de la fiche de structure N1-P1.
+# Aucun texte, dialogue, exercice ni personnage du manuel Íslenska fyrir alla.
+
+schema: superpuffin/lecon@1
+id: n1-p1-l3
+niveau: 1
+partie: 1
+ordre: 3
+duree_minutes: 4
+titre:
+  fr: "D'où viens-tu ?"
+  en: "Where are you from?"
+objectif:
+  fr: "Dire d'où l'on vient et le demander."
+  en: "Say where you are from and ask others."
+personnages: [austri, viktoriya, superpuffin]
+
+mots:
+  - id: w-hvadan
+    lemme: "hvaðan"
+    categorie: interrogatif
+    fr: "d'où"
+    en: "where from"
+  - id: w-vera
+    lemme: "vera"
+    categorie: verbe
+    formes: ["er", "ert"]
+    fr: "être"
+    en: "to be"
+  - id: w-koma
+    lemme: "koma"
+    categorie: verbe
+    formes: ["kem", "kemur"]
+    fr: "venir"
+    en: "to come"
+  - id: w-fra
+    lemme: "frá"
+    categorie: preposition
+    fr: "de (provenance)"
+    en: "from"
+  - id: w-fra-islandi
+    lemme: "frá Íslandi"
+    categorie: expression
+    fr: "d'Islande"
+    en: "from Iceland"
+  - id: w-fra-frakklandi
+    lemme: "frá Frakklandi"
+    categorie: expression
+    fr: "de France"
+    en: "from France"
+  - id: w-fra-spani
+    lemme: "frá Spáni"
+    categorie: expression
+    fr: "d'Espagne"
+    en: "from Spain"
+  - id: w-fra-englandi
+    lemme: "frá Englandi"
+    categorie: expression
+    fr: "d'Angleterre"
+    en: "from England"
+  - id: w-fra-danmorku
+    lemme: "frá Danmörku"
+    categorie: expression
+    fr: "du Danemark"
+    en: "from Denmark"
+  - id: w-fra-pollandi
+    lemme: "frá Póllandi"
+    categorie: expression
+    fr: "de Pologne"
+    en: "from Poland"
+
+phrases:
+  - id: ph-n1p1-024
+    is: "Góðan daginn, Viktoriya! Hvaðan ert þú?"
+    fr: "Bonjour, Viktoriya ! D'où viens-tu ?"
+    en: "Good morning, Viktoriya! Where are you from?"
+  - id: ph-n1p1-025
+    is: "Ég er frá Frakkland."
+    fr: "(erreur) Je viens de France."
+    en: "(mistake) I'm from France."
+    erreur_volontaire: true
+  - id: ph-n1p1-026
+    is: "Frá Frakklandi! Ég er frá Íslandi."
+    fr: "De France ! Moi, je viens d'Islande."
+    en: "From France! I'm from Iceland."
+  - id: ph-n1p1-027
+    is: "Ég er frá Frakklandi."
+    fr: "Je viens de France."
+    en: "I'm from France."
+  - id: ph-n1p1-028
+    is: "En þú, Superpuffin? Hvaðan kemur þú?"
+    fr: "Et toi, Superpuffin ? D'où viens-tu ?"
+    en: "And you, Superpuffin? Where do you come from?"
+  - id: ph-n1p1-029
+    is: "Ég kem líka frá Íslandi!"
+    fr: "Moi aussi, je viens d'Islande !"
+    en: "I come from Iceland too!"
+  - id: ph-n1p1-030
+    is: "Ég kem frá Spáni."
+    fr: "Je viens d'Espagne."
+    en: "I come from Spain."
+  - id: ph-n1p1-031
+    is: "Hvaðan ert þú, Austri?"
+    fr: "D'où viens-tu, Austri ?"
+    en: "Where are you from, Austri?"
+  - id: ph-n1p1-032
+    is: "Ég kem frá Íslandi."
+    fr: "Je viens d'Islande."
+    en: "I come from Iceland."
+
+scene:
+  lieu: seydisfjordur-quai
+  didascalie:
+    fr: "Sur le quai de Seyðisfjörður, Austri fait visiter le port à Viktoriya. Superpuffin tourne au-dessus d'eux."
+    en: "On the quay in Seyðisfjörður, Austri shows Viktoriya around the harbour. Superpuffin circles above them."
+  repliques:
+    - { locuteur: austri,      phrase: ph-n1p1-024 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-025 }
+    - { locuteur: austri,      phrase: ph-n1p1-026 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-027 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-028 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-029 }
+
+explication:
+  id: gr-vera-koma-fra
+  introduite_par: viktoriya
+  question:
+    fr: "Frakkland, Frakklandi… pourquoi le pays change ?"
+    en: "Frakkland, Frakklandi… why does the country change?"
+  reponse:
+    fr: "Après frá, le nom du pays change de forme : Frakkland devient frá Frakklandi. Apprends chaque pays avec frá, comme un bloc : la règle viendra plus tard. Et vera, koma suivent la même logique que heita : ég er, þú ert ; ég kem, þú kemur."
+    en: "After frá, the country name changes form: Frakkland becomes frá Frakklandi. Learn each country together with frá, as one block: the rule comes later. And vera, koma work like heita: ég er, þú ert; ég kem, þú kemur."
+  tableau:
+    - { is: "ég er", fr: "je suis", en: "I am" }
+    - { is: "þú ert", fr: "tu es", en: "you are" }
+    - { is: "ég kem", fr: "je viens", en: "I come" }
+    - { is: "þú kemur", fr: "tu viens", en: "you come" }
+    - { is: "Frakkland → frá Frakklandi", fr: "la France → de France", en: "France → from France" }
+
+exercices:
+  - id: ex-n1p1l3-01
+    type: reconnaitre
+    support: audio_et_texte
+    question: ph-n1p1-027
+    consigne:
+      fr: "Que dit Viktoriya ?"
+      en: "What does Viktoriya say?"
+    choix:
+      - { fr: "Je viens de France.", en: "I'm from France.", correct: true }
+      - { fr: "Je vais en France.", en: "I'm going to France." }
+      - { fr: "Je m'appelle France.", en: "My name is France." }
+
+  - id: ex-n1p1l3-02
+    type: associer
+    consigne:
+      fr: "Relie les paires."
+      en: "Match the pairs."
+    paires:
+      - { mot: w-fra-islandi }
+      - { mot: w-fra-frakklandi }
+      - { mot: w-fra-spani }
+      - { mot: w-fra-englandi }
+      - { mot: w-fra-danmorku }
+
+  - id: ex-n1p1l3-03
+    type: accorder
+    consigne:
+      fr: "Choisis la bonne forme."
+      en: "Pick the right form."
+    phrase_a_trous: "Ég ___ frá Íslandi."
+    choix:
+      - { is: "er", correct: true }
+      - { is: "ert" }
+    explication: gr-vera-koma-fra
+
+  - id: ex-n1p1l3-04
+    type: accorder
+    consigne:
+      fr: "Choisis la bonne forme."
+      en: "Pick the right form."
+    phrase_a_trous: "Hvaðan ___ þú?"
+    choix:
+      - { is: "ert", correct: true }
+      - { is: "er" }
+    explication: gr-vera-koma-fra
+
+  - id: ex-n1p1l3-05
+    type: accorder
+    consigne:
+      fr: "Choisis la bonne forme."
+      en: "Pick the right form."
+    phrase_a_trous: "Þú ___ frá Póllandi."
+    choix:
+      - { is: "kemur", correct: true }
+      - { is: "kem" }
+    explication: gr-vera-koma-fra
+
+  - id: ex-n1p1l3-06
+    type: accorder
+    consigne:
+      fr: "Viktoriya vient de France. Choisis la bonne forme."
+      en: "Viktoriya is from France. Pick the right form."
+    phrase_a_trous: "Ég er frá ___."
+    choix:
+      - { is: "Frakklandi", correct: true }
+      - { is: "Frakkland" }
+    explication: gr-vera-koma-fra
+
+  - id: ex-n1p1l3-07
+    type: retrouver
+    consigne:
+      fr: "Comment dit-on : « D'où viens-tu ? »"
+      en: "How do you say: “Where are you from?”"
+    choix:
+      - { is: "Hvaðan ert þú?", correct: true }
+      - { is: "Hvað heitir þú?" }
+      - { is: "Hvaðan er ég?" }
+
+  - id: ex-n1p1l3-08
+    type: construire
+    consigne:
+      fr: "Remets dans l'ordre : « Je viens d'Espagne. »"
+      en: "Put in order: “I come from Spain.”"
+    blocs: ["Ég", "kem", "frá", "Spáni", "."]
+    reponse: ph-n1p1-030
+
+  - id: ex-n1p1l3-09
+    type: ecouter_dialogue
+    repliques:
+      - { locuteur: viktoriya, phrase: ph-n1p1-031 }
+      - { locuteur: austri,    phrase: ph-n1p1-032 }
+    consigne:
+      fr: "D'où vient Austri ?"
+      en: "Where is Austri from?"
+    choix:
+      - { fr: "D'Islande", en: "From Iceland", correct: true }
+      - { fr: "D'Espagne", en: "From Spain" }
+      - { fr: "De France", en: "From France" }
+
+  - id: ex-n1p1l3-10
+    type: produire
+    consigne:
+      fr: "Viktoriya se présente. Écris en islandais : « Je viens de France. »"
+      en: "Viktoriya introduces herself. Write in Icelandic: “I'm from France.”"
+    reponses_acceptees: ["Ég er frá Frakklandi.", "Ég kem frá Frakklandi."]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+fin:
+  locuteur: austri
+  message:
+    fr: "Bien joué ! Moi, je viens de l'Est de l'Islande. Mes ancêtres, eux, venaient de Norvège… mais ça, c'est pour une autre leçon."
+    en: "Well done! I'm from the East of Iceland. My ancestors came from Norway… but that's for another lesson."

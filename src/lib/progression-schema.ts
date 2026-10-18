@@ -26,7 +26,7 @@ export const carte = z.strictObject({
 export const progression = z.strictObject({
 	format: z.literal(FORMAT),
 	lecons: z.record(
-		z.string().regex(/^n\d+-p\d+-l\d+$/),
+		z.string().regex(/^n\d+-p\d+-(l\d+|pp)$/),
 		z.strictObject({ terminee: instant, reussite: z.number().min(0).max(1) })
 	),
 	xp: z.number().int().min(0).max(10_000_000),

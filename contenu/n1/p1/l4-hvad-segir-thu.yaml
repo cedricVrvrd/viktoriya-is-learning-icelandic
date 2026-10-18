@@ -1,0 +1,273 @@
+# Viktoriya is learning Icelandic — Niveau 1, Partie 1, Leçon 4
+# Licence du contenu : CC BY-SA 4.0
+# Texte écrit de zéro à partir de la fiche de structure N1-P1.
+# Aucun texte, dialogue, exercice ni personnage du manuel Íslenska fyrir alla.
+
+schema: superpuffin/lecon@1
+id: n1-p1-l4
+niveau: 1
+partie: 1
+ordre: 4
+duree_minutes: 4
+titre:
+  fr: "Ça va ?"
+  en: "How are you?"
+objectif:
+  fr: "Prendre des nouvelles et prendre congé."
+  en: "Ask how someone is, and say goodbye."
+personnages: [kolla, superpuffin, viktoriya]
+
+mots:
+  - id: w-segja
+    lemme: "segja"
+    categorie: verbe
+    formes: ["segi", "segir"]
+    fr: "dire"
+    en: "to say"
+  - id: w-hvad-segir-thu
+    lemme: "hvað segir þú gott?"
+    categorie: expression
+    fr: "comment ça va ?"
+    en: "how are you?"
+    note:
+      fr: "Mot à mot : « que dis-tu de bon ? »"
+      en: "Literally: “what good do you say?”"
+  - id: w-allt-gott
+    lemme: "allt gott"
+    categorie: expression
+    fr: "tout va bien"
+    en: "all good"
+  - id: w-allt-fint
+    lemme: "allt fínt"
+    categorie: expression
+    fr: "très bien"
+    en: "all fine"
+  - id: w-allt-agaett
+    lemme: "allt ágætt"
+    categorie: expression
+    fr: "ça va, pas mal"
+    en: "not bad"
+  - id: w-allt-saemilegt
+    lemme: "allt sæmilegt"
+    categorie: expression
+    fr: "couci-couça"
+    en: "so-so"
+  - id: w-bless
+    lemme: "bless"
+    categorie: interjection
+    registre: familier
+    fr: "au revoir"
+    en: "bye"
+  - id: w-bae
+    lemme: "bæ"
+    categorie: interjection
+    registre: familier
+    fr: "salut (en partant)"
+    en: "bye-bye"
+  - id: w-sjaumst
+    lemme: "sjáumst"
+    categorie: expression
+    fr: "à plus tard"
+    en: "see you"
+  - id: w-a-morgun
+    lemme: "á morgun"
+    categorie: expression
+    fr: "demain"
+    en: "tomorrow"
+
+phrases:
+  - id: ph-n1p1-033
+    is: "Góðan daginn, Superpuffin! Hvað segir þú gott?"
+    fr: "Bonjour, Superpuffin ! Comment ça va ?"
+    en: "Good morning, Superpuffin! How are you?"
+  - id: ph-n1p1-034
+    is: "Allt fínt, takk! En þú?"
+    fr: "Très bien, merci ! Et toi ?"
+    en: "All fine, thanks! And you?"
+  - id: ph-n1p1-035
+    is: "Allt gott! Og þú, Viktoriya? Hvað segir þú?"
+    fr: "Tout va bien ! Et toi, Viktoriya ? Comment ça va ?"
+    en: "All good! And you, Viktoriya? How are you?"
+  - id: ph-n1p1-036
+    is: "Ég segir allt ágætt."
+    fr: "(erreur) Ça va, pas mal."
+    en: "(mistake) Not bad."
+    erreur_volontaire: true
+  - id: ph-n1p1-037
+    is: "Ég segi, þú segir!"
+    fr: "Je dis, tu dis !"
+    en: "I say, you say!"
+  - id: ph-n1p1-038
+    is: "Ég segi allt ágætt. Takk!"
+    fr: "Ça va, pas mal. Merci !"
+    en: "Not bad. Thanks!"
+  - id: ph-n1p1-039
+    is: "Bless, bless! Sjáumst á morgun!"
+    fr: "Au revoir ! À demain !"
+    en: "Bye-bye! See you tomorrow!"
+  - id: ph-n1p1-040
+    is: "Bæ, bæ! Sjáumst!"
+    fr: "Salut ! À plus tard !"
+    en: "Bye! See you!"
+  - id: ph-n1p1-041
+    is: "Hvað segir þú gott?"
+    fr: "Comment ça va ?"
+    en: "How are you?"
+  - id: ph-n1p1-042
+    is: "Hvað segir þú, Kolla?"
+    fr: "Comment ça va, Kolla ?"
+    en: "How are you, Kolla?"
+  - id: ph-n1p1-043
+    is: "Allt sæmilegt."
+    fr: "Couci-couça."
+    en: "So-so."
+  - id: ph-n1p1-044
+    is: "Sjáumst á morgun!"
+    fr: "À demain !"
+    en: "See you tomorrow!"
+
+scene:
+  lieu: ferme-kolla
+  didascalie:
+    fr: "Au retour du port, Kolla attend la bande devant sa bergerie, une botte de foin entre les dents."
+    en: "Back from the harbour, Kolla is waiting outside her sheep shed, a bunch of hay between her teeth."
+  repliques:
+    - { locuteur: kolla,       phrase: ph-n1p1-033 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-034 }
+    - { locuteur: kolla,       phrase: ph-n1p1-035 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-036 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-037 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-038 }
+    - { locuteur: kolla,       phrase: ph-n1p1-039 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-040 }
+
+explication:
+  id: gr-segja
+  introduite_par: viktoriya
+  question:
+    fr: "Ég segi ou ég segir ?"
+    en: "Ég segi or ég segir?"
+  reponse:
+    fr: "Même règle que heita : avec ég, pas de r (ég segi) ; avec þú, un r (þú segir). Hvað segir þú gott ? veut dire mot à mot « que dis-tu de bon ? » : c'est la façon courante de demander comment ça va."
+    en: "Same rule as heita: with ég, no r (ég segi); with þú, an r (þú segir). Hvað segir þú gott? literally means “what good do you say?”: it's the usual way to ask how someone is."
+  tableau:
+    - { is: "ég segi", fr: "je dis", en: "I say" }
+    - { is: "þú segir", fr: "tu dis", en: "you say" }
+    - { is: "allt fínt", fr: "très bien", en: "all fine" }
+    - { is: "allt sæmilegt", fr: "couci-couça", en: "so-so" }
+
+exercices:
+  - id: ex-n1p1l4-01
+    type: reconnaitre
+    support: audio_et_texte
+    question: ph-n1p1-041
+    consigne:
+      fr: "Que veut dire cette question ?"
+      en: "What does this question mean?"
+    choix:
+      - { fr: "Comment ça va ?", en: "How are you?", correct: true }
+      - { fr: "Comment tu t'appelles ?", en: "What's your name?" }
+      - { fr: "D'où viens-tu ?", en: "Where are you from?" }
+
+  - id: ex-n1p1l4-02
+    type: associer
+    consigne:
+      fr: "Relie les paires."
+      en: "Match the pairs."
+    paires:
+      - { mot: w-allt-fint }
+      - { mot: w-allt-saemilegt }
+      - { mot: w-bless }
+      - { mot: w-sjaumst }
+      - { mot: w-a-morgun }
+
+  - id: ex-n1p1l4-03
+    type: accorder
+    consigne:
+      fr: "Choisis la bonne forme."
+      en: "Pick the right form."
+    phrase_a_trous: "Ég ___ allt gott."
+    choix:
+      - { is: "segi", correct: true }
+      - { is: "segir" }
+    explication: gr-segja
+
+  - id: ex-n1p1l4-04
+    type: accorder
+    consigne:
+      fr: "Choisis la bonne forme."
+      en: "Pick the right form."
+    phrase_a_trous: "Hvað ___ þú gott?"
+    choix:
+      - { is: "segir", correct: true }
+      - { is: "segi" }
+    explication: gr-segja
+
+  - id: ex-n1p1l4-05
+    type: retrouver
+    consigne:
+      fr: "Comment dit-on : « À demain ! »"
+      en: "How do you say: “See you tomorrow!”"
+    choix:
+      - { is: "Sjáumst á morgun!", correct: true }
+      - { is: "Góðan daginn!" }
+      - { is: "Allt gott!" }
+
+  - id: ex-n1p1l4-06
+    type: ecouter_dialogue
+    repliques:
+      - { locuteur: superpuffin, phrase: ph-n1p1-042 }
+      - { locuteur: kolla,       phrase: ph-n1p1-043 }
+    consigne:
+      fr: "Comment va Kolla ?"
+      en: "How is Kolla?"
+    choix:
+      - { fr: "Couci-couça", en: "So-so", correct: true }
+      - { fr: "Très bien", en: "Very well" }
+      - { fr: "Elle s'en va", en: "She's leaving" }
+
+  - id: ex-n1p1l4-07
+    type: retrouver
+    consigne:
+      fr: "Tu vas couci-couça. Que réponds-tu ?"
+      en: "You feel so-so. What do you answer?"
+    choix:
+      - { is: "Allt sæmilegt.", correct: true }
+      - { is: "Allt fínt." }
+      - { is: "Bless." }
+
+  - id: ex-n1p1l4-08
+    type: construire
+    consigne:
+      fr: "Remets dans l'ordre : « À demain ! »"
+      en: "Put in order: “See you tomorrow!”"
+    blocs: ["Sjáumst", "á", "morgun", "!"]
+    reponse: ph-n1p1-044
+
+  - id: ex-n1p1l4-09
+    type: produire
+    consigne:
+      fr: "Demande à Kolla comment ça va, en islandais."
+      en: "Ask Kolla how she is, in Icelandic."
+    reponses_acceptees: ["Hvað segir þú gott?", "Hvað segir þú?", "Hvað segir þú gott, Kolla?", "Hvað segir þú, Kolla?"]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+  - id: ex-n1p1l4-10
+    type: produire
+    consigne:
+      fr: "Réponds que tout va très bien, en islandais."
+      en: "Answer that everything is fine, in Icelandic."
+    reponses_acceptees: ["Allt fínt", "Allt gott"]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+fin:
+  locuteur: kolla
+  message:
+    fr: "Bravo ! Allez, je file : les moutons ne vont pas se garder tout seuls."
+    en: "Well done! Right, I'm off: the sheep won't look after themselves."

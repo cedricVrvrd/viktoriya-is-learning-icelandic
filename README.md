@@ -1,7 +1,7 @@
 # Viktoriya is learning Icelandic
 
 Application gratuite et open source pour apprendre l'islandais (francophones et anglophones).
-Prototype : Niveau 1, Partie 1 en construction.
+Prototype : Niveau 1, Partie 1 complète (7 leçons et point de passage).
 
 ## Commandes
 

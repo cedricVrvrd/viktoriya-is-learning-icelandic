@@ -3,6 +3,7 @@
 	import Avatar from '#lib/components/Avatar.svelte';
 	import Lecteur from '#lib/components/Lecteur.svelte';
 	import Revision from '#lib/components/Revision.svelte';
+	import PointDePassage from '#lib/components/PointDePassage.svelte';
 	import { t, type Langue } from '#lib/i18n.ts';
 	import {
 		cartesDues,
@@ -10,6 +11,7 @@
 		etat,
 		exporter,
 		finirLecon,
+		finirPointDePassage,
 		jourLocal,
 		lireImport,
 		prochaineRevision,
@@ -19,10 +21,15 @@
 		type Lecture
 	} from '#lib/progression.svelte.ts';
 	import type { Progression } from '#lib/progression-schema.ts';
-	import lecons from 'virtual:lecons';
+	import lecons, { pointsDePassage } from 'virtual:lecons';
 
 	let langue = $state<Langue>('fr');
-	let vue = $state<{ type: 'accueil' } | { type: 'lecon'; id: string } | { type: 'revision'; dus: string[] }>({
+	let vue = $state<
+		| { type: 'accueil' }
+		| { type: 'lecon'; id: string }
+		| { type: 'revision'; dus: string[] }
+		| { type: 'passage'; id: string }
+	>({
 		type: 'accueil'
 	});
 	let maintenant = $state(new Date());
@@ -37,7 +44,9 @@
 		{ ordre: 7, fr: 'Qui est-ce ?', en: 'Who’s that?' },
 		{ ordre: null, fr: 'Point de passage', en: 'Checkpoint' }
 	];
-	const aVenir = AVENIR.filter((a) => a.ordre === null || !lecons.some((l) => l.ordre === a.ordre));
+	const aVenir = AVENIR.filter((a) =>
+		a.ordre === null ? pointsDePassage.length === 0 : !lecons.some((l) => l.ordre === a.ordre)
+	);
 
 	/** Tous les mots, par identifiant (uniques entre leçons, vérifié au build). */
 	const mots = new Map(lecons.flatMap((l) => l.mots.map((m) => [m.id, m] as const)));
@@ -62,6 +71,26 @@
 	const serieDuJour = $derived(etat.pret && serieValideeAujourdhui(maintenant));
 	const prochaine = $derived(etat.pret && dus.length === 0 ? prochaineRevision() : null);
 	const nbCartes = $derived(Object.keys(etat.p.cartes).length);
+
+	const passage = $derived.by(() => {
+		const v = vue;
+		return v.type === 'passage' ? pointsDePassage.find((p) => p.id === v.id) : undefined;
+	});
+
+	/** Le point de passage s'ouvre quand toutes les leçons de sa Partie sont terminées. */
+	const passageOuvert = (pp: (typeof pointsDePassage)[number]) =>
+		lecons.filter((l) => l.niveau === pp.niveau && l.partie === pp.partie).every((l) => l.id in etat.p.lecons);
+
+	function finPassage(pp: (typeof pointsDePassage)[number], b: { justes: number; total: number; xp: number }, ratees: string[]) {
+		const mots = lecons.filter((l) => ratees.includes(l.id)).flatMap((l) => l.mots.map((m) => m.id));
+		return finirPointDePassage(pp, b, mots);
+	}
+
+	function reviserMaintenant() {
+		maintenant = new Date();
+		const ids = cartesDues(maintenant).filter((id) => mots.has(id));
+		vue = ids.length ? { type: 'revision', dus: ids } : { type: 'accueil' };
+	}
 
 	/** Une leçon est ouverte si c'est la première de sa Partie ou si la précédente est terminée. */
 	function ouverte(l: (typeof lecons)[number]) {
@@ -125,6 +154,15 @@
 		{langue}
 		onquitter={() => (vue = { type: 'accueil' })}
 		onfini={(b) => finirLecon(lecon, b)}
+	/>
+{:else if passage}
+	<PointDePassage
+		pp={passage}
+		{lecons}
+		{langue}
+		onfini={(b, ratees) => finPassage(passage, b, ratees)}
+		onreviser={reviserMaintenant}
+		onquitter={() => ((maintenant = new Date()), (vue = { type: 'accueil' }))}
 	/>
 {:else if vue.type === 'revision'}
 	<Revision {mots} dus={vue.dus} {langue} onquitter={() => ((maintenant = new Date()), (vue = { type: 'accueil' }))} />
@@ -209,6 +247,34 @@
 							>
 						{:else}
 							<button class="bouton" type="button" onclick={() => (vue = { type: 'lecon', id: l.id })}
+								>{t(langue, 'commencer')}</button
+							>
+						{/if}
+					</div>
+				</li>
+			{/each}
+			{#each pointsDePassage as pp (pp.id)}
+				{@const reussi = pp.id in etat.p.lecons}
+				{@const libre = passageOuvert(pp)}
+				<li class="etape passage" class:active={libre && !reussi} class:faite={reussi} class:verrou={!libre}>
+					<span class="numero">
+						{#if reussi}
+							<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+							<span class="visuellement-cache">{t(langue, 'terminee')}</span>
+						{:else}★{/if}
+					</span>
+					<div class="corps">
+						<h2>{pp.titre[langue]}</h2>
+						<p>{pp.objectif[langue]} · {pp.duree_minutes} {t(langue, 'minutes')}</p>
+						{#if !libre}
+							<p class="cadenas">{t(langue, 'pp_ouvert_apres')}</p>
+						{:else if reussi}
+							<p>{t(langue, 'pp_meilleur').replace('{pct}', String(Math.round(etat.p.lecons[pp.id].reussite * 100)))}</p>
+							<button class="bouton secondaire petit-bouton" type="button" onclick={() => (vue = { type: 'passage', id: pp.id })}
+								>{t(langue, 'refaire')}</button
+							>
+						{:else}
+							<button class="bouton" type="button" onclick={() => (vue = { type: 'passage', id: pp.id })}
 								>{t(langue, 'commencer')}</button
 							>
 						{/if}

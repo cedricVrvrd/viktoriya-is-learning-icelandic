@@ -4,7 +4,7 @@ import { defineConfig, type Plugin } from 'vite';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { load as lireYaml, CORE_SCHEMA } from 'js-yaml';
-import { lecon } from './src/lib/schema';
+import { lecon, pointDePassage } from './src/lib/schema.ts';
 import { fichierAudio, reglagesDesPhrases } from './scripts/audio-plan.ts';
 
 /** Lit et valide tout le contenu au build. Le bundle client ne reçoit que du JSON validé. */
@@ -23,9 +23,11 @@ function contenu(): Plugin {
 		resolveId: (id) => (id === ID ? '\0' + ID : undefined),
 		load(id) {
 			if (id !== '\0' + ID) return;
-			const lecons = lister('contenu').map((chemin) => {
+			const lus = lister('contenu').map((chemin) => {
 				this.addWatchFile(chemin);
-				const r = lecon.safeParse(lireYaml(readFileSync(chemin, 'utf8'), { schema: CORE_SCHEMA }));
+				const brut = lireYaml(readFileSync(chemin, 'utf8'), { schema: CORE_SCHEMA }) as { schema?: string };
+				const pp = brut?.schema === 'superpuffin/point-de-passage@1';
+				const r = (pp ? pointDePassage : lecon).safeParse(brut);
 				if (!r.success) {
 					const details = r.error.issues.map((i) => `  - ${i.path.join('.') || '(racine)'} : ${i.message}`);
 					throw new Error(`Contenu invalide dans ${chemin}\n${details.join('\n')}`);
@@ -42,16 +44,22 @@ function contenu(): Plugin {
 				});
 				return { ...r.data, phrases };
 			});
-			// Identifiants uniques entre leçons : ils servent de clés à la mémoire de révision.
-			for (const genre of ['mots', 'phrases', 'exercices'] as const) {
-				const ids = lecons.flatMap((l) => l[genre].map((x) => x.id));
+			const lecons = lus.filter((x) => x.schema === 'superpuffin/lecon@1') as Extract<(typeof lus)[number], { mots: unknown }>[];
+			const points = lus.filter((x) => x.schema === 'superpuffin/point-de-passage@1');
+			// Identifiants uniques partout : ils servent de clés à la mémoire de révision.
+			const verifier = (genre: string, ids: string[]) => {
 				const doublons = [...new Set(ids.filter((id, i) => ids.indexOf(id) !== i))];
-				if (doublons.length) throw new Error(`Identifiants de ${genre} en double entre leçons : ${doublons.join(', ')}`);
-			}
-			const lids = lecons.map((l) => l.id);
-			if (new Set(lids).size !== lids.length) throw new Error('Deux leçons ont le même identifiant');
+				if (doublons.length) throw new Error(`Identifiants de ${genre} en double : ${doublons.join(', ')}`);
+			};
+			verifier('mots', lecons.flatMap((l) => l.mots.map((x) => x.id)));
+			verifier('phrases', lus.flatMap((l) => l.phrases.map((x) => x.id)));
+			verifier('exercices', lus.flatMap((l) => l.exercices.map((x) => x.id)));
+			verifier('leçons', lus.map((l) => l.id));
 			lecons.sort((a, b) => a.niveau - b.niveau || a.partie - b.partie || a.ordre - b.ordre);
-			return `export default JSON.parse(${JSON.stringify(JSON.stringify(lecons))});`;
+			return (
+				`export default JSON.parse(${JSON.stringify(JSON.stringify(lecons))});\n` +
+				`export const pointsDePassage = JSON.parse(${JSON.stringify(JSON.stringify(points))});`
+			);
 		}
 	};
 }

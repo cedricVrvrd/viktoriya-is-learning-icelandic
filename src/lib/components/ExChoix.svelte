@@ -16,7 +16,7 @@
 		langue,
 		fige,
 		ontermine
-	}: { ex: ExAvecChoix; lecon: Lecon; langue: Langue; fige: boolean; ontermine: (i: Issue) => void } =
+	}: { ex: ExAvecChoix; lecon: Pick<Lecon, 'phrases'>; langue: Langue; fige: boolean; ontermine: (i: Issue) => void } =
 		$props();
 
 	const phrases = $derived(new Map(lecon.phrases.map((p) => [p.id, p])));
