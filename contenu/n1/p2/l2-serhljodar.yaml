@@ -1,0 +1,319 @@
+# Viktoriya is learning Icelandic — Niveau 1, Partie 2, Leçon 2
+# Licence du contenu : CC BY-SA 4.0
+# Texte écrit de zéro à partir de la fiche de structure N1-P2.
+# Aucun texte, dialogue, exercice ni personnage du manuel Íslenska fyrir alla.
+#
+# Leçon d'oreille : les sons à distinguer sont dits par la voix neutre (Steinn),
+# dans des phrases d'un mot réservées aux exercices.
+
+schema: superpuffin/lecon@1
+id: n1-p2-l2
+niveau: 1
+partie: 2
+ordre: 2
+duree_minutes: 5
+titre:
+  fr: "Á n'est pas a"
+  en: "Á is not a"
+objectif:
+  fr: "Entendre et prononcer les voyelles avec ou sans accent, puis au, ei, ey et æ."
+  en: "Hear and say vowels with or without an accent, then au, ei, ey and æ."
+personnages: [bara, viktoriya, austri]
+
+# ---------------------------------------------------------------------------
+# Mots nouveaux (8). Chacun fait entendre un son de la leçon.
+# ---------------------------------------------------------------------------
+mots:
+  - id: w-ord
+    lemme: "orð"
+    categorie: nom
+    genre: n
+    formes: ["orðið"]
+    fr: "mot"
+    en: "word"
+  - id: w-her
+    lemme: "hér"
+    categorie: adverbe
+    fr: "ici"
+    en: "here"
+  - id: w-lika
+    lemme: "líka"
+    categorie: adverbe
+    fr: "aussi"
+    en: "also, too"
+  - id: w-hus
+    lemme: "hús"
+    categorie: nom
+    genre: n
+    formes: ["húsið"]
+    fr: "maison"
+    en: "house"
+  - id: w-auga
+    lemme: "auga"
+    categorie: nom
+    genre: n
+    formes: ["augað"]
+    fr: "œil"
+    en: "eye"
+  - id: w-eyja
+    lemme: "eyja"
+    categorie: nom
+    genre: f
+    formes: ["eyjan"]
+    fr: "île"
+    en: "island"
+  - id: w-baer
+    lemme: "bær"
+    categorie: nom
+    genre: m
+    formes: ["bærinn"]
+    fr: "ferme ; ville"
+    en: "farm; town"
+    note:
+      fr: "Les deux sens sont courants : « á bæ », à la ferme ; « í bænum », en ville."
+      en: "Both meanings are common: “á bæ”, on a farm; “í bænum”, in town."
+  - id: w-serhljodi
+    lemme: "sérhljóði"
+    categorie: nom
+    genre: m
+    formes: ["sérhljóðar"]
+    fr: "voyelle"
+    en: "vowel"
+
+# ---------------------------------------------------------------------------
+# Phrases.
+# ---------------------------------------------------------------------------
+phrases:
+  - id: ph-n1p2-013
+    is: "Gott kvöld! Hér er orð. Hvað er þetta?"
+    fr: "Bonsoir ! Voici un mot. Qu'est-ce que c'est ?"
+    en: "Good evening! Here's a word. What is it?"
+  - id: ph-n1p2-014
+    is: "Ja?"
+    fr: "(erreur) « Ja » ?"
+    en: "(mistake) “Ja”?"
+    erreur_volontaire: true
+  - id: ph-n1p2-015
+    is: "Nei: já! Á er ekki a."
+    fr: "Non : « já » ! Á, ce n'est pas a."
+    en: "No: “já”! Á is not a."
+  - id: ph-n1p2-016
+    is: "Já! Og hér: hús."
+    fr: "Já ! Et ici : « hús »."
+    en: "Já! And here: “hús”."
+  - id: ph-n1p2-017
+    is: "Frábært! Og þetta orð?"
+    fr: "Génial ! Et ce mot-là ?"
+    en: "Great! And this word?"
+  - id: ph-n1p2-018
+    is: "Oga?"
+    fr: "(erreur) « Oga » ?"
+    en: "(mistake) “Oga”?"
+    erreur_volontaire: true
+  - id: ph-n1p2-019
+    is: "Nei, nei! Au, eins og í Austri. Auga!"
+    fr: "Non, non ! Au, comme dans « Austri ». Auga !"
+    en: "No, no! Au, as in “Austri”. Auga!"
+  - id: ph-n1p2-020
+    is: "Auga! Og ei, eins og í nei?"
+    fr: "Auga ! Et ei, comme dans « nei » ?"
+    en: "Auga! And ei, as in “nei”?"
+  - id: ph-n1p2-021
+    is: "Já. Ei og ey eru eins. Nei, eyja!"
+    fr: "Oui. Ei et ey se disent pareil. Nei, eyja !"
+    en: "Yes. Ei and ey sound the same. Nei, eyja!"
+  - id: ph-n1p2-022
+    is: "Og æ, eins og í bær. Frábært!"
+    fr: "Et æ, comme dans « bær ». Génial !"
+    en: "And æ, as in “bær”. Great!"
+  - id: ph-n1p2-023
+    is: "Mál."
+    fr: "Langue."
+    en: "Language."
+  - id: ph-n1p2-024
+    is: "Hús."
+    fr: "Maison."
+    en: "House."
+  - id: ph-n1p2-025
+    is: "Auga."
+    fr: "Œil."
+    en: "Eye."
+  - id: ph-n1p2-026
+    is: "Eyja."
+    fr: "Île."
+    en: "Island."
+  - id: ph-n1p2-027
+    is: "Bær."
+    fr: "Ferme, ville."
+    en: "Farm, town."
+  - id: ph-n1p2-028
+    is: "Ég tala líka íslensku."
+    fr: "Je parle aussi islandais."
+    en: "I speak Icelandic too."
+
+# ---------------------------------------------------------------------------
+# Scène d'ouverture : le cours du soir de Bára.
+# ---------------------------------------------------------------------------
+scene:
+  lieu: ecole-salle-de-classe
+  didascalie:
+    fr: "Premier cours du soir à l'école. Bára écrit des mots au tableau et les fait lire à Viktoriya. Au milieu de la leçon, Austri passe la tête par la porte."
+    en: "First evening class at the school. Bára writes words on the board and has Viktoriya read them. Halfway through, Austri pokes his head round the door."
+  repliques:
+    - { locuteur: bara,      phrase: ph-n1p2-013 }
+    - { locuteur: viktoriya, phrase: ph-n1p2-014 }
+    - { locuteur: bara,      phrase: ph-n1p2-015 }
+    - { locuteur: viktoriya, phrase: ph-n1p2-016 }
+    - { locuteur: bara,      phrase: ph-n1p2-017 }
+    - { locuteur: viktoriya, phrase: ph-n1p2-018 }
+    - { locuteur: austri,    phrase: ph-n1p2-019 }
+    - { locuteur: viktoriya, phrase: ph-n1p2-020 }
+    - { locuteur: austri,    phrase: ph-n1p2-021 }
+    - { locuteur: bara,      phrase: ph-n1p2-022 }
+
+# ---------------------------------------------------------------------------
+# Carte de grammaire.
+# ---------------------------------------------------------------------------
+explication:
+  id: gr-serhljodar
+  introduite_par: viktoriya
+  question:
+    fr: "Un petit accent, et le son change complètement ?"
+    en: "One little accent, and the sound changes completely?"
+  reponse:
+    fr: "Oui : en islandais, l'accent ne dit pas où appuyer (on appuie toujours sur la première syllabe). Il change la voyelle elle-même. Á, ó, æ et au sont les pièges des francophones : aucun ne se lit comme en français. I et y se disent pareil, í et ý aussi, comme ei et ey."
+    en: "Yes: in Icelandic, the accent doesn't show stress (stress is always on the first syllable). It changes the vowel itself. I and y sound the same, so do í and ý, and ei and ey."
+  tableau:
+    - { is: "já",   fr: "á : « aou »",                 en: "á: like “ow” in “now”" }
+    - { is: "hús",  fr: "ú : « ou », comme « loup »",  en: "ú: like “oo” in “too”" }
+    - { is: "líka", fr: "í : « i », comme « lit »",     en: "í: like “ee” in “see”" }
+    - { is: "auga", fr: "au : « euil », comme « feuille »", en: "au: close to “oy”, lips rounded" }
+    - { is: "nei",  fr: "ei, ey : « eil », comme « abeille »", en: "ei, ey: like “ay” in “day”" }
+    - { is: "bær",  fr: "æ : « aï », comme « aïe »",   en: "æ: like “eye”" }
+
+# ---------------------------------------------------------------------------
+# Exercices (10). Les questions sonores sont dites par la voix neutre.
+# ---------------------------------------------------------------------------
+exercices:
+  - id: ex-n1p2l2-01
+    type: reconnaitre
+    support: audio
+    question: ph-n1p2-023
+    consigne:
+      fr: "Écoute. Quelle voyelle entends-tu ?"
+      en: "Listen. Which vowel do you hear?"
+    choix:
+      - { fr: "á (« aou »)", en: "á (“ow”)", correct: true }
+      - { fr: "a",           en: "a" }
+      - { fr: "au",          en: "au" }
+
+  - id: ex-n1p2l2-02
+    type: reconnaitre
+    support: audio
+    question: ph-n1p2-024
+    consigne:
+      fr: "Écoute. Quelle voyelle entends-tu ?"
+      en: "Listen. Which vowel do you hear?"
+    choix:
+      - { fr: "ú (« ou »)", en: "ú (“oo”)", correct: true }
+      - { fr: "u",          en: "u" }
+      - { fr: "ó",          en: "ó" }
+
+  - id: ex-n1p2l2-03
+    type: associer
+    consigne:
+      fr: "Relie les paires."
+      en: "Match the pairs."
+    paires:
+      - { mot: w-hus }
+      - { mot: w-auga }
+      - { mot: w-eyja }
+      - { mot: w-baer }
+      - { mot: w-ord }
+
+  - id: ex-n1p2l2-04
+    type: reconnaitre
+    support: audio
+    question: ph-n1p2-025
+    consigne:
+      fr: "Écoute. Ce mot commence par…"
+      en: "Listen. This word starts with…"
+    choix:
+      - { fr: "au (« euil »)", en: "au", correct: true }
+      - { fr: "ó (« oou »)",   en: "ó" }
+      - { fr: "á (« aou »)",   en: "á" }
+
+  - id: ex-n1p2l2-05
+    type: ecouter_dialogue
+    repliques:
+      - { locuteur: viktoriya, phrase: ph-n1p2-018 }
+      - { locuteur: austri,    phrase: ph-n1p2-019 }
+    consigne:
+      fr: "Pourquoi Austri reprend-il Viktoriya ?"
+      en: "Why does Austri correct Viktoriya?"
+    choix:
+      - { fr: "Parce que au ne se lit pas « o ».", en: "Because au isn't read “o”.", correct: true }
+      - { fr: "Parce qu'elle s'est trompée de prénom.", en: "Because she got his name wrong." }
+      - { fr: "Parce qu'il n'aime pas ce mot.", en: "Because he doesn't like that word." }
+
+  - id: ex-n1p2l2-06
+    type: retrouver
+    consigne:
+      fr: "Comment dit-on « aussi » ?"
+      en: "How do you say “also”?"
+    choix:
+      - { is: "líka", correct: true }
+      - { is: "hér" }
+      - { is: "hús" }
+
+  - id: ex-n1p2l2-07
+    type: reconnaitre
+    support: audio
+    question: ph-n1p2-026
+    consigne:
+      fr: "Écoute. Le son du début se dit comme…"
+      en: "Listen. The first sound is said like…"
+    choix:
+      - { fr: "ei, comme dans « nei »", en: "ei, as in “nei”", correct: true }
+      - { fr: "é, comme dans « ég »",   en: "é, as in “ég”" }
+      - { fr: "æ, comme dans « sæll »", en: "æ, as in “sæll”" }
+
+  - id: ex-n1p2l2-08
+    type: construire
+    consigne:
+      fr: "Remets dans l'ordre : « Je parle aussi islandais. »"
+      en: "Put in order: “I speak Icelandic too.”"
+    blocs: ["Ég", "tala", "líka", "íslensku", "."]
+    reponse: ph-n1p2-028
+    note:
+      fr: "« Líka » se place juste après le verbe."
+      en: "“Líka” goes right after the verb."
+
+  - id: ex-n1p2l2-09
+    type: produire
+    consigne:
+      fr: "Écris en islandais : « la maison ». Attention à l'accent !"
+      en: "Write in Icelandic: “the house”. Mind the accent!"
+    reponses_acceptees: ["húsið"]
+    tolerance:
+      accents: exiger
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+  - id: ex-n1p2l2-10
+    type: dictee
+    consigne:
+      fr: "Écoute les noms des lettres, puis écris le mot."
+      en: "Listen to the letter names, then write the word."
+    a_epeler: "auga"
+    sens: { fr: "œil", en: "eye" }
+    tolerance:
+      accents: exiger
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+fin:
+  locuteur: bara
+  message:
+    fr: "Bravo ! Ton oreille islandaise se réveille. La prochaine fois, Blesi t'attend avec þ et ð."
+    en: "Well done! Your Icelandic ear is waking up. Next time, Blesi is waiting for you with þ and ð."
