@@ -63,3 +63,9 @@
 - mot: sérhljóði
   sampa: "s j E r_0 l_0 j ou: D I"
   note: "sér + hljóði ; r assourdi devant hl, première voyelle raccourcie dans le composé ; à valider"
+- mot: samhljóði
+  sampa: "s a m l_0 j ou: D I"
+  note: "sam + hljóði, comme « sérhljóði » ; à valider"
+- mot: pók
+  sampa: "p_h ou: k"
+  note: "faux mot opposé à « bók » [p ou: k] : même son, avec le souffle du p"
