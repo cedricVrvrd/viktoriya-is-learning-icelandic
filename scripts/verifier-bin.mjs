@@ -62,5 +62,8 @@ if (horsBinUtilises.length) console.log(`Hors BÍN, acceptées : ${horsBinUtilis
 if (inconnus.length) {
 	console.error('Formes inconnues de BÍN (à corriger, ou à justifier dans contenu/hors-bin.yaml) :');
 	for (const m of inconnus) console.error(`  - ${m}  (${[...aVerifier.get(m)].join(', ')})`);
+	// Sur GitHub Actions, une annotation par forme : visible dans l'onglet du contrôle, sans ouvrir le journal.
+	if (process.env.GITHUB_ACTIONS)
+		for (const m of inconnus) console.log(`::error file=${[...aVerifier.get(m)][0]},title=Inconnu de BÍN::${m}`);
 	process.exit(1);
 }
