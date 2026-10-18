@@ -1,5 +1,6 @@
 <script lang="ts">
 	// Associer : relier chaque mot islandais à sa traduction. Une erreur ne bloque pas.
+	import { jouer } from '#lib/audio.ts';
 	import { melanger } from '#lib/correction.ts';
 	import { type Langue } from '#lib/i18n.ts';
 	import type { Exercice, Lecon } from '#lib/schema.ts';
@@ -59,7 +60,10 @@
 					class:ok={trouves.includes(m.id)}
 					class:ko={rate[0] === m.id}
 					disabled={fige || trouves.includes(m.id)}
-					onclick={() => choisir('g', m.id)}>{m.lemme}</button
+					onclick={() => {
+						if (m.audio) jouer(m.audio);
+						choisir('g', m.id);
+					}}>{m.lemme}</button
 				>
 			{/each}
 		</div>

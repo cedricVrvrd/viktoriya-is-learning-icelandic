@@ -31,7 +31,7 @@ type Reglage = { voix: Voix; vitesse: number };
 export const VOIX_PERSONNAGES: Record<string, Reglage> = {
 	superpuffin: { voix: 'grammatek-steinn', vitesse: 0.92 }, // énergique
 	viktoriya: { voix: 'is_IS-ugla-medium', vitesse: 1.05 }, // apprenante, un peu prudente
-	bara: { voix: 'is_IS-salka-medium', vitesse: 1.1 }, // âgée, posée (1,3 déformait les mots)
+	bara: { voix: 'is_IS-salka-medium', vitesse: 1.0 }, // vitesse naturelle de Salka : ralentie, elle déforme les mots
 	austri: { voix: 'grammatek-steinn', vitesse: 1.05 }, // posé
 	kolla: { voix: 'is_IS-ugla-medium', vitesse: 0.92 }, // bavarde
 	blesi: { voix: 'grammatek-steinn', vitesse: 0.85 } // toujours pressé
