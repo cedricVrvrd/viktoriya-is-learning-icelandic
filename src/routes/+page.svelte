@@ -87,11 +87,49 @@
 		vue = ids.length ? { type: 'revision', dus: ids } : { type: 'accueil' };
 	}
 
-	/** Une leçon est ouverte si c'est la première de sa Partie ou si la précédente est terminée. */
+	/** Le parcours, Partie par Partie : leçons dans l'ordre, puis le point de passage. */
+	const parties = [...new Set(lecons.map((l) => `${l.niveau}-${l.partie}`))]
+		.map((cle) => {
+			const [niveau, partie] = cle.split('-').map(Number);
+			return {
+				cle,
+				niveau,
+				partie,
+				lecons: lecons.filter((l) => l.niveau === niveau && l.partie === partie),
+				passages: pointsDePassage.filter((pp) => pp.niveau === niveau && pp.partie === partie)
+			};
+		})
+		.sort((a, b) => a.niveau - b.niveau || a.partie - b.partie);
+
+	/** Une Partie est validée par son point de passage (ou, sans point de passage, par toutes ses leçons). */
+	function partieValidee(p: (typeof parties)[number]) {
+		return p.passages.length
+			? p.passages.every((pp) => pp.id in etat.p.lecons)
+			: p.lecons.every((l) => l.id in etat.p.lecons);
+	}
+
+	/** Une Partie s'ouvre quand la précédente est validée. La première est toujours ouverte. */
+	function partieOuverte(p: (typeof parties)[number]) {
+		const i = parties.indexOf(p);
+		return modeTest || i <= 0 || partieValidee(parties[i - 1]);
+	}
+
+	/**
+	 * Une leçon est ouverte si sa Partie l'est, et si c'est la première de la Partie
+	 * ou si la précédente est terminée.
+	 */
 	function ouverte(l: (typeof lecons)[number]) {
-		if (modeTest || l.ordre === 1) return true;
+		if (modeTest) return true;
+		const p = parties.find((x) => x.niveau === l.niveau && x.partie === l.partie);
+		if (p && !partieOuverte(p)) return false;
 		const precedente = lecons.find((x) => x.niveau === l.niveau && x.partie === l.partie && x.ordre === l.ordre - 1);
 		return !precedente || precedente.id in etat.p.lecons;
+	}
+
+	/** Message sous une leçon fermée : Partie précédente à valider, ou leçon précédente à finir. */
+	function raisonVerrou(l: (typeof lecons)[number]) {
+		const p = parties.find((x) => x.niveau === l.niveau && x.partie === l.partie);
+		return p && !partieOuverte(p) ? t(langue, 'verrouillee_partie') : t(langue, 'verrouillee');
 	}
 
 	function delai(d: Date): string {
@@ -227,64 +265,71 @@
 			{/if}
 		</section>
 
-		<p class="repere">{t(langue, 'niveau')} 1 · {t(langue, 'partie')} 1</p>
-		<ol class="chemin">
-			{#each lecons as l (l.id)}
-				{@const fait = l.id in etat.p.lecons}
-				{@const libre = ouverte(l)}
-				<li class="etape" class:active={libre && !fait} class:faite={fait} class:verrou={!libre}>
-					<span class="numero">
-						{#if fait}
-							<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
-							<span class="visuellement-cache">{t(langue, 'terminee')}</span>
-						{:else}{l.ordre}{/if}
-					</span>
-					<div class="corps">
-						<h2>{l.titre[langue]}</h2>
-						<p>{l.objectif[langue]} · {l.duree_minutes} {t(langue, 'minutes')}</p>
-						{#if !libre}
-							<p class="cadenas">{t(langue, 'verrouillee')}</p>
-						{:else if fait}
-							<button class="bouton secondaire petit-bouton" type="button" onclick={() => (vue = { type: 'lecon', id: l.id })}
-								>{t(langue, 'refaire')}</button
-							>
-						{:else}
-							<button class="bouton" type="button" onclick={() => (vue = { type: 'lecon', id: l.id })}
-								>{t(langue, 'commencer')}</button
-							>
-						{/if}
-					</div>
-				</li>
-			{/each}
-			{#each pointsDePassage as pp (pp.id)}
-				{@const reussi = pp.id in etat.p.lecons}
-				{@const libre = passageOuvert(pp)}
-				<li class="etape passage" class:active={libre && !reussi} class:faite={reussi} class:verrou={!libre}>
-					<span class="numero">
-						{#if reussi}
-							<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
-							<span class="visuellement-cache">{t(langue, 'terminee')}</span>
-						{:else}★{/if}
-					</span>
-					<div class="corps">
-						<h2>{pp.titre[langue]}</h2>
-						<p>{pp.objectif[langue]} · {pp.duree_minutes} {t(langue, 'minutes')}</p>
-						{#if !libre}
-							<p class="cadenas">{t(langue, 'pp_ouvert_apres')}</p>
-						{:else if reussi}
-							<p>{t(langue, 'pp_meilleur').replace('{pct}', String(Math.round(etat.p.lecons[pp.id].reussite * 100)))}</p>
-							<button class="bouton secondaire petit-bouton" type="button" onclick={() => (vue = { type: 'passage', id: pp.id })}
-								>{t(langue, 'refaire')}</button
-							>
-						{:else}
-							<button class="bouton" type="button" onclick={() => (vue = { type: 'passage', id: pp.id })}
-								>{t(langue, 'commencer')}</button
-							>
-						{/if}
-					</div>
-				</li>
-			{/each}
-		</ol>
+		{#each parties as partie (partie.cle)}
+			<p class="repere">{t(langue, 'niveau')} {partie.niveau} · {t(langue, 'partie')} {partie.partie}</p>
+			<ol class="chemin">
+				{#each partie.lecons as l (l.id)}
+					{@const fait = l.id in etat.p.lecons}
+					{@const libre = ouverte(l)}
+					<li class="etape" class:active={libre && !fait} class:faite={fait} class:verrou={!libre}>
+						<span class="numero">
+							{#if fait}
+								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+								<span class="visuellement-cache">{t(langue, 'terminee')}</span>
+							{:else}{l.ordre}{/if}
+						</span>
+						<div class="corps">
+							<h2>{l.titre[langue]}</h2>
+							<p>{l.objectif[langue]} · {l.duree_minutes} {t(langue, 'minutes')}</p>
+							{#if !libre}
+								<p class="cadenas">{raisonVerrou(l)}</p>
+							{:else if fait}
+								<button class="bouton secondaire petit-bouton" type="button" onclick={() => (vue = { type: 'lecon', id: l.id })}
+									>{t(langue, 'refaire')}</button
+								>
+							{:else}
+								<button class="bouton" type="button" onclick={() => (vue = { type: 'lecon', id: l.id })}
+									>{t(langue, 'commencer')}</button
+								>
+							{/if}
+						</div>
+					</li>
+				{/each}
+				{#each partie.passages as pp (pp.id)}
+					{@const reussi = pp.id in etat.p.lecons}
+					{@const libre = passageOuvert(pp)}
+					<li class="etape passage" class:active={libre && !reussi} class:faite={reussi} class:verrou={!libre}>
+						<span class="numero">
+							{#if reussi}
+								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+								<span class="visuellement-cache">{t(langue, 'terminee')}</span>
+							{:else}★{/if}
+						</span>
+						<div class="corps">
+							<h2>{pp.titre[langue]}</h2>
+							<p>{pp.objectif[langue]} · {pp.duree_minutes} {t(langue, 'minutes')}</p>
+							{#if !libre}
+								<p class="cadenas">{t(langue, 'pp_ouvert_apres')}</p>
+							{:else if reussi}
+								<p>{t(langue, 'pp_meilleur').replace('{pct}', String(Math.round(etat.p.lecons[pp.id].reussite * 100)))}</p>
+								<button class="bouton secondaire petit-bouton" type="button" onclick={() => (vue = { type: 'passage', id: pp.id })}
+									>{t(langue, 'refaire')}</button
+								>
+							{:else}
+								<button class="bouton" type="button" onclick={() => (vue = { type: 'passage', id: pp.id })}
+									>{t(langue, 'commencer')}</button
+								>
+							{/if}
+						</div>
+					</li>
+				{/each}
+			</ol>
+		{/each}
+
+		<section class="a-suivre">
+			<h2>{t(langue, 'a_suivre')}</h2>
+			<p>{t(langue, 'suite_bientot')}</p>
+		</section>
 
 		<section class="sauvegarde">
 			<h2>{t(langue, 'ma_progression')}</h2>
@@ -380,6 +425,21 @@
 	}
 	.bulle-coach span {
 		font-weight: 400;
+	}
+	.a-suivre {
+		margin: 1.5rem 0 0;
+		padding: 1rem 1.2rem;
+		border: 2px dashed var(--ligne);
+		border-radius: var(--rayon);
+		color: var(--texte-doux);
+	}
+	.a-suivre h2 {
+		margin: 0 0 0.3rem;
+		font-size: 1.1rem;
+		color: var(--texte);
+	}
+	.a-suivre p {
+		margin: 0;
 	}
 	.repere {
 		font-size: 0.8rem;

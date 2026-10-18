@@ -56,6 +56,15 @@ const textes = {
 	reviendra_bientot: { fr: 'Ce mot reviendra en fin de session, et plus souvent ces prochains jours.', en: 'This word comes back at the end, and more often in the next days.' },
 	terminee: { fr: 'Terminée', en: 'Done' },
 	refaire: { fr: 'Refaire', en: 'Redo' },
+	verrouillee_partie: {
+		fr: 'Réussis le point de passage de la Partie précédente pour l’ouvrir.',
+		en: 'Pass the checkpoint of the previous Part to open it.'
+	},
+	a_suivre: { fr: 'À suivre', en: 'Coming next' },
+	suite_bientot: {
+		fr: 'La Partie suivante est en préparation. En attendant, tes révisions t’attendent chaque jour.',
+		en: 'The next Part is being written. Meanwhile, your reviews are waiting for you every day.'
+	},
 	verrouillee: { fr: 'Termine la leçon précédente pour la débloquer.', en: 'Finish the previous lesson to unlock it.' },
 	ma_progression: { fr: 'Ma progression', en: 'My progress' },
 	progression_locale: {
