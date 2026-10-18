@@ -72,3 +72,30 @@
 - mot: stafarðu
   sampa: "s t a: v a r D Y"
   note: "forme contractée de « stafar þú », comme « heitirðu » ; à valider"
+- mot: blýantur
+  sampa: "p l i: a n t Y r"
+  note: "blý + antur ; à valider"
+- mot: orðabókin
+  sampa: "O r D a p ou c I n"
+  note: "« orðabók » du dictionnaire + article -in, comme « bókin » ; à valider"
+- mot: stílabók
+  sampa: "s t i: l a p ou k"
+  note: "stíl + a + bók, sur le modèle de « orðabók » ; à valider"
+- mot: stílabókin
+  sampa: "s t i: l a p ou c I n"
+  note: "stílabók + article -in ; à valider"
+- mot: taflan
+  sampa: "t_h a p l a n"
+  note: "« tafla » + article -n ; à valider"
+- mot: taskan
+  sampa: "t_h a s k a n"
+  note: "« taska » + article -n ; à valider"
+- mot: tölvinn
+  sampa: "t_h 9 l v I n"
+  note: "forme fautive volontaire (article masculin sur un nom féminin), distracteur d'exercice"
+- mot: tölvið
+  sampa: "t_h 9 l v I D"
+  note: "forme fautive volontaire (article neutre sur un nom féminin), distracteur d'exercice"
+- mot: regnhlíf
+  sampa: "r E k n_0 l_0 i: f"
+  note: "regn + hlíf, comme les deux mots du dictionnaire ; à valider"

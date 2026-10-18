@@ -1,0 +1,314 @@
+# Viktoriya is learning Icelandic — Niveau 1, Partie 2, Leçon 6
+# Licence du contenu : CC BY-SA 4.0
+# Texte écrit de zéro à partir de la fiche de structure N1-P2.
+# Aucun texte, dialogue, exercice ni personnage du manuel Íslenska fyrir alla.
+
+schema: superpuffin/lecon@1
+id: n1-p2-l6
+niveau: 1
+partie: 2
+ordre: 6
+duree_minutes: 5
+titre:
+  fr: "Je n'ai pas compris"
+  en: "I didn't understand"
+objectif:
+  fr: "Dire qu'on ne comprend pas, et demander de répéter, de ralentir, ou ce qu'un mot veut dire."
+  en: "Say you don't understand, and ask someone to repeat, slow down, or explain a word."
+personnages: [bara, kolla, viktoriya, austri]
+
+# ---------------------------------------------------------------------------
+# Mots nouveaux (10). Phrases de survie apprises en blocs.
+# ---------------------------------------------------------------------------
+mots:
+  - id: w-skilja
+    lemme: "skilja"
+    categorie: verbe
+    formes: ["skil", "skilur"]
+    fr: "comprendre"
+    en: "to understand"
+  - id: w-ekki
+    lemme: "ekki"
+    categorie: adverbe
+    fr: "ne… pas"
+    en: "not"
+    note:
+      fr: "Se place après le verbe : ég skil ekki."
+      en: "Goes after the verb: ég skil ekki."
+  - id: w-hvad-thydir
+    lemme: "hvað þýðir…?"
+    categorie: expression
+    fr: "que veut dire… ?"
+    en: "what does… mean?"
+  - id: w-hvernig-segir-madur
+    lemme: "hvernig segir maður…?"
+    categorie: expression
+    fr: "comment dit-on… ?"
+    en: "how do you say…?"
+  - id: w-aftur
+    lemme: "aftur"
+    categorie: adverbe
+    fr: "encore, de nouveau"
+    en: "again"
+  - id: w-einu-sinni-enn
+    lemme: "einu sinni enn"
+    categorie: expression
+    fr: "une fois de plus"
+    en: "once more"
+  - id: w-adeins-haegar
+    lemme: "aðeins hægar, takk"
+    categorie: expression
+    fr: "un peu plus lentement, s'il te plaît"
+    en: "a bit more slowly, please"
+  - id: w-komid-thid-sael
+    lemme: "komið þið sæl"
+    categorie: expression
+    fr: "bonjour à tous"
+    en: "hello everyone"
+    note:
+      fr: "Version plus soutenue : « komið þið sæl og blessuð » (radio, discours)."
+      en: "More formal: “komið þið sæl og blessuð” (radio, speeches)."
+  - id: w-vedur
+    lemme: "veður"
+    categorie: nom
+    genre: n
+    formes: ["veðrið"]
+    fr: "temps (météo)"
+    en: "weather"
+  - id: w-regnhlif
+    lemme: "regnhlíf"
+    categorie: nom
+    genre: f
+    formes: ["regnhlífin"]
+    fr: "parapluie"
+    en: "umbrella"
+
+# ---------------------------------------------------------------------------
+# Phrases.
+# ---------------------------------------------------------------------------
+phrases:
+  - id: ph-n1p2-061
+    is: "Komið þið sæl og blessuð!"
+    fr: "Bonjour à tous !"
+    en: "Hello everyone!"
+  - id: ph-n1p2-062
+    is: "Komdu sæl, Bára!"
+    fr: "Bonjour, Bára !"
+    en: "Hello, Bára!"
+  - id: ph-n1p2-063
+    is: "Í dag lærum við um veðrið á Austurlandi."
+    fr: "Aujourd'hui, nous apprenons le temps qu'il fait dans l'Est."
+    en: "Today we're learning about the weather in the East."
+  - id: ph-n1p2-064
+    is: "Ég ekki skil…"
+    fr: "(erreur) Je ne comprends pas…"
+    en: "(mistake) I don't understand…"
+    erreur_volontaire: true
+  - id: ph-n1p2-065
+    is: "Ég skil ekki!"
+    fr: "Je ne comprends pas !"
+    en: "I don't understand!"
+  - id: ph-n1p2-066
+    is: "Ég skil ekki. Aðeins hægar, takk!"
+    fr: "Je ne comprends pas. Un peu plus lentement, s'il te plaît !"
+    en: "I don't understand. A bit more slowly, please!"
+  - id: ph-n1p2-067
+    is: "Í dag… lærum við… um veðrið."
+    fr: "Aujourd'hui… nous apprenons… le temps qu'il fait."
+    en: "Today… we're learning… about the weather."
+  - id: ph-n1p2-068
+    is: "Hvað þýðir veðrið?"
+    fr: "Que veut dire « veðrið » ?"
+    en: "What does “veðrið” mean?"
+  - id: ph-n1p2-069
+    is: "Þetta er veðrið: rigning!"
+    fr: "Ça, c'est le temps qu'il fait : de la pluie !"
+    en: "That's the weather: rain!"
+  - id: ph-n1p2-070
+    is: "Ég skil! Og hvernig segir maður parapluie á íslensku?"
+    fr: "Je comprends ! Et comment dit-on « parapluie » en islandais ?"
+    en: "I understand! And how do you say “parapluie” in Icelandic?"
+  - id: ph-n1p2-071
+    is: "Regnhlíf. Einu sinni enn: regnhlíf."
+    fr: "Regnhlíf. Encore une fois : regnhlíf."
+    en: "Regnhlíf. Once more: regnhlíf."
+  - id: ph-n1p2-072
+    is: "Hvað þýðir orðið?"
+    fr: "Que veut dire le mot ?"
+    en: "What does the word mean?"
+  - id: ph-n1p2-073
+    is: "Hvernig segir maður bók á dönsku?"
+    fr: "Comment dit-on « bók » en danois ?"
+    en: "How do you say “bók” in Danish?"
+
+# ---------------------------------------------------------------------------
+# Scène d'ouverture : Bára parle trop vite.
+# ---------------------------------------------------------------------------
+scene:
+  lieu: ecole-salle-de-classe
+  didascalie:
+    fr: "Troisième cours du soir : toute la bande est là. Bára arrive en coup de vent, salue la classe et se lance à toute vitesse. Dehors, il pleut à verse."
+    en: "Third evening class: the whole gang is there. Bára rushes in, greets the class and launches in at full speed. Outside, it's pouring with rain."
+  repliques:
+    - { locuteur: bara,      phrase: ph-n1p2-061 }
+    - { locuteur: kolla,     phrase: ph-n1p2-062 }
+    - { locuteur: bara,      phrase: ph-n1p2-063 }
+    - { locuteur: viktoriya, phrase: ph-n1p2-064 }
+    - { locuteur: kolla,     phrase: ph-n1p2-065 }
+    - { locuteur: viktoriya, phrase: ph-n1p2-066 }
+    - { locuteur: bara,      phrase: ph-n1p2-067 }
+    - { locuteur: viktoriya, phrase: ph-n1p2-068 }
+    - { locuteur: austri,    phrase: ph-n1p2-069 }
+    - { locuteur: viktoriya, phrase: ph-n1p2-070 }
+    - { locuteur: bara,      phrase: ph-n1p2-071 }
+
+# ---------------------------------------------------------------------------
+# Carte de grammaire.
+# ---------------------------------------------------------------------------
+explication:
+  id: gr-ekki
+  introduite_par: viktoriya
+  question:
+    fr: "Comment je dis que je ne comprends pas ?"
+    en: "How do I say I don't understand?"
+  reponse:
+    fr: "« Ég skil ekki. » Pas de « ne » : un seul mot, ekki, placé juste après le verbe. Garde aussi ces blocs pour te sortir d'affaire en cours, sans chercher à les décortiquer pour l'instant."
+    en: "“Ég skil ekki.” No “do”: just one word, ekki, right after the verb. Keep these blocks too, to get by in class, without picking them apart for now."
+  tableau:
+    - { is: "Ég skil ekki.",                        fr: "Je ne comprends pas.",              en: "I don't understand." }
+    - { is: "Aðeins hægar, takk.",                  fr: "Un peu plus lentement, s'il te plaît.", en: "A bit more slowly, please." }
+    - { is: "Einu sinni enn.",                      fr: "Une fois de plus.",                 en: "Once more." }
+    - { is: "Hvað þýðir…?",                         fr: "Que veut dire… ?",                  en: "What does… mean?" }
+    - { is: "Hvernig segir maður… á íslensku?",     fr: "Comment dit-on… en islandais ?",    en: "How do you say… in Icelandic?" }
+
+# ---------------------------------------------------------------------------
+# Exercices (11).
+# ---------------------------------------------------------------------------
+exercices:
+  - id: ex-n1p2l6-01
+    type: reconnaitre
+    support: audio_et_texte
+    question: ph-n1p2-061
+    consigne:
+      fr: "Que dit Bára en entrant ?"
+      en: "What does Bára say as she comes in?"
+    choix:
+      - { fr: "Bonjour à tous !",  en: "Hello everyone!", correct: true }
+      - { fr: "Au revoir !",       en: "Goodbye!" }
+      - { fr: "Merci beaucoup !",  en: "Thank you very much!" }
+
+  - id: ex-n1p2l6-02
+    type: ecouter_dialogue
+    repliques:
+      - { locuteur: viktoriya, phrase: ph-n1p2-064 }
+      - { locuteur: kolla,     phrase: ph-n1p2-065 }
+    consigne:
+      fr: "Que corrige Kolla ?"
+      en: "What does Kolla correct?"
+    choix:
+      - { fr: "La place de ekki : après le verbe.", en: "Where ekki goes: after the verb.", correct: true }
+      - { fr: "Le vouvoiement.",                    en: "Being too formal." }
+      - { fr: "La prononciation de skil.",          en: "How skil is pronounced." }
+
+  - id: ex-n1p2l6-03
+    type: associer
+    consigne:
+      fr: "Relie les paires."
+      en: "Match the pairs."
+    paires:
+      - { mot: w-aftur }
+      - { mot: w-hvad-thydir }
+      - { mot: w-hvernig-segir-madur }
+      - { mot: w-adeins-haegar }
+      - { mot: w-regnhlif }
+
+  - id: ex-n1p2l6-04
+    type: accorder
+    consigne:
+      fr: "Choisis la bonne forme."
+      en: "Pick the right form."
+    phrase_a_trous: "Ég ___ ekki."
+    choix:
+      - { is: "skil", correct: true }
+      - { is: "skilur" }
+    explication: gr-ekki
+
+  - id: ex-n1p2l6-05
+    type: retrouver
+    consigne:
+      fr: "Tu n'as pas compris. Que dis-tu ?"
+      en: "You didn't understand. What do you say?"
+    choix:
+      - { is: "Ég skil ekki.", correct: true }
+      - { is: "Ég ekki skil." }
+      - { is: "Ég skil." }
+
+  - id: ex-n1p2l6-06
+    type: retrouver
+    consigne:
+      fr: "Bára parle trop vite. Que lui dis-tu ?"
+      en: "Bára is speaking too fast. What do you tell her?"
+    choix:
+      - { is: "Aðeins hægar, takk.", correct: true }
+      - { is: "Komið þið sæl." }
+      - { is: "Það er gaman." }
+
+  - id: ex-n1p2l6-07
+    type: reconnaitre
+    support: audio
+    question: ph-n1p2-072
+    consigne:
+      fr: "Écoute. Que veut dire cette question ?"
+      en: "Listen. What does this question mean?"
+    choix:
+      - { fr: "Que veut dire le mot ?",   en: "What does the word mean?", correct: true }
+      - { fr: "Comment s'écrit le mot ?", en: "How is the word spelt?" }
+      - { fr: "Où est le mot ?",          en: "Where is the word?" }
+
+  - id: ex-n1p2l6-08
+    type: construire
+    consigne:
+      fr: "Remets dans l'ordre : « Comment dit-on bók en danois ? »"
+      en: "Put in order: “How do you say bók in Danish?”"
+    blocs: ["Hvernig", "segir", "maður", "bók", "á", "dönsku", "?"]
+    reponse: ph-n1p2-073
+
+  - id: ex-n1p2l6-09
+    type: produire
+    consigne:
+      fr: "Écris en islandais : « Je ne comprends pas. »"
+      en: "Write in Icelandic: “I don't understand.”"
+    reponses_acceptees: ["Ég skil ekki."]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+  - id: ex-n1p2l6-10
+    type: produire
+    consigne:
+      fr: "Demande ce que veut dire « regnhlíf »."
+      en: "Ask what “regnhlíf” means."
+    reponses_acceptees: ["Hvað þýðir regnhlíf?"]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+  - id: ex-n1p2l6-11
+    type: dictee
+    consigne:
+      fr: "Écoute les noms des lettres, puis écris le mot."
+      en: "Listen to the letter names, then write the word."
+    a_epeler: "aftur"
+    sens: { fr: "encore, de nouveau", en: "again" }
+    tolerance:
+      accents: exiger
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+fin:
+  locuteur: bara
+  message:
+    fr: "Bravo ! Avec ces phrases, tu ne seras plus jamais perdue en cours. Prochaine étape : le point de passage de la Partie 2."
+    en: "Well done! With these phrases, you'll never be lost in class again. Next up: the Part 2 checkpoint."
