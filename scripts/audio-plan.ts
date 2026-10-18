@@ -53,7 +53,8 @@ const RYTHME = 'pauses-1';
 export type Tache = { fichier: string; texte: string; voix: Voix; vitesse: number };
 
 export function empreinte(texte: string, r: Reglage): string {
-	const lexique = r.voix === 'grammatek-steinn' ? `|lexique:${versionLexique}` : '';
+	// attaque-1 : blanc ajouté avant chaque morceau (scripts/voix_grammatek.py), d'où de nouveaux sons Steinn.
+	const lexique = r.voix === 'grammatek-steinn' ? `|lexique:${versionLexique}|attaque-1` : '';
 	const source = `${r.voix}|${r.vitesse.toFixed(2)}|${texte.normalize('NFC')}${lexique}|${RYTHME}`;
 	return createHash('sha256').update(source).digest('hex').slice(0, 16);
 }

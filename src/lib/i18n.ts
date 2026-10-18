@@ -105,6 +105,10 @@ const textes = {
 		fr: 'Mode test : tout est ouvert, chaque exercice peut être passé, rien n’est enregistré.',
 		en: 'Test mode: everything is open, any exercise can be skipped, nothing is saved.'
 	},
+	fin_test: {
+		fr: 'Mode test : cette leçon n’est pas enregistrée. Retire « ?test » de l’adresse pour progresser pour de vrai.',
+		en: 'Test mode: this lesson is not saved. Remove “?test” from the address to make real progress.'
+	},
 	passer_test: { fr: 'Passer (test)', en: 'Skip (test)' },
 	erreur_marquee: { fr: 'erreur', en: 'mistake' },
 	accents_rouges: { fr: 'Les lettres en rouge sont à corriger.', en: 'Letters in red need fixing.' },
