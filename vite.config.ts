@@ -5,7 +5,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { load as lireYaml, CORE_SCHEMA } from 'js-yaml';
 import { lecon, pointDePassage } from './src/lib/schema.ts';
-import { fichierAudio, reglagesDesPhrases } from './scripts/audio-plan.ts';
+import { fichierAudio, reglagesDesPhrases, textesExercice, VOIX_NEUTRE, VOIX_REPONSE } from './scripts/audio-plan.ts';
 
 /** Lit et valide tout le contenu au build. Le bundle client ne reçoit que du JSON validé. */
 function contenu(): Plugin {
@@ -32,19 +32,33 @@ function contenu(): Plugin {
 					const details = r.error.issues.map((i) => `  - ${i.path.join('.') || '(racine)'} : ${i.message}`);
 					throw new Error(`Contenu invalide dans ${chemin}\n${details.join('\n')}`);
 				}
-				// Relie chaque phrase à son fichier audio, s'il a été généré (static/audio, voir le workflow).
-				const reglages = reglagesDesPhrases(r.data);
-				const phrases = r.data.phrases.map((p) => {
-					const fichier = fichierAudio(p.is, reglages.get(p.id)!);
-					if (existsSync(join('static', fichier))) return { ...p, audio: fichier };
-					// En CI (EXIGER_AUDIO=1), une phrase sans audio fait échouer le build.
+				// Relie chaque son à son fichier, s'il a été généré (static/audio, voir le workflow).
+				// En CI (EXIGER_AUDIO=1), un son manquant fait échouer le build.
+				const relier = (texte: string, reglage: Parameters<typeof fichierAudio>[1]) => {
+					const fichier = fichierAudio(texte, reglage);
+					if (existsSync(join('static', fichier))) return fichier;
 					if (process.env.EXIGER_AUDIO === '1')
-						throw new Error(`Audio manquant pour ${p.id} « ${p.is} » (${fichier}) dans ${chemin}`);
-					return p;
+						throw new Error(`Audio manquant pour « ${texte} » (${fichier}) dans ${chemin}`);
+					return undefined;
+				};
+				const reglages = reglagesDesPhrases(r.data);
+				const phrases = r.data.phrases.map((p) => ({ ...p, audio: relier(p.is, reglages.get(p.id)!) }));
+				const textes = new Map(r.data.phrases.map((p) => [p.id, p.is]));
+				const exercices = r.data.exercices.map((ex) => {
+					const t = textesExercice(ex, textes);
+					const neutre = (x: string | null) => (x ? (relier(x, VOIX_NEUTRE) ?? null) : null);
+					const sons = {
+						...(t.choix ? { choix: t.choix.map(neutre) } : {}),
+						...(t.blocs ? { blocs: t.blocs.map(neutre) } : {}),
+						...(t.reponse ? { reponse: relier(t.reponse, VOIX_REPONSE) } : {}),
+						...(t.reponses ? { reponses: t.reponses.map((x) => relier(x, VOIX_REPONSE) ?? null) } : {})
+					};
+					return Object.keys(sons).length ? { ...ex, sons } : ex;
 				});
-				return { ...r.data, phrases };
+				const mots = 'mots' in r.data ? { mots: r.data.mots.map((m) => ({ ...m, audio: relier(m.lemme, VOIX_NEUTRE) })) } : {};
+				return { ...r.data, ...mots, phrases, exercices };
 			});
-			const lecons = lus.filter((x) => x.schema === 'superpuffin/lecon@1') as Extract<(typeof lus)[number], { mots: unknown }>[];
+			const lecons = lus.filter((x) => x.schema === 'superpuffin/lecon@1') as Extract<(typeof lus)[number], { ordre: number }>[];
 			const points = lus.filter((x) => x.schema === 'superpuffin/point-de-passage@1');
 			// Identifiants uniques partout : ils servent de clés à la mémoire de révision.
 			const verifier = (genre: string, ids: string[]) => {

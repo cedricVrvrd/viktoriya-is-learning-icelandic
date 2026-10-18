@@ -100,7 +100,7 @@ jobs:
           .venv-audio/bin/python scripts/generer-audio.py .audio-plan.json static/audio .piper .grammatek
 
       - name: Page d'essais de voix
-        run: .venv-audio/bin/python scripts/essais-audio.py static/essais-audio .piper .grammatek .audio-plan.json
+        run: .venv-audio/bin/python scripts/essais-audio.py static/essais-audio .piper .grammatek
 
       - name: Build (le schéma du contenu est validé ici)
         run: npm run build

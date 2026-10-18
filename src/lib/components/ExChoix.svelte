@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import Bulle from './Bulle.svelte';
 	import BoutonAudio from './BoutonAudio.svelte';
-	import { arreter, jouerSuite } from '#lib/audio.ts';
+	import { arreter, jouer, jouerSuite } from '#lib/audio.ts';
 	import { melanger } from '#lib/correction.ts';
 	import { t, type Langue } from '#lib/i18n.ts';
 	import type { Exercice, Lecon } from '#lib/schema.ts';
@@ -40,12 +40,20 @@
 		return () => arreter();
 	});
 
+	/** Choisir une réponse en islandais la fait entendre. */
+	function choisir(i: number) {
+		choisi = i;
+		const son = ex.sons?.choix?.[i];
+		if (son) jouer(son);
+	}
+
 	function verifier() {
 		const c = options.find((o) => o.i === choisi);
 		if (!c) return;
 		const bon = options.find((o) => o.correct)!;
 		ontermine({
 			juste: !!c.correct,
+			son: ex.sons?.reponse,
 			solution: c.correct ? undefined : libelle(bon),
 			solutionIslandaise: islandais,
 			explication: !c.correct && ex.type === 'accorder' && !!ex.explication
@@ -91,7 +99,7 @@
 				class={['option', { choisi: choisi === c.i, is: islandais }]}
 				lang={islandais ? 'is' : langue}
 				disabled={fige}
-				onclick={() => (choisi = c.i)}>{libelle(c)}</button
+				onclick={() => choisir(c.i)}>{libelle(c)}</button
 			>
 		{/each}
 	</div>

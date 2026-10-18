@@ -31,6 +31,7 @@ sw.addEventListener('fetch', (event) => {
 	const url = new URL(event.request.url);
 	if (url.origin !== sw.location.origin) return;
 	event.respondWith(
-		caches.match(event.request).then((enCache) => enCache ?? fetch(event.request))
+		// La page d'accueil répond aussi à …/?test (mode test), même hors ligne.
+		caches.match(event.request, { ignoreSearch: event.request.mode === 'navigate' }).then((enCache) => enCache ?? fetch(event.request))
 	);
 });

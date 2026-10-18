@@ -29,13 +29,21 @@ class VoixGrammatek:
         self.voix = PiperVoice.load(modele, config_path=adaptee)
         self.phonetiseur = Phonetiseur(dossier / "g2p", lexique_projet, config)
 
-    def ecrire_wav(self, texte: str, sortie: Path, vitesse: float = 1.0, accents: bool = True):
+    @property
+    def frequence(self) -> int:
+        return self.voix.config.sample_rate
+
+    def audio(self, texte: str, vitesse: float = 1.0, accents: bool = True) -> np.ndarray:
+        """Signal brut (float) d'un morceau de phrase."""
         jetons = self.phonetiseur.phrase(texte)
         if not accents:
             jetons = [j for j in jetons if j not in ("ˈ", "ˌ")]
         ids = phonemes_to_ids(jetons, self.voix.config.phoneme_id_map)
         audio = self.voix.phoneme_ids_to_audio(ids, SynthesisConfig(length_scale=vitesse))
-        audio = audio[0] if isinstance(audio, tuple) else audio
+        return np.asarray(audio[0] if isinstance(audio, tuple) else audio, dtype=np.float32)
+
+    def ecrire_wav(self, texte: str, sortie: Path, vitesse: float = 1.0, accents: bool = True):
+        audio = self.audio(texte, vitesse, accents)
         crete = float(np.abs(audio).max()) or 1.0
         pcm = (audio / crete * 0.9 * 32767).astype(np.int16)  # normalisation à -1 dB
         with wave.open(str(sortie), "wb") as w:

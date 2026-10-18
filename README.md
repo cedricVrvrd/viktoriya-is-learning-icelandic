@@ -15,6 +15,12 @@ APERCU=1 npx vite build && python3 scripts/apercu-fragment.py apercu/index.html 
                    # aperçu en un seul fichier, publiable dans claude.ai
 ```
 
+## Mode test
+
+Ajouter `?test` à l'adresse (`…/viktoriya-is-learning-icelandic/?test`) : toutes les leçons et
+le point de passage sont ouverts, un bouton « Passer (test) » saute chaque exercice, et rien
+n'est enregistré dans la progression.
+
 ## Organisation
 
 - `contenu/` : leçons en YAML. Validées par `src/lib/schema.ts` au build : texte brut seulement,
@@ -24,8 +30,10 @@ APERCU=1 npx vite build && python3 scripts/apercu-fragment.py apercu/index.html 
   `src/lib/progression-schema.ts`.
 - `src/lib/correction.ts` : correction des réponses tapées (accent manquant = validé, lettre en rouge).
 - `src/lib/components/` : lecteur de leçon, exercices, mini-clavier islandais.
-- `scripts/audio-plan.ts`, `scripts/generer-audio.py` : audio de chaque phrase (Piper + voix Talrómur),
-  généré en CI, un fichier par empreinte de (voix, vitesse, texte).
+- `scripts/audio-plan.ts`, `scripts/generer-audio.py` : audio des phrases, des choix et blocs en
+  islandais, des réponses répétées par Superpuffin et des mots en révision (voix Grammatek et
+  Talrómur), généré en CI avec une pause à chaque ponctuation, un fichier par empreinte de
+  (voix, vitesse, texte).
 - `scripts/verifier-securite.mjs` : refuse `{@html}`, `innerHTML`, `eval` dans le code.
 
 ## Publication

@@ -2,6 +2,8 @@
 	// Déroulé d'une leçon : scène → carte de grammaire → exercices → fin.
 	// Les erreurs reviennent en fin de leçon, sans pénalité, jusqu'à être réussies.
 	import Avatar from './Avatar.svelte';
+	import BoutonAudio from './BoutonAudio.svelte';
+	import { jouer } from '#lib/audio.ts';
 	import Bulle from './Bulle.svelte';
 	import ExChoix from './ExChoix.svelte';
 	import ExAssocier from './ExAssocier.svelte';
@@ -16,8 +18,9 @@
 		lecon,
 		langue,
 		onquitter,
-		onfini
-	}: { lecon: Lecon; langue: Langue; onquitter: () => void; onfini?: (b: Bilan) => void } = $props();
+		onfini,
+		test = false
+	}: { lecon: Lecon; langue: Langue; onquitter: () => void; onfini?: (b: Bilan) => void; test?: boolean } = $props();
 
 	type Etape = { ex: Exercice; retour: boolean };
 	let phase = $state<'scene' | 'grammaire' | 'exercices' | 'fin'>('scene');
@@ -38,6 +41,8 @@
 
 	function terminer(i: Issue) {
 		issue = i;
+		// Superpuffin répète la bonne réponse.
+		if (i.son) jouer(i.son);
 		if (i.juste) {
 			reussis = [...reussis, etape.ex.id];
 			if (!etape.retour) premierCoup += 1;
@@ -122,6 +127,9 @@
 				<button class="bouton" type="button" onclick={() => (phase = 'exercices')}>{t(langue, 'compris')}</button>
 			</div>
 		{:else if phase === 'exercices' && etape}
+			{#if test && !issue}
+				<button class="passer-test" type="button" onclick={continuer}>{t(langue, 'passer_test')} →</button>
+			{/if}
 			{#if etape.retour}<p class="retour">{t(langue, 'retour_erreur')}</p>{/if}
 			{#key position}
 				{@const ex = etape.ex}
@@ -172,7 +180,10 @@
 					<p class="petit">{t(langue, 'reviendra')}</p>
 				{/if}
 			</div>
-			<button class="bouton" type="button" onclick={continuer}>{t(langue, 'continuer')}</button>
+			<div class="retour-actions">
+				{#if issue.son}<BoutonAudio fichier={issue.son} {langue} />{/if}
+				<button class="bouton" type="button" onclick={continuer}>{t(langue, 'continuer')}</button>
+			</div>
 		</div>
 	{/if}
 </div>
@@ -329,6 +340,28 @@
 	.faux {
 		background: var(--erreur-fond);
 		border-color: var(--rouge);
+	}
+	.passer-test {
+		appearance: none;
+		display: block;
+		margin: 0 0 0.6rem auto;
+		padding: 0.3rem 0.7rem;
+		border: 2px dashed var(--primaire);
+		border-radius: 999px;
+		background: none;
+		color: var(--primaire);
+		font: inherit;
+		font-size: 0.85rem;
+		font-weight: 700;
+		cursor: pointer;
+	}
+	.retour-actions {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+	}
+	.retour-actions .bouton {
+		flex: 1;
 	}
 	.retour-texte p {
 		margin: 0.25rem 0 0;

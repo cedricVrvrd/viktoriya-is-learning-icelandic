@@ -10,8 +10,8 @@ partie: 1
 ordre: 5
 duree_minutes: 5
 titre:
-  fr: "Tu parles quoi ?"
-  en: "What do you speak?"
+  fr: "Quelles langues parles-tu ?"
+  en: "Which languages do you speak?"
 objectif:
   fr: "Dire quelles langues on parle et le demander."
   en: "Say which languages you speak, and ask others."

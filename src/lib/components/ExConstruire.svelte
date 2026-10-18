@@ -1,5 +1,6 @@
 <script lang="ts">
 	// Construire : remettre des blocs dans l'ordre.
+	import { jouer } from '#lib/audio.ts';
 	import { assembler, melanger } from '#lib/correction.ts';
 	import { t, type Langue } from '#lib/i18n.ts';
 	import type { Exercice, Lecon } from '#lib/schema.ts';
@@ -23,10 +24,17 @@
 	let places = $state<number[]>([]);
 	const attendu = $derived(lecon.phrases.find((p) => p.id === ex.reponse)!.is);
 
+	/** Placer un bloc le fait entendre. */
+	function placer(i: number) {
+		places = [...places, i];
+		const son = ex.sons?.blocs?.[i];
+		if (son) jouer(son);
+	}
+
 	function verifier() {
 		const phrase = assembler(places.map((i) => ex.blocs[i]));
 		const juste = phrase === attendu;
-		ontermine({ juste, solution: juste ? undefined : attendu, solutionIslandaise: true });
+		ontermine({ juste, solution: juste ? undefined : attendu, solutionIslandaise: true, son: ex.sons?.reponse });
 	}
 </script>
 
@@ -52,7 +60,7 @@
 				lang="is"
 				class:utilise={places.includes(b.i)}
 				disabled={fige || places.includes(b.i)}
-				onclick={() => (places = [...places, b.i])}>{b.texte}</button
+				onclick={() => placer(b.i)}>{b.texte}</button
 			>
 		{/each}
 	</div>

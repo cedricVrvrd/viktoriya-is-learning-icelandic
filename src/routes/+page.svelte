@@ -34,25 +34,18 @@
 	});
 	let maintenant = $state(new Date());
 
-	// Leçons prévues par la fiche de structure N1-P1, pas encore écrites.
-	const AVENIR: { ordre: number | null; fr: string; en: string }[] = [
-		{ ordre: 2, fr: 'Sæll ou sæl ?', en: 'Sæll or sæl?' },
-		{ ordre: 3, fr: 'D’où viens-tu ?', en: 'Where are you from?' },
-		{ ordre: 4, fr: 'Ça va ?', en: 'How are you?' },
-		{ ordre: 5, fr: 'Tu parles quoi ?', en: 'What do you speak?' },
-		{ ordre: 6, fr: 'C’est quoi, ça ?', en: 'What’s that?' },
-		{ ordre: 7, fr: 'Qui est-ce ?', en: 'Who’s that?' },
-		{ ordre: null, fr: 'Point de passage', en: 'Checkpoint' }
-	];
-	const aVenir = AVENIR.filter((a) =>
-		a.ordre === null ? pointsDePassage.length === 0 : !lecons.some((l) => l.ordre === a.ordre)
-	);
+	/**
+	 * Mode test (adresse terminée par ?test) : toutes les leçons sont ouvertes, chaque exercice
+	 * peut être passé, et rien n'est enregistré. Pour relire le contenu sans tout refaire.
+	 */
+	let modeTest = $state(false);
 
 	/** Tous les mots, par identifiant (uniques entre leçons, vérifié au build). */
 	const mots = new Map(lecons.flatMap((l) => l.mots.map((m) => [m.id, m] as const)));
 
 	onMount(() => {
 		if (!navigator.language.toLowerCase().startsWith('fr')) langue = 'en';
+		modeTest = new URLSearchParams(location.search).has('test');
 		charger();
 		// L'heure avance : les révisions arrivent à échéance sans recharger la page.
 		const minuteur = setInterval(() => (maintenant = new Date()), 30_000);
@@ -79,9 +72,11 @@
 
 	/** Le point de passage s'ouvre quand toutes les leçons de sa Partie sont terminées. */
 	const passageOuvert = (pp: (typeof pointsDePassage)[number]) =>
+		modeTest ||
 		lecons.filter((l) => l.niveau === pp.niveau && l.partie === pp.partie).every((l) => l.id in etat.p.lecons);
 
-	function finPassage(pp: (typeof pointsDePassage)[number], b: { justes: number; total: number; xp: number }, ratees: string[]) {
+	async function finPassage(pp: (typeof pointsDePassage)[number], b: { justes: number; total: number; xp: number }, ratees: string[]) {
+		if (modeTest) return b.total > 0 && b.justes / b.total >= pp.seuil;
 		const mots = lecons.filter((l) => ratees.includes(l.id)).flatMap((l) => l.mots.map((m) => m.id));
 		return finirPointDePassage(pp, b, mots);
 	}
@@ -94,7 +89,7 @@
 
 	/** Une leçon est ouverte si c'est la première de sa Partie ou si la précédente est terminée. */
 	function ouverte(l: (typeof lecons)[number]) {
-		if (l.ordre === 1) return true;
+		if (modeTest || l.ordre === 1) return true;
 		const precedente = lecons.find((x) => x.niveau === l.niveau && x.partie === l.partie && x.ordre === l.ordre - 1);
 		return !precedente || precedente.id in etat.p.lecons;
 	}
@@ -153,12 +148,16 @@
 		{lecon}
 		{langue}
 		onquitter={() => (vue = { type: 'accueil' })}
-		onfini={(b) => finirLecon(lecon, b)}
+		test={modeTest}
+		onfini={(b) => {
+			if (!modeTest) finirLecon(lecon, b);
+		}}
 	/>
 {:else if passage}
 	<PointDePassage
 		pp={passage}
 		{lecons}
+		test={modeTest}
 		{langue}
 		onfini={(b, ratees) => finPassage(passage, b, ratees)}
 		onreviser={reviserMaintenant}
@@ -175,6 +174,10 @@
 				<button type="button" aria-pressed={langue === 'en'} onclick={() => (langue = 'en')}>EN</button>
 			</div>
 		</header>
+
+		{#if modeTest}
+			<p class="mode-test" role="note">{t(langue, 'mode_test')}</p>
+		{/if}
 
 		<section class="stats" aria-label={t(langue, 'ma_progression')}>
 			<div class="stat" class:eteinte={!serieDuJour}>
@@ -278,15 +281,6 @@
 								>{t(langue, 'commencer')}</button
 							>
 						{/if}
-					</div>
-				</li>
-			{/each}
-			{#each aVenir as a (a.en)}
-				<li class="etape verrou">
-					<span class="numero">{a.ordre ?? '★'}</span>
-					<div class="corps">
-						<h2>{a[langue]}</h2>
-						<p>{t(langue, 'bientot')}</p>
 					</div>
 				</li>
 			{/each}
@@ -458,6 +452,15 @@
 	}
 	.active .corps h2 {
 		font-size: 1.4rem;
+	}
+	.mode-test {
+		margin: 0 0 1rem;
+		padding: 0.6rem 0.9rem;
+		border-radius: var(--rayon);
+		border: 2px dashed var(--primaire);
+		color: var(--primaire);
+		font-weight: 700;
+		font-size: 0.95rem;
 	}
 	.verrou .corps h2 {
 		color: var(--texte-doux);

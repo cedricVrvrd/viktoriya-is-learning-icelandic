@@ -3,6 +3,8 @@
 	// islandais → sens (reconnaître) et sens → islandais (retrouver).
 	// Chaque première réponse note la carte FSRS ; une erreur revient en fin de session.
 	import Avatar from './Avatar.svelte';
+	import BoutonAudio from './BoutonAudio.svelte';
+	import { jouer } from '#lib/audio.ts';
 	import { melanger } from '#lib/correction.ts';
 	import { t, type Langue } from '#lib/i18n.ts';
 	import { finirRevision, noterRevision } from '#lib/progression.svelte.ts';
@@ -64,6 +66,7 @@
 		if (!q || choisi === null) return;
 		const juste = choisi === q.mot.id;
 		verdict = juste;
+		if (q.mot.audio) jouer(q.mot.audio);
 		if (!q.retour) noterRevision(q.mot.id, juste);
 		if (juste) {
 			reussis += 1;
@@ -107,9 +110,14 @@
 			<h2 class="consigne">
 				{q.sens === 'is-vers-sens' ? t(langue, 'revision_sens') : t(langue, 'revision_islandais')}
 			</h2>
-			<p class="cible" lang={q.sens === 'is-vers-sens' ? 'is' : langue} class:is={q.sens === 'is-vers-sens'}>
-				{q.sens === 'is-vers-sens' ? q.mot.lemme : q.mot[langue]}
-			</p>
+			{#key position}
+				<div class="cible-ligne">
+					{#if q.sens === 'is-vers-sens' && q.mot.audio}<BoutonAudio fichier={q.mot.audio} {langue} auto grand />{/if}
+					<p class="cible" lang={q.sens === 'is-vers-sens' ? 'is' : langue} class:is={q.sens === 'is-vers-sens'}>
+						{q.sens === 'is-vers-sens' ? q.mot.lemme : q.mot[langue]}
+					</p>
+				</div>
+			{/key}
 			<div class="options" role="radiogroup" aria-label={t(langue, 'revision_choix')}>
 				{#each q.options as o (o.id)}
 					{@const islandais = q.sens === 'sens-vers-is'}
@@ -120,7 +128,10 @@
 						class={['option', { choisi: choisi === o.id, is: islandais }]}
 						lang={islandais ? 'is' : langue}
 						disabled={verdict !== null}
-						onclick={() => (choisi = o.id)}>{islandais ? o.lemme : o[langue]}</button
+						onclick={() => {
+							choisi = o.id;
+							if (islandais && o.audio) jouer(o.audio);
+						}}>{islandais ? o.lemme : o[langue]}</button
 					>
 				{/each}
 			</div>
@@ -141,7 +152,10 @@
 					<p class="petit">{t(langue, 'reviendra_bientot')}</p>
 				{/if}
 			</div>
-			<button class="bouton" type="button" onclick={continuer}>{t(langue, 'continuer')}</button>
+			<div class="retour-actions">
+				{#if q.mot.audio}<BoutonAudio fichier={q.mot.audio} {langue} />{/if}
+				<button class="bouton" type="button" onclick={continuer}>{t(langue, 'continuer')}</button>
+			</div>
 		</div>
 	{/if}
 </div>
@@ -192,6 +206,23 @@
 		color: var(--primaire);
 		min-width: 3.5rem;
 		text-align: right;
+	}
+	.cible-ligne {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.8rem;
+	}
+	.cible-ligne .cible {
+		flex: 1;
+	}
+	.retour-actions {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+	}
+	.retour-actions .bouton {
+		flex: 1;
 	}
 	.contenu {
 		display: grid;

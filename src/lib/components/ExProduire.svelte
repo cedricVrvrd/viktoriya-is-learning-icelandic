@@ -1,7 +1,7 @@
 <script lang="ts">
 	// Produire : taper la réponse. Saisie affichée en texte brut, normalisée NFC, longueur bornée.
 	import Clavier from './Clavier.svelte';
-	import { LONGUEUR_MAX, comparerDebutPrenom, comparerPlusieurs, nettoyer } from '#lib/correction.ts';
+	import { LONGUEUR_MAX, comparer, comparerDebutPrenom, comparerPlusieurs, nettoyer } from '#lib/correction.ts';
 	import { t, type Langue } from '#lib/i18n.ts';
 	import type { Exercice } from '#lib/schema.ts';
 	import type { Issue } from '#lib/types.ts';
@@ -30,9 +30,13 @@
 			ex.debut_attendu && ex.suite_libre
 				? comparerDebutPrenom(saisie, ex.debut_attendu, ex.tolerance)
 				: comparerPlusieurs(saisie, ex.reponses_acceptees ?? [], ex.tolerance);
-		if (r.statut === 'juste') ontermine({ juste: true });
-		else if (r.statut === 'accents') ontermine({ juste: true, accents: r.correction });
-		else ontermine({ juste: false, solution: r.attendu, solutionIslandaise: true });
+		// Superpuffin répète la réponse acceptée la plus proche de la saisie (la première, à défaut).
+		const acceptees = ex.reponses_acceptees ?? [];
+		const visee = Math.max(0, acceptees.findIndex((a) => comparer(saisie, a, ex.tolerance).statut !== 'faux'));
+		const son = ex.sons?.reponses?.[visee] ?? undefined;
+		if (r.statut === 'juste') ontermine({ juste: true, son });
+		else if (r.statut === 'accents') ontermine({ juste: true, accents: r.correction, son });
+		else ontermine({ juste: false, solution: r.attendu, solutionIslandaise: true, son });
 	}
 </script>
 

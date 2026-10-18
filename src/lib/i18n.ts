@@ -89,6 +89,11 @@ const textes = {
 		fr: 'Voix : Steinn de Grammatek (Apache 2.0) ; Salka et Ugla, Talrómur, Université de Reykjavík (CC BY 4.0) ; moteur Piper.',
 		en: 'Voices: Steinn by Grammatek (Apache 2.0); Salka and Ugla, Talrómur, Reykjavík University (CC BY 4.0); Piper engine.'
 	},
+	mode_test: {
+		fr: 'Mode test : tout est ouvert, chaque exercice peut être passé, rien n’est enregistré.',
+		en: 'Test mode: everything is open, any exercise can be skipped, nothing is saved.'
+	},
+	passer_test: { fr: 'Passer (test)', en: 'Skip (test)' },
 	erreur_marquee: { fr: 'erreur', en: 'mistake' },
 	accents_rouges: { fr: 'Les lettres en rouge sont à corriger.', en: 'Letters in red need fixing.' },
 	prenom_invalide: {

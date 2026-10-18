@@ -3,6 +3,8 @@
 	// des erreurs ; on valide si la part de bonnes réponses atteint le seuil (80 %).
 	// En cas d'échec, l'appelant remet en révision les mots des leçons ratées.
 	import Avatar from './Avatar.svelte';
+	import BoutonAudio from './BoutonAudio.svelte';
+	import { jouer } from '#lib/audio.ts';
 	import ExChoix from './ExChoix.svelte';
 	import ExConstruire from './ExConstruire.svelte';
 	import ExProduire from './ExProduire.svelte';
@@ -16,7 +18,8 @@
 		langue,
 		onfini,
 		onreviser,
-		onquitter
+		onquitter,
+		test = false
 	}: {
 		pp: PointDePassage;
 		lecons: Lecon[];
@@ -25,6 +28,7 @@
 		onfini: (b: { justes: number; total: number; xp: number }, leconsRatees: string[]) => Promise<boolean>;
 		onreviser: () => void;
 		onquitter: () => void;
+		test?: boolean;
 	} = $props();
 
 	let phase = $state<'intro' | 'quiz' | 'fin'>('intro');
@@ -44,6 +48,8 @@
 
 	function terminer(i: Issue) {
 		issue = i;
+		// Superpuffin répète la bonne réponse.
+		if (i.son) jouer(i.son);
 		if (i.juste) {
 			justes += 1;
 			xp += 10;
@@ -93,6 +99,9 @@
 				<button class="bouton" type="button" onclick={() => (phase = 'quiz')}>{t(langue, 'pp_commencer')}</button>
 			</section>
 		{:else if phase === 'quiz' && ex}
+			{#if test && !issue}
+				<button class="passer-test" type="button" onclick={continuer}>{t(langue, 'passer_test')} →</button>
+			{/if}
 			{#key `${essai}-${position}`}
 				{#if ex.type === 'construire'}
 					<ExConstruire {ex} lecon={contexte} {langue} fige={!!issue} ontermine={terminer} />
@@ -147,7 +156,10 @@
 					{/if}
 				{/if}
 			</div>
-			<button class="bouton" type="button" onclick={continuer}>{t(langue, 'continuer')}</button>
+			<div class="retour-actions">
+				{#if issue.son}<BoutonAudio fichier={issue.son} {langue} />{/if}
+				<button class="bouton" type="button" onclick={continuer}>{t(langue, 'continuer')}</button>
+			</div>
 		</div>
 	{/if}
 </div>
@@ -262,6 +274,28 @@
 		width: 100%;
 		max-width: 32rem;
 		margin: 0 auto;
+	}
+	.passer-test {
+		appearance: none;
+		display: block;
+		margin: 0 0 0.6rem auto;
+		padding: 0.3rem 0.7rem;
+		border: 2px dashed var(--primaire);
+		border-radius: 999px;
+		background: none;
+		color: var(--primaire);
+		font: inherit;
+		font-size: 0.85rem;
+		font-weight: 700;
+		cursor: pointer;
+	}
+	.retour-actions {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+	}
+	.retour-actions .bouton {
+		flex: 1;
 	}
 	.retour-panneau p {
 		margin: 0.25rem 0 0;

@@ -9,3 +9,4 @@ static/audio/
 .audio-plan.json
 static/essais-audio/
 .grammatek/
+__pycache__/

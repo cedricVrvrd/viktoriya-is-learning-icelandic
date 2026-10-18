@@ -8,6 +8,8 @@ export type Issue = {
 	/** Bonne réponse à montrer en cas d'erreur. */
 	solution?: string;
 	solutionIslandaise?: boolean;
+	/** Bonne réponse dite par Superpuffin, jouée dès la vérification. */
+	son?: string;
 	/** Afficher la carte de grammaire de la leçon dans le retour. */
 	explication?: boolean;
 };

@@ -1,6 +1,6 @@
 """Page d'écoute comparative des voix, pour juger à l'oreille.
 
-Usage : python3 scripts/essais-audio.py static/essais-audio .piper .grammatek .audio-plan.json
+Usage : python3 scripts/essais-audio.py static/essais-audio .piper .grammatek
 
 Produit static/essais-audio/index.html et les sons, publiés avec le site
 (…/superpuffin/essais-audio/), hors cache hors ligne.
@@ -11,7 +11,6 @@ islandais (scripts/phonetiseur.py).
 """
 
 import html
-import json
 import subprocess
 import sys
 import tempfile
@@ -23,14 +22,13 @@ from piper import PiperVoice, SynthesisConfig
 sys.path.insert(0, str(Path(__file__).parent))
 from voix_grammatek import VoixGrammatek  # noqa: E402
 
-sortie, dossier_piper, dossier_grammatek, plan_json = (Path(a) for a in sys.argv[1:5])
+sortie, dossier_piper, dossier_grammatek = (Path(a) for a in sys.argv[1:4])
 sortie.mkdir(parents=True, exist_ok=True)
 
 ESSAIS = ["Já!", "Halló!", "Hæ!", "Hvað heitir þú?", "Takk!", "Nei, ég heiti Viktoriya."]
-plan = json.loads(plan_json.read_text(encoding="utf-8"))
-# Phrases tests + phrases dites par la voix Grammatek (les seules qu'elle sait prononcer :
-# les autres contiennent des mots absents du dictionnaire de prononciation).
-PHRASES = list(dict.fromkeys(ESSAIS + [t["texte"] for t in plan if t["voix"] == "grammatek-steinn"]))
+# Le choix des voix est fait (Grammatek sans accents) : la page garde seulement quelques
+# phrases témoins, pour réécouter les voix après une mise à jour de Piper ou du lexique.
+PHRASES = ESSAIS
 
 COLONNES = [
     ("salka", "Salka (Piper, actuelle)"),

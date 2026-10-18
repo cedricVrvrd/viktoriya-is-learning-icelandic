@@ -225,9 +225,24 @@ export function leconVisee(exId: string): string | null {
 export type LeconContenu = z.infer<typeof lecon>;
 /** Phrase telle que l'appli la reçoit : reliée à son fichier audio quand il existe. */
 export type Phrase = LeconContenu['phrases'][number] & { audio?: string };
-/** Leçon telle que l'appli la reçoit. */
-export type Lecon = Omit<LeconContenu, 'phrases'> & { phrases: Phrase[] };
-export type Exercice = Lecon['exercices'][number];
+export type Mot = LeconContenu['mots'][number] & { audio?: string };
+/** Sons ajoutés au build (vite.config.ts) : choix et blocs touchés, bonne réponse répétée. */
+export type SonsExercice = {
+	choix?: (string | null)[];
+	blocs?: (string | null)[];
+	reponse?: string;
+	reponses?: (string | null)[];
+};
+export type Exercice = LeconContenu['exercices'][number] & { sons?: SonsExercice };
+/** Leçon telle que l'appli la reçoit : phrases, mots et exercices reliés à leurs sons. */
+export type Lecon = Omit<LeconContenu, 'phrases' | 'mots' | 'exercices'> & {
+	phrases: Phrase[];
+	mots: Mot[];
+	exercices: Exercice[];
+};
 export type PointDePassageContenu = z.infer<typeof pointDePassage>;
-export type PointDePassage = Omit<PointDePassageContenu, 'phrases'> & { phrases: Phrase[] };
+export type PointDePassage = Omit<PointDePassageContenu, 'phrases' | 'exercices'> & {
+	phrases: Phrase[];
+	exercices: (PointDePassageContenu['exercices'][number] & { sons?: SonsExercice })[];
+};
 export type Personnage = (typeof PERSONNAGES)[number];
