@@ -1,0 +1,296 @@
+# Viktoriya is learning Icelandic — Niveau 1, Partie 2, Leçon 3
+# Licence du contenu : CC BY-SA 4.0
+# Texte écrit de zéro à partir de la fiche de structure N1-P2.
+# Aucun texte, dialogue, exercice ni personnage du manuel Íslenska fyrir alla.
+#
+# Leçon d'oreille : les sons à distinguer sont dits par la voix neutre (Steinn),
+# dans des phrases courtes réservées aux exercices.
+
+schema: superpuffin/lecon@1
+id: n1-p2-l3
+niveau: 1
+partie: 2
+ordre: 3
+duree_minutes: 5
+titre:
+  fr: "Þ, ð et compagnie"
+  en: "Þ, ð and friends"
+objectif:
+  fr: "Prononcer þ et ð, et entendre la différence entre p et b, t et d, k et g."
+  en: "Say þ and ð, and hear the difference between p and b, t and d, k and g."
+personnages: [blesi, viktoriya]
+
+# ---------------------------------------------------------------------------
+# Mots nouveaux (8).
+# ---------------------------------------------------------------------------
+mots:
+  - id: w-thad
+    lemme: "það"
+    categorie: pronom
+    fr: "ce, cela, il (neutre)"
+    en: "it, that"
+  - id: w-hvar
+    lemme: "hvar"
+    categorie: interrogatif
+    fr: "où"
+    en: "where"
+    note:
+      fr: "hv se prononce [kv] : « kvar »."
+      en: "hv is pronounced [kv]: “kvar”."
+  - id: w-tharna
+    lemme: "þarna"
+    categorie: adverbe
+    fr: "là, là-bas"
+    en: "there"
+  - id: w-fjall
+    lemme: "fjall"
+    categorie: nom
+    genre: n
+    formes: ["fjallið"]
+    fr: "montagne"
+    en: "mountain"
+  - id: w-jokull
+    lemme: "jökull"
+    categorie: nom
+    genre: m
+    formes: ["jökullinn"]
+    fr: "glacier"
+    en: "glacier"
+  - id: w-gaman
+    lemme: "gaman"
+    categorie: nom
+    genre: n
+    fr: "amusement ; « það er gaman », c'est amusant"
+    en: "fun; “það er gaman”, it's fun"
+  - id: w-hlustadu
+    lemme: "hlustaðu"
+    categorie: expression
+    fr: "écoute !"
+    en: "listen!"
+  - id: w-samhljodi
+    lemme: "samhljóði"
+    categorie: nom
+    genre: m
+    formes: ["samhljóðar"]
+    fr: "consonne"
+    en: "consonant"
+
+# ---------------------------------------------------------------------------
+# Phrases.
+# ---------------------------------------------------------------------------
+phrases:
+  - id: ph-n1p2-029
+    is: "Hæ, Viktoriya! Komdu! Þetta er gaman!"
+    fr: "Salut, Viktoriya ! Viens ! C'est amusant !"
+    en: "Hi, Viktoriya! Come on! This is fun!"
+  - id: ph-n1p2-030
+    is: "Hæ, Blesi! Hvað er tetta?"
+    fr: "(erreur) Salut, Blesi ! C'est quoi, « tetta » ?"
+    en: "(mistake) Hi, Blesi! What's “tetta”?"
+    erreur_volontaire: true
+  - id: ph-n1p2-031
+    is: "Nei! Þetta, með þorn! Eins og í þú."
+    fr: "Non ! « Þetta », avec un þorn ! Comme dans « þú »."
+    en: "No! “Þetta”, with a þorn! As in “þú”."
+  - id: ph-n1p2-032
+    is: "Hvar er fjallið? Hvar er jökullinn?"
+    fr: "Où est la montagne ? Où est le glacier ?"
+    en: "Where's the mountain? Where's the glacier?"
+  - id: ph-n1p2-033
+    is: "Fjallið er þarna. Og jökullinn er líka þarna!"
+    fr: "La montagne est là-bas. Et le glacier est là-bas aussi !"
+    en: "The mountain is over there. And the glacier is over there too!"
+  - id: ph-n1p2-034
+    is: "Frábært! Og þetta? Bók eða pók?"
+    fr: "Génial ! Et ça ? « Bók » ou « pók » ?"
+    en: "Great! And this? “Bók” or “pók”?"
+  - id: ph-n1p2-035
+    is: "Pók?"
+    fr: "(erreur) « Pók » ?"
+    en: "(mistake) “Pók”?"
+    erreur_volontaire: true
+  - id: ph-n1p2-036
+    is: "Nei! Bók. Hlustaðu: bók, pabbi."
+    fr: "Non ! « Bók ». Écoute : « bók », « pabbi »."
+    en: "No! “Bók”. Listen: “bók”, “pabbi”."
+  - id: ph-n1p2-037
+    is: "Það er gaman! Sjáumst!"
+    fr: "C'est amusant ! À plus !"
+    en: "This is fun! See you!"
+  - id: ph-n1p2-038
+    is: "Það."
+    fr: "Cela."
+    en: "That."
+  - id: ph-n1p2-039
+    is: "Bók."
+    fr: "Livre."
+    en: "Book."
+  - id: ph-n1p2-040
+    is: "Pabbi."
+    fr: "Papa."
+    en: "Dad."
+  - id: ph-n1p2-041
+    is: "Hvar er jökullinn?"
+    fr: "Où est le glacier ?"
+    en: "Where is the glacier?"
+
+# ---------------------------------------------------------------------------
+# Scène d'ouverture : Blesi lance un jeu près du fjord.
+# ---------------------------------------------------------------------------
+scene:
+  lieu: fjord-prairie
+  didascalie:
+    fr: "Après le cours, Blesi attend Viktoriya au bord du fjord, la crinière au vent. Il a inventé un nouveau jeu : montrer des choses du sabot, et elle doit les nommer."
+    en: "After class, Blesi waits for Viktoriya by the fjord, mane in the wind. He has made up a new game: he points at things with his hoof, and she has to name them."
+  repliques:
+    - { locuteur: blesi,     phrase: ph-n1p2-029 }
+    - { locuteur: viktoriya, phrase: ph-n1p2-030 }
+    - { locuteur: blesi,     phrase: ph-n1p2-031 }
+    - { locuteur: blesi,     phrase: ph-n1p2-032 }
+    - { locuteur: viktoriya, phrase: ph-n1p2-033 }
+    - { locuteur: blesi,     phrase: ph-n1p2-034 }
+    - { locuteur: viktoriya, phrase: ph-n1p2-035 }
+    - { locuteur: blesi,     phrase: ph-n1p2-036 }
+    - { locuteur: blesi,     phrase: ph-n1p2-037 }
+
+# ---------------------------------------------------------------------------
+# Carte de grammaire.
+# ---------------------------------------------------------------------------
+explication:
+  id: gr-samhljodar
+  introduite_par: viktoriya
+  question:
+    fr: "Bók ou pók ? Je n'entends pas la différence !"
+    en: "Bók or pók? I can't hear the difference!"
+  reponse:
+    fr: "Normal : le b islandais est sourd, il sonne presque comme notre p. La vraie différence, c'est le souffle : p, t et k sont suivis d'un petit souffle, b, d et g non. Autres consonnes à surveiller : þ et ð, hv qui se dit [kv], ll qui se dit environ [tl], et j qui se dit comme le y de « yaourt »."
+    en: "That's normal: Icelandic b is unvoiced, close to an English p. The real difference is the puff of air: p, t and k come with a puff, b, d and g don't. Other consonants to watch: þ and ð, hv said [kv], ll said roughly [tl], and j said like the y in “yes”."
+  tableau:
+    - { is: "þú",    fr: "þ : th de l'anglais « think »",         en: "þ: th as in “think”" }
+    - { is: "það",   fr: "ð : th de « this », jamais au début",  en: "ð: th as in “this”, never at the start" }
+    - { is: "pabbi", fr: "p : avec un souffle",                  en: "p: with a puff of air" }
+    - { is: "bók",   fr: "b : sans souffle, presque un p",       en: "b: no puff, close to an English p" }
+    - { is: "hvar",  fr: "hv : [kv], « kvar »",                  en: "hv: [kv], “kvar”" }
+    - { is: "fjall", fr: "ll : environ [tl], « fyatl »",          en: "ll: roughly [tl], “fyatl”" }
+
+# ---------------------------------------------------------------------------
+# Exercices (10).
+# ---------------------------------------------------------------------------
+exercices:
+  - id: ex-n1p2l3-01
+    type: reconnaitre
+    support: audio_et_texte
+    question: ph-n1p2-029
+    consigne:
+      fr: "Que dit Blesi ?"
+      en: "What does Blesi say?"
+    choix:
+      - { fr: "Que c'est amusant.",        en: "That it's fun.", correct: true }
+      - { fr: "Qu'il doit partir.",        en: "That he has to go." }
+      - { fr: "Qu'il cherche l'école.",    en: "That he's looking for the school." }
+
+  - id: ex-n1p2l3-02
+    type: reconnaitre
+    support: audio
+    question: ph-n1p2-038
+    consigne:
+      fr: "Écoute. Ce mot finit par…"
+      en: "Listen. This word ends with…"
+    choix:
+      - { fr: "ð (th de « this »)",  en: "ð (th as in “this”)", correct: true }
+      - { fr: "þ (th de « think »)", en: "þ (th as in “think”)" }
+      - { fr: "d",                   en: "d" }
+
+  - id: ex-n1p2l3-03
+    type: associer
+    consigne:
+      fr: "Relie les paires."
+      en: "Match the pairs."
+    paires:
+      - { mot: w-fjall }
+      - { mot: w-jokull }
+      - { mot: w-hvar }
+      - { mot: w-tharna }
+      - { mot: w-hlustadu }
+
+  - id: ex-n1p2l3-04
+    type: reconnaitre
+    support: audio
+    question: ph-n1p2-039
+    consigne:
+      fr: "Écoute bien. Ce mot commence par…"
+      en: "Listen carefully. This word starts with…"
+    choix:
+      - { fr: "b (sans souffle)", en: "b (no puff of air)", correct: true }
+      - { fr: "p (avec souffle)", en: "p (with a puff of air)" }
+
+  - id: ex-n1p2l3-05
+    type: reconnaitre
+    support: audio
+    question: ph-n1p2-040
+    consigne:
+      fr: "Et celui-ci commence par…"
+      en: "And this one starts with…"
+    choix:
+      - { fr: "p (avec souffle)", en: "p (with a puff of air)", correct: true }
+      - { fr: "b (sans souffle)", en: "b (no puff of air)" }
+
+  - id: ex-n1p2l3-06
+    type: ecouter_dialogue
+    repliques:
+      - { locuteur: viktoriya, phrase: ph-n1p2-030 }
+      - { locuteur: blesi,     phrase: ph-n1p2-031 }
+    consigne:
+      fr: "Quelle erreur fait Viktoriya ?"
+      en: "What mistake does Viktoriya make?"
+    choix:
+      - { fr: "Elle lit þ comme un t.",       en: "She reads þ like a t.", correct: true }
+      - { fr: "Elle se trompe de prénom.",    en: "She gets his name wrong." }
+      - { fr: "Elle oublie de dire bonjour.", en: "She forgets to say hello." }
+
+  - id: ex-n1p2l3-07
+    type: retrouver
+    consigne:
+      fr: "Comment dit-on « Où est la montagne ? »"
+      en: "How do you say “Where is the mountain?”"
+    choix:
+      - { is: "Hvar er fjallið?", correct: true }
+      - { is: "Hvað er fjallið?" }
+      - { is: "Hvaðan er fjallið?" }
+
+  - id: ex-n1p2l3-08
+    type: construire
+    consigne:
+      fr: "Remets dans l'ordre : « Où est le glacier ? »"
+      en: "Put in order: “Where is the glacier?”"
+    blocs: ["Hvar", "er", "jökullinn", "?"]
+    reponse: ph-n1p2-041
+
+  - id: ex-n1p2l3-09
+    type: produire
+    consigne:
+      fr: "Écris en islandais : « C'est amusant ! »"
+      en: "Write in Icelandic: “It's fun!”"
+    reponses_acceptees: ["Það er gaman!", "Þetta er gaman!"]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+  - id: ex-n1p2l3-10
+    type: dictee
+    consigne:
+      fr: "Écoute les noms des lettres, puis écris le mot."
+      en: "Listen to the letter names, then write the word."
+    a_epeler: "fjall"
+    sens: { fr: "montagne", en: "mountain" }
+    tolerance:
+      accents: exiger
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+fin:
+  locuteur: blesi
+  message:
+    fr: "Pas mal du tout ! La prochaine fois, Kolla t'apprend à épeler ton nom. Moi, je file au galop."
+    en: "Not bad at all! Next time, Kolla teaches you to spell your name. I'm off at a gallop."
