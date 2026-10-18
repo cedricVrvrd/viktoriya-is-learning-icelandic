@@ -28,7 +28,9 @@ sortie.mkdir(parents=True, exist_ok=True)
 
 ESSAIS = ["Já!", "Halló!", "Hæ!", "Hvað heitir þú?", "Takk!", "Nei, ég heiti Viktoriya."]
 plan = json.loads(plan_json.read_text(encoding="utf-8"))
-PHRASES = list(dict.fromkeys(ESSAIS + [t["texte"] for t in plan]))
+# Phrases tests + phrases dites par la voix Grammatek (les seules qu'elle sait prononcer :
+# les autres contiennent des mots absents du dictionnaire de prononciation).
+PHRASES = list(dict.fromkeys(ESSAIS + [t["texte"] for t in plan if t["voix"] == "grammatek-steinn"]))
 
 COLONNES = [
     ("salka", "Salka (Piper, actuelle)"),
