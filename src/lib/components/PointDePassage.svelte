@@ -105,7 +105,7 @@
 			{#key `${essai}-${position}`}
 				{#if ex.type === 'construire'}
 					<ExConstruire {ex} lecon={contexte} {langue} fige={!!issue} ontermine={terminer} />
-				{:else if ex.type === 'produire'}
+				{:else if ex.type === 'produire' || ex.type === 'dictee'}
 					<ExProduire {ex} {langue} fige={!!issue} ontermine={terminer} />
 				{:else if ex.type !== 'associer'}
 					<ExChoix {ex} lecon={contexte} {langue} fige={!!issue} ontermine={terminer} />

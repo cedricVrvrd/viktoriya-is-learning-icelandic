@@ -3,6 +3,7 @@
 // tout champ inconnu est rejeté (objets stricts).
 import { z } from 'zod';
 import { assembler } from './correction.ts';
+import { epeler } from './lettres.ts';
 
 const texte = z
 	.string()
@@ -98,6 +99,15 @@ const exercice = z.discriminatedUnion('type', [
 		debut_attendu: texte.optional(),
 		suite_libre: z.literal('prenom').optional(),
 		tolerance
+	}),
+	// Dictée : l'appli épelle un mot lettre par lettre (noms islandais des lettres), l'apprenant le tape.
+	z.strictObject({
+		...base,
+		type: z.literal('dictee'),
+		a_epeler: texte.max(40),
+		/** Sens du mot, montré après la vérification. */
+		sens: bilingue.optional(),
+		tolerance
 	})
 ]);
 
@@ -137,6 +147,13 @@ function verifierExercices(
 			const attendu = phrases.get(ex.reponse)?.is;
 			if (attendu && assembler(ex.blocs) !== attendu)
 				erreur(`${ex.id} : les blocs ne reconstituent pas « ${attendu} »`);
+		}
+		if (ex.type === 'dictee') {
+			try {
+				epeler(ex.a_epeler);
+			} catch (e) {
+				erreur(`${ex.id} : ${(e as Error).message}`);
+			}
 		}
 		if (ex.type === 'produire' && !ex.reponses_acceptees && !(ex.debut_attendu && ex.suite_libre))
 			erreur(`${ex.id} : réponses attendues manquantes`);
@@ -232,6 +249,8 @@ export type SonsExercice = {
 	blocs?: (string | null)[];
 	reponse?: string;
 	reponses?: (string | null)[];
+	/** Dictée : un son par nom de lettre, null pour une pause. */
+	lettres?: (string | null)[];
 };
 export type Exercice = LeconContenu['exercices'][number] & { sons?: SonsExercice };
 /** Leçon telle que l'appli la reçoit : phrases, mots et exercices reliés à leurs sons. */

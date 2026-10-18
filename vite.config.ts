@@ -50,6 +50,7 @@ function contenu(): Plugin {
 					const sons = {
 						...(t.choix ? { choix: t.choix.map(neutre) } : {}),
 						...(t.blocs ? { blocs: t.blocs.map(neutre) } : {}),
+						...(t.lettres ? { lettres: t.lettres.map(neutre) } : {}),
 						...(t.reponse ? { reponse: relier(t.reponse, VOIX_REPONSE) } : {}),
 						...(t.reponses ? { reponses: t.reponses.map((x) => relier(x, VOIX_REPONSE) ?? null) } : {})
 					};

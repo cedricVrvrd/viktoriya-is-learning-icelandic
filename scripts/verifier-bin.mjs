@@ -13,7 +13,7 @@ if (!csv || !existsSync(csv)) {
 }
 
 // Champs du contenu qui contiennent de l'islandais.
-const CLES_ISLANDAISES = new Set(['is', 'lemme', 'formes', 'blocs', 'reponses_acceptees', 'debut_attendu', 'phrase_a_trous']);
+const CLES_ISLANDAISES = new Set(['is', 'lemme', 'formes', 'blocs', 'reponses_acceptees', 'debut_attendu', 'phrase_a_trous', 'a_epeler']);
 
 function collecter(noeud, cle, sortie) {
 	if (Array.isArray(noeud)) noeud.forEach((n) => collecter(n, cle, sortie));

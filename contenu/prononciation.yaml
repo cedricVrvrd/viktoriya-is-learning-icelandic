@@ -22,3 +22,32 @@
 - mot: pétursson
   sampa: "p_h j E: t Y r_0 s O n"
   note: "« péturs » + « son », comme « pétursdóttir » et « jónsson » dans le dictionnaire ; à valider"
+# Noms de lettres pour épeler (src/lib/lettres.ts), absents du dictionnaire.
+# Construits sur le modèle des noms présents (bé, pé, té, eff, enn, ell) et de mots voisins.
+- mot: dé
+  sampa: "t j E:"
+  note: "nom de la lettre d, comme « bé » [p j E:] ; à valider"
+- mot: ge
+  sampa: "c E:"
+  note: "nom de la lettre g ; g mouillé devant e, comme dans « gera » ; à valider"
+- mot: ká
+  sampa: "k_h au:"
+  note: "nom de la lettre k, comme « kát » ; à valider"
+- mot: emm
+  sampa: "E m"
+  note: "nom de la lettre m, comme « eff », « enn » ; à valider"
+- mot: err
+  sampa: "E r"
+  note: "nom de la lettre r ; à valider"
+- mot: ess
+  sampa: "E s"
+  note: "nom de la lettre s ; à valider"
+- mot: ypsilon
+  sampa: "Y f s I l O n"
+  note: "nom de la lettre y ; le dictionnaire donne cette prononciation sous la graphie « ufsilon »"
+- mot: þorn
+  sampa: "T O r t n_0"
+  note: "nom de la lettre þ ; rn final comme dans « horn », « korn » ; à valider"
+- mot: sé
+  sampa: "s j E:"
+  note: "nom de la lettre c (lettre étrangère) ; à valider"

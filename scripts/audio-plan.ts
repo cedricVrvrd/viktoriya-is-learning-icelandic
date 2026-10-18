@@ -5,6 +5,7 @@
 // produit un nouveau fichier, et seules les phrases modifiées sont régénérées.
 import { createHash } from 'node:crypto';
 import { existsSync, readFileSync } from 'node:fs';
+import { epeler } from '../src/lib/lettres.ts';
 
 /**
  * Voix Piper Talrómur (Université de Reykjavík, CC BY 4.0), lues par eSpeak,
@@ -68,6 +69,7 @@ type ExerciceBrut = {
 	reponse?: string;
 	phrase_a_trous?: string;
 	reponses_acceptees?: string[];
+	a_epeler?: string;
 };
 type LeconBrute = {
 	phrases: { id: string; is: string }[];
@@ -89,6 +91,8 @@ export type TextesExercice = {
 	reponse?: string;
 	/** Produire : une version par réponse acceptée, pour répéter celle que l'apprenant visait. */
 	reponses?: string[];
+	/** Dictée : un nom de lettre par lettre du mot (null pour une pause), dit par la voix neutre. */
+	lettres?: (string | null)[];
 };
 
 export function textesExercice(ex: ExerciceBrut, phrases: Map<string, string>): TextesExercice {
@@ -105,6 +109,8 @@ export function textesExercice(ex: ExerciceBrut, phrases: Map<string, string>): 
 			return { blocs: ex.blocs!.map((b) => (sonore(b) ? b : null)), reponse: phrases.get(ex.reponse!) };
 		case 'produire':
 			return ex.reponses_acceptees ? { reponses: ex.reponses_acceptees } : {};
+		case 'dictee':
+			return { lettres: epeler(ex.a_epeler!), reponse: ex.a_epeler };
 		default:
 			return {};
 	}
@@ -141,7 +147,7 @@ export function planifier(lecons: LeconBrute[]): Tache[] {
 		const phrases = new Map(lecon.phrases.map((p) => [p.id, p.is]));
 		for (const ex of lecon.exercices) {
 			const t = textesExercice(ex, phrases);
-			for (const c of [...(t.choix ?? []), ...(t.blocs ?? [])]) ajouter(c, VOIX_NEUTRE);
+			for (const c of [...(t.choix ?? []), ...(t.blocs ?? []), ...(t.lettres ?? [])]) ajouter(c, VOIX_NEUTRE);
 			for (const r of [t.reponse, ...(t.reponses ?? [])]) ajouter(r, VOIX_REPONSE);
 		}
 	}

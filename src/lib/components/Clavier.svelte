@@ -1,5 +1,7 @@
 <script lang="ts">
 	// Mini-barre flottante de lettres islandaises, posée au-dessus du clavier du téléphone.
+	// Règle du projet : tout champ où l'on tape de l'islandais affiche cette barre
+	// (Produire, Dictée, et tout futur exercice de saisie).
 	// Appui court : minuscule. Appui long (450 ms) : majuscule.
 	// Position suivie avec l'API VisualViewport, qui donne la hauteur réelle du clavier.
 	import { onMount } from 'svelte';

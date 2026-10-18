@@ -26,13 +26,16 @@ export function jouer(fichier: string): Promise<void> {
 	return lancer(fichier);
 }
 
-/** Joue plusieurs fichiers à la suite, avec une courte pause entre chaque. */
-export async function jouerSuite(fichiers: string[]) {
+/**
+ * Joue plusieurs fichiers à la suite, avec une pause entre chaque (en ms).
+ * Un null marque un silence de deux pauses (espace entre deux mots épelés).
+ */
+export async function jouerSuite(fichiers: (string | null)[], pause = 350) {
 	const moi = ++generation;
 	for (const f of fichiers) {
 		if (generation !== moi) return;
-		await lancer(f);
-		await new Promise((r) => setTimeout(r, 350));
+		if (f) await lancer(f);
+		await new Promise((r) => setTimeout(r, f ? pause : pause * 2));
 	}
 }
 

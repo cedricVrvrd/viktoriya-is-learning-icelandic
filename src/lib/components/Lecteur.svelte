@@ -137,7 +137,7 @@
 					<ExAssocier {ex} {lecon} {langue} fige={!!issue} ontermine={terminer} />
 				{:else if ex.type === 'construire'}
 					<ExConstruire {ex} {lecon} {langue} fige={!!issue} ontermine={terminer} />
-				{:else if ex.type === 'produire'}
+				{:else if ex.type === 'produire' || ex.type === 'dictee'}
 					<ExProduire {ex} {langue} fige={!!issue} ontermine={terminer} />
 				{:else}
 					<ExChoix {ex} {lecon} {langue} fige={!!issue} ontermine={terminer} />
