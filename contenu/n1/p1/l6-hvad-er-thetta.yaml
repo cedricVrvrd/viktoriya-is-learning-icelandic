@@ -15,7 +15,7 @@ titre:
 objectif:
   fr: "Nommer des personnes et des objets, avec « le » et « la »."
   en: "Name people and things, with “the”."
-personnages: [blesi, viktoriya, superpuffin]
+personnages: [superpuffin, viktoriya]
 
 mots:
   - id: w-thetta-er
@@ -135,16 +135,16 @@ phrases:
 scene:
   lieu: cafe-seydisfjordur
   didascalie:
-    fr: "Dans le petit café du port, Blesi entre au galop, essoufflé. Il a inventé un jeu : nommer tout ce qu'il montre, le plus vite possible."
-    en: "In the little harbour café, Blesi gallops in, out of breath. He has made up a game: name everything he points at, as fast as possible."
+    fr: "Dans le petit café du port, Superpuffin a inventé un jeu : il montre un objet du bout de l'aile, et Viktoriya doit le nommer, le plus vite possible."
+    en: "In the little harbour café, Superpuffin has made up a game: he points at something with his wing tip, and Viktoriya has to name it, as fast as possible."
   repliques:
-    - { locuteur: blesi,       phrase: ph-n1p1-055 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-055 }
     - { locuteur: viktoriya,   phrase: ph-n1p1-056 }
-    - { locuteur: blesi,       phrase: ph-n1p1-057 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-057 }
     - { locuteur: viktoriya,   phrase: ph-n1p1-058 }
-    - { locuteur: blesi,       phrase: ph-n1p1-059 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-059 }
     - { locuteur: superpuffin, phrase: ph-n1p1-060 }
-    - { locuteur: blesi,       phrase: ph-n1p1-061 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-061 }
 
 explication:
   id: gr-genres-article
@@ -237,7 +237,7 @@ exercices:
   - id: ex-n1p1l6-07
     type: ecouter_dialogue
     repliques:
-      - { locuteur: blesi,       phrase: ph-n1p1-063 }
+      - { locuteur: viktoriya,   phrase: ph-n1p1-063 }
       - { locuteur: superpuffin, phrase: ph-n1p1-064 }
     consigne:
       fr: "Qu'est-ce que Superpuffin montre ?"
@@ -278,7 +278,7 @@ exercices:
       majuscule_initiale: ignorer
 
 fin:
-  locuteur: blesi
+  locuteur: superpuffin
   message:
-    fr: "Pas mal ! Mais moi, j'aurais fini deux fois plus vite. Au tölt, bien sûr."
-    en: "Not bad! But I'd have finished twice as fast. At a tölt, of course."
+    fr: "Pas mal du tout ! La prochaine fois, je montre deux fois plus vite."
+    en: "Not bad at all! Next time, I'll point twice as fast."

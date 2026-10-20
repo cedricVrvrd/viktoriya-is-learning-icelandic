@@ -15,7 +15,7 @@ titre:
 objectif:
   fr: "Dire d'où l'on vient et le demander."
   en: "Say where you are from and ask others."
-personnages: [austri, viktoriya, superpuffin]
+personnages: [superpuffin, viktoriya]
 
 mots:
   - id: w-hvadan
@@ -82,9 +82,9 @@ phrases:
     en: "(mistake) I'm from France."
     erreur_volontaire: true
   - id: ph-n1p1-026
-    is: "Frá Frakklandi! Ég er frá Íslandi."
-    fr: "De France ! Moi, je viens d'Islande."
-    en: "From France! I'm from Iceland."
+    is: "Frá Frakklandi! Gott."
+    fr: "De France ! Très bien."
+    en: "From France! Good."
   - id: ph-n1p1-027
     is: "Ég er frá Frakklandi."
     fr: "Je viens de France."
@@ -94,17 +94,17 @@ phrases:
     fr: "Et toi, Superpuffin ? D'où viens-tu ?"
     en: "And you, Superpuffin? Where do you come from?"
   - id: ph-n1p1-029
-    is: "Ég kem líka frá Íslandi!"
-    fr: "Moi aussi, je viens d'Islande !"
-    en: "I come from Iceland too!"
+    is: "Ég er frá Íslandi!"
+    fr: "Moi, je viens d'Islande !"
+    en: "I'm from Iceland!"
   - id: ph-n1p1-030
     is: "Ég kem frá Spáni."
     fr: "Je viens d'Espagne."
     en: "I come from Spain."
   - id: ph-n1p1-031
-    is: "Hvaðan ert þú, Austri?"
-    fr: "D'où viens-tu, Austri ?"
-    en: "Where are you from, Austri?"
+    is: "Hvaðan ert þú, Superpuffin?"
+    fr: "D'où viens-tu, Superpuffin ?"
+    en: "Where are you from, Superpuffin?"
   - id: ph-n1p1-032
     is: "Ég kem frá Íslandi."
     fr: "Je viens d'Islande."
@@ -113,12 +113,12 @@ phrases:
 scene:
   lieu: seydisfjordur-quai
   didascalie:
-    fr: "Sur le quai de Seyðisfjörður, Austri fait visiter le port à Viktoriya. Superpuffin tourne au-dessus d'eux."
-    en: "On the quay in Seyðisfjörður, Austri shows Viktoriya around the harbour. Superpuffin circles above them."
+    fr: "Sur le quai de Seyðisfjörður, Superpuffin fait visiter le port à Viktoriya, en volant en rond au-dessus d'elle."
+    en: "On the quay in Seyðisfjörður, Superpuffin shows Viktoriya around the harbour, circling above her."
   repliques:
-    - { locuteur: austri,      phrase: ph-n1p1-024 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-024 }
     - { locuteur: viktoriya,   phrase: ph-n1p1-025 }
-    - { locuteur: austri,      phrase: ph-n1p1-026 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-026 }
     - { locuteur: viktoriya,   phrase: ph-n1p1-027 }
     - { locuteur: viktoriya,   phrase: ph-n1p1-028 }
     - { locuteur: superpuffin, phrase: ph-n1p1-029 }
@@ -230,10 +230,10 @@ exercices:
     type: ecouter_dialogue
     repliques:
       - { locuteur: viktoriya, phrase: ph-n1p1-031 }
-      - { locuteur: austri,    phrase: ph-n1p1-032 }
+      - { locuteur: superpuffin, phrase: ph-n1p1-032 }
     consigne:
-      fr: "D'où vient Austri ?"
-      en: "Where is Austri from?"
+      fr: "D'où vient Superpuffin ?"
+      en: "Where is Superpuffin from?"
     choix:
       - { fr: "D'Islande", en: "From Iceland", correct: true }
       - { fr: "D'Espagne", en: "From Spain" }
@@ -251,7 +251,7 @@ exercices:
       majuscule_initiale: ignorer
 
 fin:
-  locuteur: austri
+  locuteur: superpuffin
   message:
-    fr: "Bien joué ! Moi, je viens de l'Est de l'Islande. Mes ancêtres, eux, venaient de Norvège… mais ça, c'est pour une autre leçon."
-    en: "Well done! I'm from the East of Iceland. My ancestors came from Norway… but that's for another lesson."
+    fr: "Bien joué ! Moi, je suis né sur une falaise de l'Est de l'Islande. Les macareux reviennent toujours au même endroit."
+    en: "Well done! I was born on a cliff in the East of Iceland. Puffins always come back to the same place."

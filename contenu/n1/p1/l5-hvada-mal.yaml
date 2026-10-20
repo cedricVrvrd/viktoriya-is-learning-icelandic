@@ -15,7 +15,7 @@ titre:
 objectif:
   fr: "Dire quelles langues on parle et le demander."
   en: "Say which languages you speak, and ask others."
-personnages: [viktoriya, bara]
+personnages: [superpuffin, viktoriya]
 
 mots:
   - id: w-tala
@@ -95,9 +95,9 @@ phrases:
     fr: "Oui ! Je parle français, anglais et un peu islandais."
     en: "Yes! I speak French, English and a little Icelandic."
   - id: ph-n1p1-049
-    is: "En þú, Bára? Hvaða mál talar þú?"
-    fr: "Et toi, Bára ? Quelles langues parles-tu ?"
-    en: "And you, Bára? Which languages do you speak?"
+    is: "En þú, Superpuffin? Hvaða mál talar þú?"
+    fr: "Et toi, Superpuffin ? Quelles langues parles-tu ?"
+    en: "And you, Superpuffin? Which languages do you speak?"
   - id: ph-n1p1-050
     is: "Ég tala íslensku, dönsku og smá ensku."
     fr: "Je parle islandais, danois et un peu anglais."
@@ -107,9 +107,9 @@ phrases:
     fr: "Quelles langues parles-tu ?"
     en: "Which languages do you speak?"
   - id: ph-n1p1-052
-    is: "Talar þú þýsku, Bára?"
-    fr: "Tu parles allemand, Bára ?"
-    en: "Do you speak German, Bára?"
+    is: "Talar þú þýsku, Superpuffin?"
+    fr: "Tu parles allemand, Superpuffin ?"
+    en: "Do you speak German, Superpuffin?"
   - id: ph-n1p1-053
     is: "Nei, en ég tala dönsku."
     fr: "Non, mais je parle danois."
@@ -122,15 +122,15 @@ phrases:
 scene:
   lieu: fjord-rivage
   didascalie:
-    fr: "Au bout du fjord, une grande baleine fait surface tout doucement. C'est Bára. Elle parle lentement, comme quelqu'un qui a tout son temps."
-    en: "At the end of the fjord, a great whale surfaces very slowly. It's Bára. She speaks slowly, like someone with all the time in the world."
+    fr: "Au bout du fjord, Superpuffin se pose sur un rocher à côté de Viktoriya. Pour une fois, il parle lentement, pour qu'elle suive bien."
+    en: "At the end of the fjord, Superpuffin lands on a rock next to Viktoriya. For once, he speaks slowly, so she can follow."
   repliques:
-    - { locuteur: bara,      phrase: ph-n1p1-045 }
+    - { locuteur: superpuffin,      phrase: ph-n1p1-045 }
     - { locuteur: viktoriya, phrase: ph-n1p1-046 }
-    - { locuteur: bara,      phrase: ph-n1p1-047 }
+    - { locuteur: superpuffin,      phrase: ph-n1p1-047 }
     - { locuteur: viktoriya, phrase: ph-n1p1-048 }
     - { locuteur: viktoriya, phrase: ph-n1p1-049 }
-    - { locuteur: bara,      phrase: ph-n1p1-050 }
+    - { locuteur: superpuffin,      phrase: ph-n1p1-050 }
 
 explication:
   id: gr-tala-langue
@@ -209,10 +209,10 @@ exercices:
     type: ecouter_dialogue
     repliques:
       - { locuteur: viktoriya, phrase: ph-n1p1-052 }
-      - { locuteur: bara,      phrase: ph-n1p1-053 }
+      - { locuteur: superpuffin,      phrase: ph-n1p1-053 }
     consigne:
-      fr: "Quelle langue parle Bára ?"
-      en: "Which language does Bára speak?"
+      fr: "Quelle langue parle Superpuffin ?"
+      en: "Which language does Superpuffin speak?"
     choix:
       - { fr: "Le danois", en: "Danish", correct: true }
       - { fr: "L'allemand", en: "German" }
@@ -259,7 +259,7 @@ exercices:
       majuscule_initiale: ignorer
 
 fin:
-  locuteur: bara
+  locuteur: superpuffin
   message:
-    fr: "Très bien, petite renarde. Moi, j'ai appris le danois il y a bien longtemps… Les baleines ont le temps."
-    en: "Very good, little fox. I learned Danish a very long time ago… Whales have time."
+    fr: "Très bien, petite renarde ! Moi, le danois, je l'ai appris en volant jusqu'au Danemark. Enfin, presque."
+    en: "Very good, little fox! I learned Danish by flying all the way to Denmark. Well, almost."

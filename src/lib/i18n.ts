@@ -19,6 +19,8 @@ const textes = {
 	traduction: { fr: 'Afficher la traduction', en: 'Show translation' },
 	ta_reponse: { fr: 'Ta réponse', en: 'Your answer' },
 	effacer: { fr: 'Retirer', en: 'Remove' },
+	grille_lettres: { fr: 'Lettres à toucher dans l’ordre', en: 'Letters to tap in order' },
+	grille_erreurs: { fr: 'Erreurs : {n}', en: 'Mistakes: {n}' },
 	dictee_ecouter: { fr: 'Réécouter', en: 'Listen again' },
 	dictee_lent: { fr: 'Plus lentement', en: 'More slowly' },
 	dictee_sens: { fr: 'Sens :', en: 'Meaning:' },
@@ -123,9 +125,5 @@ export const t = (langue: Langue, cle: CleTexte): string => textes[cle][langue];
 
 export const NOMS_PERSONNAGES: Record<string, string> = {
 	superpuffin: 'Superpuffin',
-	viktoriya: 'Viktoriya',
-	bara: 'Bára',
-	austri: 'Austri',
-	kolla: 'Kolla',
-	blesi: 'Blesi'
+	viktoriya: 'Viktoriya'
 };

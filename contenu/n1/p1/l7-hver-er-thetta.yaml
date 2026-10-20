@@ -15,7 +15,7 @@ titre:
 objectif:
   fr: "Présenter quelqu'un : son nom, son origine, ses langues."
   en: "Introduce someone: their name, where they're from, what they speak."
-personnages: [bara, viktoriya, austri]
+personnages: [superpuffin, viktoriya]
 
 mots:
   - id: w-hver
@@ -71,21 +71,21 @@ mots:
 
 phrases:
   - id: ph-n1p1-066
-    is: "Bára, hver er þetta?"
-    fr: "Bára, qui est-ce ?"
-    en: "Bára, who's that?"
+    is: "Superpuffin, hver er þetta?"
+    fr: "Superpuffin, qui est-ce ?"
+    en: "Superpuffin, who's that?"
   - id: ph-n1p1-067
-    is: "Þetta er Austri. Hann er frá Íslandi."
-    fr: "C'est Austri. Il vient d'Islande."
-    en: "That's Austri. He's from Iceland."
+    is: "Þetta er Jón. Hann er frá Íslandi."
+    fr: "C'est Jón. Il vient d'Islande."
+    en: "That's Jón. He's from Iceland."
   - id: ph-n1p1-068
     is: "Og hver er þetta?"
     fr: "Et qui est-ce ?"
     en: "And who's that?"
   - id: ph-n1p1-069
-    is: "Þetta er Kolla. Hún talar íslensku."
-    fr: "C'est Kolla. Elle parle islandais."
-    en: "That's Kolla. She speaks Icelandic."
+    is: "Þetta er Anna. Hún talar íslensku."
+    fr: "C'est Anna. Elle parle islandais."
+    en: "That's Anna. She speaks Icelandic."
   - id: ph-n1p1-070
     is: "Og hvaðan er hún?"
     fr: "Et d'où vient-elle ?"
@@ -95,9 +95,9 @@ phrases:
     fr: "Elle aussi vient d'Islande."
     en: "She's from Iceland too."
   - id: ph-n1p1-072
-    is: "Hver er þetta, Bára?"
-    fr: "Qui est-ce, Bára ?"
-    en: "Who's that, Bára?"
+    is: "Hver er þetta, Superpuffin?"
+    fr: "Qui est-ce, Superpuffin ?"
+    en: "Who's that, Superpuffin?"
   - id: ph-n1p1-073
     is: "Þetta er stelpa. Hún heitir Ragna."
     fr: "C'est une fille. Elle s'appelle Ragna."
@@ -110,20 +110,20 @@ phrases:
 scene:
   lieu: fjord-rivage
   didascalie:
-    fr: "Le soir, au bord du fjord. Viktoriya et Bára regardent passer les habitants sur le chemin du village."
-    en: "Evening, by the fjord. Viktoriya and Bára watch the locals walk by on the village path."
+    fr: "Le soir, au bord du fjord. Viktoriya et Superpuffin regardent passer les habitants sur le chemin du village."
+    en: "Evening, by the fjord. Viktoriya and Superpuffin watch the locals walk by on the village path."
   repliques:
     - { locuteur: viktoriya, phrase: ph-n1p1-066 }
-    - { locuteur: bara,      phrase: ph-n1p1-067 }
+    - { locuteur: superpuffin,      phrase: ph-n1p1-067 }
     - { locuteur: viktoriya, phrase: ph-n1p1-068 }
-    - { locuteur: bara,      phrase: ph-n1p1-069 }
+    - { locuteur: superpuffin,      phrase: ph-n1p1-069 }
     - { locuteur: viktoriya, phrase: ph-n1p1-070 }
-    - { locuteur: bara,      phrase: ph-n1p1-071 }
+    - { locuteur: superpuffin,      phrase: ph-n1p1-071 }
 
-# Carte culture, racontée par Bára (son rôle dans le cahier des charges).
+# Carte culture, racontée par Superpuffin (son rôle dans le cahier des charges).
 explication:
   id: gr-son-dottir
-  introduite_par: bara
+  introduite_par: superpuffin
   question:
     fr: "Pourquoi tant de noms en -son et en -dóttir ?"
     en: "Why so many names ending in -son and -dóttir?"
@@ -142,12 +142,12 @@ exercices:
     support: audio_et_texte
     question: ph-n1p1-067
     consigne:
-      fr: "Que dit Bára ?"
-      en: "What does Bára say?"
+      fr: "Que dit Superpuffin ?"
+      en: "What does Superpuffin say?"
     choix:
-      - { fr: "C'est Austri. Il vient d'Islande.", en: "That's Austri. He's from Iceland.", correct: true }
-      - { fr: "C'est Austri. Il parle islandais.", en: "That's Austri. He speaks Icelandic." }
-      - { fr: "Voici Austri. Il va en Islande.", en: "Here's Austri. He's going to Iceland." }
+      - { fr: "C'est Jón. Il vient d'Islande.", en: "That's Jón. He's from Iceland.", correct: true }
+      - { fr: "C'est Jón. Il parle islandais.", en: "That's Jón. He speaks Icelandic." }
+      - { fr: "Voici Jón. Il va en Islande.", en: "Here's Jón. He's going to Iceland." }
 
   - id: ex-n1p1l7-02
     type: associer
@@ -166,7 +166,7 @@ exercices:
     consigne:
       fr: "Il ou elle ? Choisis le bon mot."
       en: "He or she? Pick the right word."
-    phrase_a_trous: "Þetta er Kolla. ___ talar íslensku."
+    phrase_a_trous: "Þetta er Anna. ___ talar íslensku."
     choix:
       - { is: "Hún", correct: true }
       - { is: "Hann" }
@@ -177,7 +177,7 @@ exercices:
     consigne:
       fr: "Il ou elle ? Choisis le bon mot."
       en: "He or she? Pick the right word."
-    phrase_a_trous: "Þetta er Austri. ___ er frá Íslandi."
+    phrase_a_trous: "Þetta er Jón. ___ er frá Íslandi."
     choix:
       - { is: "Hann", correct: true }
       - { is: "Hún" }
@@ -207,15 +207,15 @@ exercices:
   - id: ex-n1p1l7-07
     type: ecouter_dialogue
     repliques:
-      - { locuteur: austri, phrase: ph-n1p1-072 }
-      - { locuteur: bara,   phrase: ph-n1p1-073 }
+      - { locuteur: viktoriya,   phrase: ph-n1p1-072 }
+      - { locuteur: superpuffin, phrase: ph-n1p1-073 }
     consigne:
       fr: "Comment s'appelle la fille ?"
       en: "What's the girl's name?"
     choix:
       - { fr: "Ragna", en: "Ragna", correct: true }
-      - { fr: "Kolla", en: "Kolla" }
-      - { fr: "Bára", en: "Bára" }
+      - { fr: "Anna", en: "Anna" }
+      - { fr: "Viktoriya", en: "Viktoriya" }
 
   - id: ex-n1p1l7-08
     type: construire
@@ -248,7 +248,7 @@ exercices:
       majuscule_initiale: ignorer
 
 fin:
-  locuteur: bara
+  locuteur: superpuffin
   message:
-    fr: "Te voilà prête à présenter toute la bande. Il ne reste plus que le point de passage : Superpuffin t'y attend."
-    en: "Now you can introduce the whole gang. Only the checkpoint is left: Superpuffin is waiting for you there."
+    fr: "Te voilà prête à présenter tout le village. Il ne reste plus que le point de passage : je t'y attends !"
+    en: "Now you can introduce the whole village. Only the checkpoint is left: I'll be waiting for you there!"

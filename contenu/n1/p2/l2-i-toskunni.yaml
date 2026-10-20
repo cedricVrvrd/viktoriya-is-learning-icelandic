@@ -1,13 +1,13 @@
-# Viktoriya is learning Icelandic — Niveau 1, Partie 2, Leçon 5
+# Viktoriya is learning Icelandic — Niveau 1, Partie 2, Leçon 2
 # Licence du contenu : CC BY-SA 4.0
 # Texte écrit de zéro à partir de la fiche de structure N1-P2.
 # Aucun texte, dialogue, exercice ni personnage du manuel Íslenska fyrir alla.
 
 schema: superpuffin/lecon@1
-id: n1-p2-l5
+id: n1-p2-l2
 niveau: 1
 partie: 2
-ordre: 5
+ordre: 2
 duree_minutes: 5
 titre:
   fr: "Dans mon sac"
@@ -15,7 +15,7 @@ titre:
 objectif:
   fr: "Nommer les objets et les personnes de la classe, avec « le » et « la »."
   en: "Name the things and people in the classroom, with “the”."
-personnages: [bara, viktoriya]
+personnages: [superpuffin, viktoriya]
 
 # ---------------------------------------------------------------------------
 # Mots nouveaux (10).
@@ -101,7 +101,7 @@ mots:
 phrases:
   - id: ph-n1p2-051
     is: "Gott kvöld! Ég er kennarinn og þú ert nemandi."
-    fr: "Bonsoir ! Je suis la professeure et tu es une élève."
+    fr: "Bonsoir ! Je suis le professeur et tu es une élève."
     en: "Good evening! I'm the teacher and you're a student."
   - id: ph-n1p2-052
     is: "Já! Og hér er taskan."
@@ -142,21 +142,21 @@ phrases:
     en: "This is a pencil and a pen."
 
 # ---------------------------------------------------------------------------
-# Scène d'ouverture : Bára fait vider les sacs.
+# Scène d'ouverture : Superpuffin fait vider les sacs.
 # ---------------------------------------------------------------------------
 scene:
   lieu: ecole-salle-de-classe
   didascalie:
-    fr: "Deuxième cours du soir. Bára demande à chacun de poser sur la table ce qu'il a dans son sac. Viktoriya commence."
-    en: "Second evening class. Bára asks everyone to put what's in their bag on the table. Viktoriya goes first."
+    fr: "Le soir, à l'école de Seyðisfjörður. Superpuffin joue au professeur et demande à Viktoriya de poser sur la table tout ce qu'il y a dans son sac."
+    en: "Evening, at the school in Seyðisfjörður. Superpuffin plays teacher and asks Viktoriya to put everything in her bag on the table."
   repliques:
-    - { locuteur: bara,      phrase: ph-n1p2-051 }
+    - { locuteur: superpuffin,      phrase: ph-n1p2-051 }
     - { locuteur: viktoriya, phrase: ph-n1p2-052 }
-    - { locuteur: bara,      phrase: ph-n1p2-053 }
+    - { locuteur: superpuffin,      phrase: ph-n1p2-053 }
     - { locuteur: viktoriya, phrase: ph-n1p2-054 }
-    - { locuteur: bara,      phrase: ph-n1p2-055 }
+    - { locuteur: superpuffin,      phrase: ph-n1p2-055 }
     - { locuteur: viktoriya, phrase: ph-n1p2-056 }
-    - { locuteur: bara,      phrase: ph-n1p2-057 }
+    - { locuteur: superpuffin,      phrase: ph-n1p2-057 }
     - { locuteur: viktoriya, phrase: ph-n1p2-058 }
 
 # ---------------------------------------------------------------------------
@@ -182,19 +182,19 @@ explication:
 # Exercices (10).
 # ---------------------------------------------------------------------------
 exercices:
-  - id: ex-n1p2l5-01
+  - id: ex-n1p2l2-01
     type: reconnaitre
     support: audio_et_texte
     question: ph-n1p2-051
     consigne:
-      fr: "Qui est Bára ?"
-      en: "Who is Bára?"
+      fr: "Qui est Superpuffin, ce soir ?"
+      en: "Who is Superpuffin tonight?"
     choix:
-      - { fr: "La professeure", en: "The teacher", correct: true }
-      - { fr: "Une élève",      en: "A student" }
+      - { fr: "Le professeur", en: "The teacher", correct: true }
+      - { fr: "Un élève",        en: "A student" }
       - { fr: "La voisine",     en: "The neighbour" }
 
-  - id: ex-n1p2l5-02
+  - id: ex-n1p2l2-02
     type: associer
     consigne:
       fr: "Relie les paires."
@@ -206,7 +206,7 @@ exercices:
       - { mot: w-tafla }
       - { mot: w-tolva }
 
-  - id: ex-n1p2l5-03
+  - id: ex-n1p2l2-03
     type: accorder
     consigne:
       fr: "Choisis la bonne forme : « Où est l'ordinateur ? »"
@@ -218,7 +218,7 @@ exercices:
       - { is: "tölvið" }
     explication: gr-kyn-skolans
 
-  - id: ex-n1p2l5-04
+  - id: ex-n1p2l2-04
     type: reconnaitre
     support: audio
     question: ph-n1p2-059
@@ -230,20 +230,20 @@ exercices:
       - { fr: "Où est le sac ?",       en: "Where is the bag?" }
       - { fr: "Qu'est-ce que c'est ?", en: "What's this?" }
 
-  - id: ex-n1p2l5-05
+  - id: ex-n1p2l2-05
     type: ecouter_dialogue
     repliques:
       - { locuteur: viktoriya, phrase: ph-n1p2-056 }
-      - { locuteur: bara,      phrase: ph-n1p2-057 }
+      - { locuteur: superpuffin,      phrase: ph-n1p2-057 }
     consigne:
-      fr: "Pourquoi Bára corrige-t-elle Viktoriya ?"
-      en: "Why does Bára correct Viktoriya?"
+      fr: "Pourquoi Superpuffin corrige-t-il Viktoriya ?"
+      en: "Why does Superpuffin correct Viktoriya?"
     choix:
       - { fr: "Tölva est féminin, comme bók.",   en: "Tölva is feminine, like bók.", correct: true }
       - { fr: "Viktoriya n'a pas d'ordinateur.", en: "Viktoriya has no computer." }
       - { fr: "Viktoriya parle trop vite.",      en: "Viktoriya speaks too fast." }
 
-  - id: ex-n1p2l5-06
+  - id: ex-n1p2l2-06
     type: retrouver
     consigne:
       fr: "Comment dit-on « le dictionnaire » ?"
@@ -253,7 +253,7 @@ exercices:
       - { is: "stílabókin" }
       - { is: "orðið" }
 
-  - id: ex-n1p2l5-07
+  - id: ex-n1p2l2-07
     type: retrouver
     consigne:
       fr: "Comment dit-on « l'élève » ?"
@@ -263,7 +263,7 @@ exercices:
       - { is: "kennarinn" }
       - { is: "nafnið" }
 
-  - id: ex-n1p2l5-08
+  - id: ex-n1p2l2-08
     type: construire
     consigne:
       fr: "Remets dans l'ordre : « C'est un crayon et un stylo. »"
@@ -271,7 +271,7 @@ exercices:
     blocs: ["Þetta", "er", "blýantur", "og", "penni", "."]
     reponse: ph-n1p2-060
 
-  - id: ex-n1p2l5-09
+  - id: ex-n1p2l2-09
     type: produire
     consigne:
       fr: "Écris en islandais : « Où est le sac ? »"
@@ -282,20 +282,16 @@ exercices:
       ponctuation_finale: ignorer
       majuscule_initiale: ignorer
 
-  - id: ex-n1p2l5-10
-    type: dictee
+  - id: ex-n1p2l2-10
+    type: grille
     consigne:
-      fr: "Écoute les noms des lettres, puis écris le mot."
-      en: "Listen to the letter names, then write the word."
-    a_epeler: "penni"
-    sens: { fr: "stylo", en: "pen" }
-    tolerance:
-      accents: exiger
-      ponctuation_finale: ignorer
-      majuscule_initiale: ignorer
+      fr: "Touche les lettres dans l'ordre pour écrire le mot islandais."
+      en: "Tap the letters in order to write the Icelandic word."
+    sens: { fr: "l'ordinateur", en: "the computer" }
+    a_trouver: "tölvan"
 
 fin:
-  locuteur: bara
+  locuteur: superpuffin
   message:
     fr: "Bravo ! Ton sac n'a plus de secret. Au prochain cours, on apprend à dire quand on ne comprend pas."
     en: "Well done! Your bag holds no secrets now. Next class, we learn how to say you don't understand."

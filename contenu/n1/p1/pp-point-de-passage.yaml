@@ -16,18 +16,18 @@ objectif:
   fr: "Tenir une première conversation : saluer, se présenter, présenter quelqu'un."
   en: "Hold a first conversation: greet, introduce yourself, introduce someone."
 seuil: 0.8
-personnages: [superpuffin, kolla, blesi]
+personnages: [superpuffin, viktoriya]
 
 intro:
   locuteur: superpuffin
   message:
-    fr: "Point de passage ! Montre à toute la bande ce que tu as appris. Il faut 80 % de bonnes réponses du premier coup pour valider la Partie 1. Pas de panique : ici, une erreur ne revient pas, on compte, c'est tout."
-    en: "Checkpoint! Show the whole gang what you've learned. You need 80% right first time to pass Part 1. Don't panic: mistakes don't come back here, we just count."
+    fr: "Point de passage ! Montre-moi ce que tu as appris. Il faut 80 % de bonnes réponses du premier coup pour valider la Partie 1. Pas de panique : ici, une erreur ne revient pas, on compte, c'est tout."
+    en: "Checkpoint! Show me what you've learned. You need 80% right first time to pass Part 1. Don't panic: mistakes don't come back here, we just count."
 reussite:
   locuteur: superpuffin
   message:
-    fr: "Partie 1 validée ! Tu sais saluer, te présenter et présenter toute la bande. Et moi, pour fêter ça, j'ai réussi mon atterrissage. Presque."
-    en: "Part 1 passed! You can greet, introduce yourself and introduce the whole gang. To celebrate, I nailed my landing. Almost."
+    fr: "Partie 1 validée ! Tu sais saluer, te présenter et présenter tout le village. Et moi, pour fêter ça, j'ai réussi mon atterrissage. Presque."
+    en: "Part 1 passed! You can greet, introduce yourself and introduce the whole village. To celebrate, I nailed my landing. Almost."
 echec:
   locuteur: superpuffin
   message:
@@ -40,9 +40,9 @@ phrases:
     fr: "Comment tu t'appelles ?"
     en: "What's your name?"
   - id: ph-n1p1-076
-    is: "Hvaðan ert þú, Blesi?"
-    fr: "D'où viens-tu, Blesi ?"
-    en: "Where are you from, Blesi?"
+    is: "Hvaðan ert þú, Superpuffin?"
+    fr: "D'où viens-tu, Superpuffin ?"
+    en: "Where are you from, Superpuffin?"
   - id: ph-n1p1-077
     is: "Ég kem frá Íslandi."
     fr: "Je viens d'Islande."
@@ -72,9 +72,9 @@ exercices:
   - id: ex-n1p1pp-l2-01
     type: accorder
     consigne:
-      fr: "Tu dis au revoir à Austri. Choisis la bonne forme."
-      en: "You say goodbye to Austri. Pick the right form."
-    phrase_a_trous: "Vertu ___, Austri!"
+      fr: "Tu dis au revoir à Superpuffin. Choisis la bonne forme."
+      en: "You say goodbye to Superpuffin. Pick the right form."
+    phrase_a_trous: "Vertu ___, Superpuffin!"
     choix:
       - { is: "sæll", correct: true }
       - { is: "sæl" }
@@ -102,11 +102,11 @@ exercices:
   - id: ex-n1p1pp-l3-02
     type: ecouter_dialogue
     repliques:
-      - { locuteur: kolla, phrase: ph-n1p1-076 }
-      - { locuteur: blesi, phrase: ph-n1p1-077 }
+      - { locuteur: viktoriya,   phrase: ph-n1p1-076 }
+      - { locuteur: superpuffin, phrase: ph-n1p1-077 }
     consigne:
-      fr: "D'où vient Blesi ?"
-      en: "Where is Blesi from?"
+      fr: "D'où vient Superpuffin ?"
+      en: "Where is Superpuffin from?"
     choix:
       - { fr: "D'Islande", en: "From Iceland", correct: true }
       - { fr: "Du Danemark", en: "From Denmark" }
@@ -170,7 +170,7 @@ exercices:
     consigne:
       fr: "Il ou elle ? Choisis le bon mot."
       en: "He or she? Pick the right word."
-    phrase_a_trous: "Þetta er Bára. ___ talar dönsku."
+    phrase_a_trous: "Þetta er Anna. ___ talar dönsku."
     choix:
       - { is: "Hún", correct: true }
       - { is: "Hann" }

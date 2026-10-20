@@ -15,7 +15,7 @@ titre:
 objectif:
   fr: "Saluer poliment, selon l'heure et la personne."
   en: "Greet politely, by time of day and by who you talk to."
-personnages: [kolla, austri, viktoriya]
+personnages: [superpuffin, viktoriya]
 
 # ---------------------------------------------------------------------------
 # Mots nouveaux (8 expressions). Rappels de la leçon 1 : halló, já, nei, takk, en.
@@ -74,73 +74,64 @@ mots:
 # ---------------------------------------------------------------------------
 phrases:
   - id: ph-n1p1-012
-    is: "Góðan daginn, Austri!"
-    fr: "Bonjour, Austri !"
-    en: "Good morning, Austri!"
+    is: "Góðan daginn, Superpuffin!"
+    fr: "Bonjour, Superpuffin !"
+    en: "Good morning, Superpuffin!"
   - id: ph-n1p1-013
-    is: "Góðan dag, Kolla. Komdu sæl!"
-    fr: "Bonjour, Kolla. Bonjour à toi !"
-    en: "Good day, Kolla. Hello to you!"
-  - id: ph-n1p1-014
-    is: "Komdu sæll!"
-    fr: "Bonjour ! (à un homme)"
-    en: "Hello! (to a man)"
+    is: "Góðan dag, Viktoriya. Komdu sæl!"
+    fr: "Bonjour, Viktoriya. Bonjour à toi !"
+    en: "Good day, Viktoriya. Hello to you!"
   - id: ph-n1p1-015
-    is: "Komdu sæl, Austri!"
-    fr: "(erreur) Bonjour, Austri !"
-    en: "(mistake) Hello, Austri!"
+    is: "Komdu sæl, Superpuffin!"
+    fr: "(erreur) Bonjour, Superpuffin ! (comme à une femme)"
+    en: "(mistake) Hello, Superpuffin! (as if to a woman)"
     erreur_volontaire: true
   - id: ph-n1p1-016
-    is: "Nei, nei! Komdu sæll, Austri!"
-    fr: "Non, non ! Bonjour, Austri ! (à un homme)"
-    en: "No, no! Hello, Austri! (to a man)"
+    is: "Nei, nei! Komdu sæll!"
+    fr: "Non, non ! « Komdu sæll » : je suis un monsieur !"
+    en: "No, no! “Komdu sæll”: I'm a gentleman!"
   - id: ph-n1p1-017
-    is: "Komdu sæll, Austri!"
-    fr: "Bonjour, Austri !"
-    en: "Hello, Austri!"
+    is: "Komdu sæll, Superpuffin!"
+    fr: "Bonjour, Superpuffin !"
+    en: "Hello, Superpuffin!"
   - id: ph-n1p1-018
     is: "Komdu sæl, Viktoriya!"
     fr: "Bonjour, Viktoriya ! (à une femme)"
     en: "Hello, Viktoriya! (to a woman)"
   - id: ph-n1p1-019
-    is: "Vertu sæl, Kolla!"
-    fr: "Au revoir, Kolla ! (à une femme)"
-    en: "Goodbye, Kolla! (to a woman)"
-  - id: ph-n1p1-020
-    is: "Vertu sæll!"
-    fr: "Au revoir ! (à un homme)"
-    en: "Goodbye! (to a man)"
+    is: "Vertu sæl, Viktoriya!"
+    fr: "Au revoir, Viktoriya ! (à une femme)"
+    en: "Goodbye, Viktoriya! (to a woman)"
   - id: ph-n1p1-021
-    is: "Gott kvöld, Austri!"
-    fr: "Bonsoir, Austri !"
-    en: "Good evening, Austri!"
+    is: "Gott kvöld, Viktoriya!"
+    fr: "Bonsoir, Viktoriya !"
+    en: "Good evening, Viktoriya!"
   - id: ph-n1p1-022
-    is: "Góða kvöldið, Kolla!"
-    fr: "Bonsoir, Kolla !"
-    en: "Good evening, Kolla!"
+    is: "Góða kvöldið, Superpuffin!"
+    fr: "Bonsoir, Superpuffin !"
+    en: "Good evening, Superpuffin!"
   - id: ph-n1p1-023
-    is: "Vertu sæll, Austri!"
-    fr: "Au revoir, Austri !"
-    en: "Goodbye, Austri!"
+    is: "Vertu sæll, Superpuffin!"
+    fr: "Au revoir, Superpuffin !"
+    en: "Goodbye, Superpuffin!"
 
 # ---------------------------------------------------------------------------
-# Scène : le lendemain matin, à la ferme de Kolla.
+# Scène : le lendemain matin, sur le chemin du fjord.
 # ---------------------------------------------------------------------------
 scene:
-  lieu: ferme-kolla
+  lieu: chemin-fjord
   didascalie:
-    fr: "Le lendemain matin, à la ferme de Kolla, au-dessus du fjord. Austri arrive, le nez rouge de froid. Viktoriya suit, bien décidée à être polie."
-    en: "Next morning at Kolla's farm above the fjord. Austri arrives, his nose red with cold. Viktoriya follows, determined to be polite."
+    fr: "Le lendemain matin, sur le chemin qui longe le fjord. Superpuffin attend Viktoriya, perché sur un piquet de clôture. Elle est bien décidée à être polie."
+    en: "Next morning, on the path along the fjord. Superpuffin is waiting for Viktoriya on a fence post. She is determined to be polite."
   repliques:
-    - { locuteur: kolla,     phrase: ph-n1p1-012 }
-    - { locuteur: austri,    phrase: ph-n1p1-013 }
-    - { locuteur: kolla,     phrase: ph-n1p1-014 }
-    - { locuteur: viktoriya, phrase: ph-n1p1-015 }
-    - { locuteur: kolla,     phrase: ph-n1p1-016 }
-    - { locuteur: viktoriya, phrase: ph-n1p1-017 }
-    - { locuteur: austri,    phrase: ph-n1p1-018 }
-    - { locuteur: austri,    phrase: ph-n1p1-019 }
-    - { locuteur: kolla,     phrase: ph-n1p1-020 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-012 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-013 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-015 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-016 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-017 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-018 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-023 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-019 }
 
 # ---------------------------------------------------------------------------
 # Carte de grammaire, introduite par Viktoriya.
@@ -149,8 +140,8 @@ explication:
   id: gr-saell-sael
   introduite_par: viktoriya
   question:
-    fr: "Pourquoi sæll pour Austri, et sæl pour Kolla ?"
-    en: "Why sæll for Austri, but sæl for Kolla?"
+    fr: "Pourquoi sæll pour toi, et sæl pour moi ?"
+    en: "Why sæll for you, but sæl for me?"
   reponse:
     fr: "Sæll veut dire « heureux ». Il s'accorde avec la personne à qui tu parles : sæll pour un homme, sæl pour une femme. Komdu sæll, c'est « viens heureux » ; vertu sæll, « reste heureux »."
     en: "Sæll means “happy”. It agrees with the person you are talking to: sæll for a man, sæl for a woman. Komdu sæll is “come happy”; vertu sæll, “stay happy”."
@@ -169,12 +160,12 @@ exercices:
     support: audio_et_texte
     question: ph-n1p1-012
     consigne:
-      fr: "Que dit Kolla ?"
-      en: "What does Kolla say?"
+      fr: "Que dit Viktoriya ?"
+      en: "What does Viktoriya say?"
     choix:
-      - { fr: "Bonjour, Austri !", en: "Good morning, Austri!", correct: true }
-      - { fr: "Bonsoir, Austri !", en: "Good evening, Austri!" }
-      - { fr: "Au revoir, Austri !", en: "Goodbye, Austri!" }
+      - { fr: "Bonjour, Superpuffin !", en: "Good morning, Superpuffin!", correct: true }
+      - { fr: "Bonsoir, Superpuffin !", en: "Good evening, Superpuffin!" }
+      - { fr: "Au revoir, Superpuffin !", en: "Goodbye, Superpuffin!" }
 
   - id: ex-n1p1l2-02
     type: associer
@@ -190,9 +181,9 @@ exercices:
   - id: ex-n1p1l2-03
     type: accorder
     consigne:
-      fr: "Tu salues Austri. Choisis la bonne forme."
-      en: "You greet Austri. Pick the right form."
-    phrase_a_trous: "Komdu ___, Austri!"
+      fr: "Tu salues Superpuffin. Choisis la bonne forme."
+      en: "You greet Superpuffin. Pick the right form."
+    phrase_a_trous: "Komdu ___, Superpuffin!"
     choix:
       - { is: "sæll", correct: true }
       - { is: "sæl" }
@@ -201,9 +192,9 @@ exercices:
   - id: ex-n1p1l2-04
     type: accorder
     consigne:
-      fr: "Tu salues Kolla. Choisis la bonne forme."
-      en: "You greet Kolla. Pick the right form."
-    phrase_a_trous: "Komdu ___, Kolla!"
+      fr: "Tu salues Anna, une voisine. Choisis la bonne forme."
+      en: "You greet Anna, a neighbour. Pick the right form."
+    phrase_a_trous: "Komdu ___, Anna!"
     choix:
       - { is: "sæl", correct: true }
       - { is: "sæll" }
@@ -233,8 +224,8 @@ exercices:
   - id: ex-n1p1l2-07
     type: ecouter_dialogue
     repliques:
-      - { locuteur: kolla,  phrase: ph-n1p1-021 }
-      - { locuteur: austri, phrase: ph-n1p1-022 }
+      - { locuteur: superpuffin, phrase: ph-n1p1-021 }
+      - { locuteur: viktoriya,   phrase: ph-n1p1-022 }
     consigne:
       fr: "C'est le matin ou le soir ?"
       en: "Is it morning or evening?"
@@ -245,17 +236,17 @@ exercices:
   - id: ex-n1p1l2-08
     type: construire
     consigne:
-      fr: "Remets dans l'ordre : « Au revoir, Austri ! »"
-      en: "Put in order: “Goodbye, Austri!”"
-    blocs: ["Vertu", "sæll", ",", "Austri", "!"]
+      fr: "Remets dans l'ordre : « Au revoir, Superpuffin ! »"
+      en: "Put in order: “Goodbye, Superpuffin!”"
+    blocs: ["Vertu", "sæll", ",", "Superpuffin", "!"]
     reponse: ph-n1p1-023
 
   - id: ex-n1p1l2-09
     type: produire
     consigne:
-      fr: "Salue Austri poliment, en islandais."
-      en: "Greet Austri politely, in Icelandic."
-    reponses_acceptees: ["Komdu sæll!", "Komdu sæll, Austri!"]
+      fr: "Salue Superpuffin poliment, en islandais."
+      en: "Greet Superpuffin politely, in Icelandic."
+    reponses_acceptees: ["Komdu sæll!", "Komdu sæll, Superpuffin!"]
     tolerance:
       accents: signaler
       ponctuation_finale: ignorer
@@ -264,16 +255,16 @@ exercices:
   - id: ex-n1p1l2-10
     type: produire
     consigne:
-      fr: "Dis au revoir poliment à Kolla, en islandais."
-      en: "Say goodbye politely to Kolla, in Icelandic."
-    reponses_acceptees: ["Vertu sæl!", "Vertu sæl, Kolla!"]
+      fr: "Dis au revoir poliment à Anna, en islandais."
+      en: "Say goodbye politely to Anna, in Icelandic."
+    reponses_acceptees: ["Vertu sæl!", "Vertu sæl, Anna!"]
     tolerance:
       accents: signaler
       ponctuation_finale: ignorer
       majuscule_initiale: ignorer
 
 fin:
-  locuteur: kolla
+  locuteur: superpuffin
   message:
-    fr: "Bravo ! Et la prochaine fois, c'est « komdu sæl » pour moi : je suis une dame, figure-toi."
-    en: "Well done! And next time, it's “komdu sæl” for me: I'm a lady, you know."
+    fr: "Bravo ! Retiens bien : moi, c'est « komdu sæll ». Toi, c'est « komdu sæl »."
+    en: "Well done! Remember: for me, it's “komdu sæll”. For you, it's “komdu sæl”."

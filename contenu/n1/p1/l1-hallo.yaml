@@ -125,9 +125,9 @@ phrases:
     fr: "Oui ! Je m'appelle Superpuffin."
     en: "Yes! My name is Superpuffin."
   - id: ph-n1p1-010
-    is: "Heitir þú Kolla?"
-    fr: "Tu t'appelles Kolla ?"
-    en: "Is your name Kolla?"
+    is: "Heitir þú Anna?"
+    fr: "Tu t'appelles Anna ?"
+    en: "Is your name Anna?"
   - id: ph-n1p1-011
     is: "Nei, ég heiti Viktoriya."
     fr: "Non, je m'appelle Viktoriya."
@@ -243,9 +243,9 @@ exercices:
   - id: ex-n1p1l1-07
     type: construire
     consigne:
-      fr: "Remets dans l'ordre : « Tu t'appelles Kolla ? »"
-      en: "Put in order: “Is your name Kolla?”"
-    blocs: ["Heitir", "þú", "Kolla", "?"]
+      fr: "Remets dans l'ordre : « Tu t'appelles Anna ? »"
+      en: "Put in order: “Is your name Anna?”"
+    blocs: ["Heitir", "þú", "Anna", "?"]
     reponse: ph-n1p1-010
     note:
       fr: "Pour poser une question, le verbe passe en premier."
@@ -257,11 +257,11 @@ exercices:
       - { locuteur: superpuffin, phrase: ph-n1p1-010 }
       - { locuteur: viktoriya,   phrase: ph-n1p1-011 }
     consigne:
-      fr: "La renarde s'appelle-t-elle Kolla ?"
-      en: "Is the fox called Kolla?"
+      fr: "La renarde s'appelle-t-elle Anna ?"
+      en: "Is the fox called Anna?"
     choix:
       - { fr: "Non, elle s'appelle Viktoriya.", en: "No, she's called Viktoriya.", correct: true }
-      - { fr: "Oui, elle s'appelle Kolla.",     en: "Yes, she's called Kolla." }
+      - { fr: "Oui, elle s'appelle Anna.",     en: "Yes, she's called Anna." }
 
   - id: ex-n1p1l1-09
     type: produire

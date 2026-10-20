@@ -1,6 +1,6 @@
 # Viktoriya is learning Icelandic — Niveau 1, Partie 2, Point de passage
 # Licence du contenu : CC BY-SA 4.0
-# Quiz de fin de Partie : reprend les leçons 1 à 6. Seuil : 80 % de bonnes réponses du premier coup.
+# Quiz de fin de Partie : reprend les leçons 1 à 4. Seuil : 80 % de bonnes réponses du premier coup.
 # L'identifiant de chaque exercice indique la leçon vérifiée (ex-n1p2pp-l3-01 → leçon 3) :
 # en cas d'échec, les mots des leçons ratées sont remis en révision.
 
@@ -13,146 +13,79 @@ titre:
   fr: "Point de passage"
   en: "Checkpoint"
 objectif:
-  fr: "Épeler, lire juste, et se débrouiller en cours."
-  en: "Spell, read correctly, and get by in class."
+  fr: "Se repérer en ville, nommer ses affaires, se débrouiller en cours, parler du temps."
+  en: "Find your way in town, name your things, get by in class, talk about the weather."
 seuil: 0.8
-personnages: [bara, viktoriya, kolla]
+personnages: [superpuffin, viktoriya]
 
 intro:
-  locuteur: bara
+  locuteur: superpuffin
   message:
-    fr: "Dernier cours du soir avant les vacances : petit contrôle ! Il faut 80 % de bonnes réponses du premier coup pour valider la Partie 2. Prends ton temps, et n'oublie pas : « aðeins hægar, takk » marche aussi avec moi."
-    en: "Last evening class before the holidays: a little test! You need 80% right first time to pass Part 2. Take your time, and remember: “aðeins hægar, takk” works on me too."
+    fr: "Dernier cours avant les vacances : petit contrôle ! Il faut 80 % de bonnes réponses du premier coup pour valider la Partie 2. Prends ton temps, et n'oublie pas : « aðeins hægar, takk » marche aussi avec moi."
+    en: "Last class before the holidays: a little test! You need 80% right first time to pass Part 2. Take your time, and remember: “aðeins hægar, takk” works on me too."
 reussite:
-  locuteur: bara
+  locuteur: superpuffin
   message:
-    fr: "Partie 2 validée ! Tu lis, tu épelles, et tu sais demander de l'aide. Kolla a même écrit ton nom en grand sur le tableau, avec un ypsilon."
-    en: "Part 2 passed! You can read, spell and ask for help. Kolla even wrote your name big on the board, with a y."
+    fr: "Partie 2 validée ! Tu te repères en ville, tu sais demander de l'aide, et même parler de la pluie. Une vraie Islandaise."
+    en: "Part 2 passed! You can find your way in town, ask for help, and even talk about the rain. A real Icelander."
 echec:
-  locuteur: bara
+  locuteur: superpuffin
   message:
     fr: "Presque ! Les mots des leçons ci-dessous t'attendent dans les révisions. Revois-les, puis retente : einu sinni enn !"
     en: "Almost! The words from the lessons below are waiting for you in Review. Go over them, then try again: einu sinni enn!"
 
 phrases:
-  - id: ph-n1p2-074
-    is: "Þetta er stafrófið."
-    fr: "C'est l'alphabet."
-    en: "This is the alphabet."
-  - id: ph-n1p2-075
-    is: "Hús."
-    fr: "Maison."
-    en: "House."
-  - id: ph-n1p2-076
-    is: "Það."
-    fr: "Cela."
-    en: "That."
-  - id: ph-n1p2-077
+  - id: ph-n1p2-151
     is: "Komið þið sæl! Í dag lærum við um veðrið."
     fr: "Bonjour à tous ! Aujourd'hui, nous apprenons le temps qu'il fait."
     en: "Hello everyone! Today we're learning about the weather."
-  - id: ph-n1p2-078
+  - id: ph-n1p2-152
     is: "Aðeins hægar, takk!"
     fr: "Un peu plus lentement, s'il te plaît !"
     en: "A bit more slowly, please!"
+  - id: ph-n1p2-153
+    is: "Það er rigning."
+    fr: "Il pleut."
+    en: "It's raining."
+  - id: ph-n1p2-154
+    is: "Hvar er bankinn?"
+    fr: "Où est la banque ?"
+    en: "Where is the bank?"
 
 exercices:
-  # --- Leçon 1 : l'alphabet -------------------------------------------------
+  # --- Leçon 1 : en ville ------------------------------------------------------
   - id: ex-n1p2pp-l1-01
     type: retrouver
     consigne:
-      fr: "Comment s'appelle la lettre þ ?"
-      en: "What is the letter þ called?"
+      fr: "Comment dit-on « Où est l'église ? »"
+      en: "How do you say “Where is the church?”"
     choix:
-      - { is: "þorn", correct: true }
-      - { is: "eð" }
-      - { is: "té" }
+      - { is: "Hvar er kirkjan?", correct: true }
+      - { is: "Hvað er kirkjan?" }
+      - { is: "Hver er kirkjan?" }
 
   - id: ex-n1p2pp-l1-02
     type: reconnaitre
-    support: texte
-    question: ph-n1p2-074
+    support: audio
+    question: ph-n1p2-154
     consigne:
-      fr: "Quelles lettres ne servent que pour les mots étrangers ?"
-      en: "Which letters are only used in foreign words?"
+      fr: "Écoute. Que demande-t-on ?"
+      en: "Listen. What is being asked?"
     choix:
-      - { fr: "c, q, w, z", en: "c, q, w, z", correct: true }
-      - { fr: "þ, ð, æ, ö", en: "þ, ð, æ, ö" }
-      - { fr: "á, é, í, ó", en: "á, é, í, ó" }
+      - { fr: "Où est la banque ?",  en: "Where is the bank?", correct: true }
+      - { fr: "Où est le port ?",    en: "Where is the harbour?" }
+      - { fr: "Où est le magasin ?", en: "Where is the shop?" }
 
-  # --- Leçon 2 : les voyelles ------------------------------------------------
+  - id: ex-n1p2pp-l1-03
+    type: grille
+    consigne:
+      fr: "Touche les lettres dans l'ordre pour écrire le mot islandais."
+      en: "Tap the letters in order to write the Icelandic word."
+    sens: { fr: "l'église", en: "the church" }
+    a_trouver: "kirkjan"
+
+  # --- Leçon 2 : dans mon sac ----------------------------------------------------
   - id: ex-n1p2pp-l2-01
-    type: reconnaitre
-    support: audio
-    question: ph-n1p2-075
-    consigne:
-      fr: "Écoute. Quelle voyelle entends-tu ?"
-      en: "Listen. Which vowel do you hear?"
-    choix:
-      - { fr: "ú (« ou »)", en: "ú (“oo”)", correct: true }
-      - { fr: "u",          en: "u" }
-      - { fr: "ó",          en: "ó" }
-
-  - id: ex-n1p2pp-l2-02
-    type: dictee
-    consigne:
-      fr: "Écoute les noms des lettres, puis écris le mot."
-      en: "Listen to the letter names, then write the word."
-    a_epeler: "eyja"
-    sens: { fr: "île", en: "island" }
-    tolerance:
-      accents: exiger
-      ponctuation_finale: ignorer
-      majuscule_initiale: ignorer
-
-  # --- Leçon 3 : les consonnes -----------------------------------------------
-  - id: ex-n1p2pp-l3-01
-    type: reconnaitre
-    support: audio
-    question: ph-n1p2-076
-    consigne:
-      fr: "Écoute. Ce mot finit par…"
-      en: "Listen. This word ends with…"
-    choix:
-      - { fr: "ð (th de « this »)",  en: "ð (th as in “this”)", correct: true }
-      - { fr: "þ (th de « think »)", en: "þ (th as in “think”)" }
-      - { fr: "d",                   en: "d" }
-
-  - id: ex-n1p2pp-l3-02
-    type: retrouver
-    consigne:
-      fr: "Comment dit-on « Où est le glacier ? »"
-      en: "How do you say “Where is the glacier?”"
-    choix:
-      - { is: "Hvar er jökullinn?", correct: true }
-      - { is: "Hvað er jökullinn?" }
-      - { is: "Hvaðan er jökullinn?" }
-
-  # --- Leçon 4 : épeler --------------------------------------------------------
-  - id: ex-n1p2pp-l4-01
-    type: dictee
-    consigne:
-      fr: "Écoute ce prénom épelé, puis écris-le."
-      en: "Listen to this name being spelled, then write it."
-    a_epeler: "Austri"
-    sens: { fr: "le prénom du renne", en: "the reindeer's name" }
-    tolerance:
-      accents: exiger
-      ponctuation_finale: ignorer
-      majuscule_initiale: ignorer
-
-  - id: ex-n1p2pp-l4-02
-    type: accorder
-    consigne:
-      fr: "Choisis la bonne forme."
-      en: "Pick the right form."
-    phrase_a_trous: "Hvernig ___ þú það?"
-    choix:
-      - { is: "stafar", correct: true }
-      - { is: "stafa" }
-
-  # --- Leçon 5 : la classe -----------------------------------------------------
-  - id: ex-n1p2pp-l5-01
     type: retrouver
     consigne:
       fr: "Comment dit-on « le professeur » ?"
@@ -162,19 +95,7 @@ exercices:
       - { is: "nemandinn" }
       - { is: "penninn" }
 
-  - id: ex-n1p2pp-l5-02
-    type: dictee
-    consigne:
-      fr: "Écoute les noms des lettres, puis écris le mot."
-      en: "Listen to the letter names, then write the word."
-    a_epeler: "tafla"
-    sens: { fr: "tableau (de la classe)", en: "board" }
-    tolerance:
-      accents: exiger
-      ponctuation_finale: ignorer
-      majuscule_initiale: ignorer
-
-  - id: ex-n1p2pp-l5-03
+  - id: ex-n1p2pp-l2-02
     type: produire
     consigne:
       fr: "Écris en islandais : « Où est l'ordinateur ? »"
@@ -185,8 +106,16 @@ exercices:
       ponctuation_finale: ignorer
       majuscule_initiale: ignorer
 
-  # --- Leçon 6 : survivre en cours ---------------------------------------------
-  - id: ex-n1p2pp-l6-01
+  - id: ex-n1p2pp-l2-03
+    type: grille
+    consigne:
+      fr: "Touche les lettres dans l'ordre pour écrire le mot islandais."
+      en: "Tap the letters in order to write the Icelandic word."
+    sens: { fr: "le dictionnaire", en: "the dictionary" }
+    a_trouver: "orðabókin"
+
+  # --- Leçon 3 : survivre en cours -----------------------------------------------
+  - id: ex-n1p2pp-l3-01
     type: retrouver
     consigne:
       fr: "Tu n'as pas compris. Que dis-tu ?"
@@ -196,25 +125,67 @@ exercices:
       - { is: "Ég ekki skil." }
       - { is: "Takk fyrir." }
 
-  - id: ex-n1p2pp-l6-02
+  - id: ex-n1p2pp-l3-02
     type: ecouter_dialogue
     repliques:
-      - { locuteur: bara,      phrase: ph-n1p2-077 }
-      - { locuteur: viktoriya, phrase: ph-n1p2-078 }
+      - { locuteur: superpuffin, phrase: ph-n1p2-151 }
+      - { locuteur: viktoriya,   phrase: ph-n1p2-152 }
     consigne:
       fr: "Que demande Viktoriya ?"
       en: "What is Viktoriya asking for?"
     choix:
-      - { fr: "Que Bára parle plus lentement.", en: "For Bára to speak more slowly.", correct: true }
-      - { fr: "Que Bára répète le mot « veðrið ».", en: "For Bára to repeat the word “veðrið”." }
-      - { fr: "Qu'on lui prête un parapluie.", en: "To borrow an umbrella." }
+      - { fr: "Que Superpuffin parle plus lentement.", en: "For Superpuffin to speak more slowly.", correct: true }
+      - { fr: "Qu'il répète le mot « veðrið ».",       en: "For him to repeat the word “veðrið”." }
+      - { fr: "Qu'on lui prête un parapluie.",         en: "To borrow an umbrella." }
 
-  - id: ex-n1p2pp-l6-03
+  - id: ex-n1p2pp-l3-03
     type: produire
     consigne:
-      fr: "Demande ce que veut dire « fjall »."
-      en: "Ask what “fjall” means."
-    reponses_acceptees: ["Hvað þýðir fjall?"]
+      fr: "Demande ce que veut dire « höfn »."
+      en: "Ask what “höfn” means."
+    reponses_acceptees: ["Hvað þýðir höfn?"]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+  # --- Leçon 4 : le temps qu'il fait ---------------------------------------------
+  - id: ex-n1p2pp-l4-01
+    type: reconnaitre
+    support: audio
+    question: ph-n1p2-153
+    consigne:
+      fr: "Écoute. Quel temps fait-il ?"
+      en: "Listen. What's the weather like?"
+    choix:
+      - { fr: "Il pleut.",         en: "It's raining.", correct: true }
+      - { fr: "Il neige.",         en: "It's snowing." }
+      - { fr: "Il y a du soleil.", en: "It's sunny." }
+
+  - id: ex-n1p2pp-l4-02
+    type: retrouver
+    consigne:
+      fr: "Tu as froid. Que dis-tu ?"
+      en: "You're cold. What do you say?"
+    choix:
+      - { is: "Mér er kalt.", correct: true }
+      - { is: "Ég er kalt." }
+      - { is: "Það er sól." }
+
+  - id: ex-n1p2pp-l4-03
+    type: grille
+    consigne:
+      fr: "Touche les lettres dans l'ordre pour écrire la phrase islandaise."
+      en: "Tap the letters in order to write the Icelandic sentence."
+    sens: { fr: "Il y a du soleil.", en: "It's sunny." }
+    a_trouver: "Það er sól."
+
+  - id: ex-n1p2pp-l4-04
+    type: produire
+    consigne:
+      fr: "Écris en islandais : « Il fait froid. »"
+      en: "Write in Icelandic: “It's cold.”"
+    reponses_acceptees: ["Það er kalt."]
     tolerance:
       accents: signaler
       ponctuation_finale: ignorer

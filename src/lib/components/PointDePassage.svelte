@@ -8,6 +8,7 @@
 	import ExChoix from './ExChoix.svelte';
 	import ExConstruire from './ExConstruire.svelte';
 	import ExProduire from './ExProduire.svelte';
+	import ExGrille from './ExGrille.svelte';
 	import { t, type Langue } from '#lib/i18n.ts';
 	import { leconVisee, type Lecon, type PointDePassage } from '#lib/schema.ts';
 	import type { Issue } from '#lib/types.ts';
@@ -105,6 +106,8 @@
 			{#key `${essai}-${position}`}
 				{#if ex.type === 'construire'}
 					<ExConstruire {ex} lecon={contexte} {langue} fige={!!issue} ontermine={terminer} />
+				{:else if ex.type === 'grille'}
+					<ExGrille {ex} {langue} fige={!!issue} ontermine={terminer} />
 				{:else if ex.type === 'produire' || ex.type === 'dictee'}
 					<ExProduire {ex} {langue} fige={!!issue} ontermine={terminer} />
 				{:else if ex.type !== 'associer'}
