@@ -24,18 +24,14 @@ type Reglage = { voix: Voix; vitesse: number };
 
 /**
  * Une voix par personnage. vitesse = length_scale : plus grand = plus lent.
- * Choix à l'écoute (17/10/2026) : Grammatek, sans marques d'accent, sonne juste ; elle
+ * Choix à l'écoute (17/10/2026, puis 20/10/2026 : seuls Superpuffin et Viktoriya sont gardés) : Grammatek, sans marques d'accent, sonne juste ; elle
  * remplace les voix masculines Piper (Búi, Steinn). Les voix féminines restent Piper
  * (Salka, Ugla), faute d'autre voix libre. Les personnages qui partagent une voix se
  * distinguent par la vitesse.
  */
 export const VOIX_PERSONNAGES: Record<string, Reglage> = {
 	superpuffin: { voix: 'grammatek-steinn', vitesse: 0.92 }, // énergique
-	viktoriya: { voix: 'is_IS-ugla-medium', vitesse: 1.05 }, // apprenante, un peu prudente
-	bara: { voix: 'is_IS-salka-medium', vitesse: 1.0 }, // vitesse naturelle de Salka : ralentie, elle déforme les mots
-	austri: { voix: 'grammatek-steinn', vitesse: 1.05 }, // posé
-	kolla: { voix: 'is_IS-ugla-medium', vitesse: 0.92 }, // bavarde
-	blesi: { voix: 'grammatek-steinn', vitesse: 0.85 } // toujours pressé
+	viktoriya: { voix: 'is_IS-ugla-medium', vitesse: 1.05 } // apprenante, un peu prudente
 };
 
 /** Voix des phrases dites hors dialogue (questions d'exercice, choix, blocs, mots en révision). */
@@ -71,6 +67,7 @@ type ExerciceBrut = {
 	phrase_a_trous?: string;
 	reponses_acceptees?: string[];
 	a_epeler?: string;
+	a_trouver?: string;
 };
 type LeconBrute = {
 	phrases: { id: string; is: string }[];
@@ -110,6 +107,8 @@ export function textesExercice(ex: ExerciceBrut, phrases: Map<string, string>): 
 			return { blocs: ex.blocs!.map((b) => (sonore(b) ? b : null)), reponse: phrases.get(ex.reponse!) };
 		case 'produire':
 			return ex.reponses_acceptees ? { reponses: ex.reponses_acceptees } : {};
+		case 'grille':
+			return { reponse: ex.a_trouver };
 		case 'dictee':
 			return { lettres: epeler(ex.a_epeler!), reponse: ex.a_epeler };
 		default:

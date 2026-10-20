@@ -3,7 +3,7 @@
 // tout champ inconnu est rejeté (objets stricts).
 import { z } from 'zod';
 import { assembler } from './correction.ts';
-import { epeler } from './lettres.ts';
+import { epeler, NOMS_LETTRES } from './lettres.ts';
 
 const texte = z
 	.string()
@@ -14,7 +14,8 @@ const texte = z
 
 const bilingue = z.strictObject({ fr: texte, en: texte });
 
-export const PERSONNAGES = ['superpuffin', 'viktoriya', 'bara', 'austri', 'kolla', 'blesi'] as const;
+// Deux personnages seulement : leurs voix sont les seules jugées justes à l'écoute (20/10/2026).
+export const PERSONNAGES = ['superpuffin', 'viktoriya'] as const;
 const personnage = z.enum(PERSONNAGES);
 
 const idMot = z.string().regex(/^w-[a-z0-9-]+$/);
@@ -100,6 +101,13 @@ const exercice = z.discriminatedUnion('type', [
 		suite_libre: z.literal('prenom').optional(),
 		tolerance
 	}),
+	// Grille : le sens est affiché, l'apprenant touche les lettres du mot islandais dans l'ordre.
+	z.strictObject({
+		...base,
+		type: z.literal('grille'),
+		sens: bilingue,
+		a_trouver: texte.max(60)
+	}),
 	// Dictée : l'appli épelle un mot lettre par lettre (noms islandais des lettres), l'apprenant le tape.
 	z.strictObject({
 		...base,
@@ -147,6 +155,12 @@ function verifierExercices(
 			const attendu = phrases.get(ex.reponse)?.is;
 			if (attendu && assembler(ex.blocs) !== attendu)
 				erreur(`${ex.id} : les blocs ne reconstituent pas « ${attendu} »`);
+		}
+		if (ex.type === 'grille') {
+			const lettres = [...ex.a_trouver.normalize('NFC').toLocaleLowerCase('is')].filter((c) => /\p{L}/u.test(c));
+			const inconnues = lettres.filter((c) => !(c in NOMS_LETTRES));
+			if (inconnues.length) erreur(`${ex.id} : lettres hors alphabet (${inconnues.join(', ')})`);
+			if (lettres.length < 2 || lettres.length > 30) erreur(`${ex.id} : entre 2 et 30 lettres à trouver (${lettres.length})`);
 		}
 		if (ex.type === 'dictee') {
 			try {

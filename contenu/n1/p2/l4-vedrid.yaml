@@ -1,0 +1,287 @@
+# Viktoriya is learning Icelandic — Niveau 1, Partie 2, Leçon 4
+# Licence du contenu : CC BY-SA 4.0
+# Texte écrit de zéro. Aucun texte, dialogue, exercice ni personnage du manuel Íslenska fyrir alla.
+# Les remarques de prononciation passent par des mots entiers, jamais par des lettres isolées.
+
+schema: superpuffin/lecon@1
+id: n1-p2-l4
+niveau: 1
+partie: 2
+ordre: 4
+duree_minutes: 5
+titre:
+  fr: "Il pleut !"
+  en: "It's raining!"
+objectif:
+  fr: "Dire le temps qu'il fait, et dire qu'on a froid."
+  en: "Say what the weather is like, and say you're cold."
+personnages: [superpuffin, viktoriya]
+
+# ---------------------------------------------------------------------------
+# Mots nouveaux (10).
+# ---------------------------------------------------------------------------
+mots:
+  - id: w-hvernig-er-vedrid
+    lemme: "hvernig er veðrið?"
+    categorie: expression
+    fr: "quel temps fait-il ?"
+    en: "what's the weather like?"
+  - id: w-rigning
+    lemme: "rigning"
+    categorie: nom
+    genre: f
+    fr: "pluie"
+    en: "rain"
+    note:
+      fr: "Le r se roule. Devant n, le g sonne presque comme un k : « rikning »."
+      en: "Roll the r. Before n, the g sounds almost like a k: “rikning”."
+  - id: w-sol
+    lemme: "sól"
+    categorie: nom
+    genre: f
+    fr: "soleil"
+    en: "sun"
+    note:
+      fr: "ó sonne « oou », comme le « oh » anglais de « go »."
+      en: "ó sounds like the “o” in “go”."
+  - id: w-vindur
+    lemme: "vindur"
+    categorie: nom
+    genre: m
+    fr: "vent"
+    en: "wind"
+  - id: w-snjor
+    lemme: "snjór"
+    categorie: nom
+    genre: m
+    fr: "neige"
+    en: "snow"
+  - id: w-kalt
+    lemme: "kalt"
+    categorie: adjectif
+    fr: "froid (il fait froid)"
+    en: "cold"
+  - id: w-hlytt
+    lemme: "hlýtt"
+    categorie: adjectif
+    fr: "doux, chaud (il fait bon)"
+    en: "warm"
+    note:
+      fr: "hl se dit comme un l soufflé, sans voix."
+      en: "hl is a breathy, voiceless l."
+  - id: w-mer-er-kalt
+    lemme: "mér er kalt"
+    categorie: expression
+    fr: "j'ai froid"
+    en: "I'm cold"
+    note:
+      fr: "Mot à mot : « à moi, il est froid ». Jamais « ég er kalt »."
+      en: "Word for word: “to me it is cold”. Never “ég er kalt”."
+  - id: w-i-dag
+    lemme: "í dag"
+    categorie: expression
+    fr: "aujourd'hui"
+    en: "today"
+  - id: w-gott-vedur
+    lemme: "gott veður"
+    categorie: expression
+    fr: "beau temps"
+    en: "nice weather"
+
+# ---------------------------------------------------------------------------
+# Phrases.
+# ---------------------------------------------------------------------------
+phrases:
+  - id: ph-n1p2-131
+    is: "Góðan daginn, Superpuffin! Hvernig er veðrið í dag?"
+    fr: "Bonjour, Superpuffin ! Quel temps fait-il aujourd'hui ?"
+    en: "Good morning, Superpuffin! What's the weather like today?"
+  - id: ph-n1p2-132
+    is: "Það er rigning og vindur. Og kalt!"
+    fr: "Il pleut et il y a du vent. Et il fait froid !"
+    en: "It's raining and windy. And cold!"
+  - id: ph-n1p2-133
+    is: "Ég er kalt!"
+    fr: "(erreur) J'ai froid !"
+    en: "(mistake) I'm cold!"
+    erreur_volontaire: true
+  - id: ph-n1p2-134
+    is: "Nei, nei: mér er kalt!"
+    fr: "Non, non : « mér er kalt » !"
+    en: "No, no: “mér er kalt”!"
+  - id: ph-n1p2-135
+    is: "Mér er kalt! En á morgun?"
+    fr: "J'ai froid ! Mais demain ?"
+    en: "I'm cold! But tomorrow?"
+  - id: ph-n1p2-136
+    is: "Á morgun er sól. Það er gott veður!"
+    fr: "Demain, il y a du soleil. Il fait beau !"
+    en: "Tomorrow there's sun. The weather's nice!"
+  - id: ph-n1p2-137
+    is: "Frábært! Sjáumst á morgun!"
+    fr: "Génial ! À demain !"
+    en: "Great! See you tomorrow!"
+  - id: ph-n1p2-138
+    is: "Það er snjór."
+    fr: "Il neige."
+    en: "It's snowing."
+  - id: ph-n1p2-139
+    is: "Það er hlýtt í dag."
+    fr: "Il fait bon aujourd'hui."
+    en: "It's warm today."
+  - id: ph-n1p2-140
+    is: "Hvernig er veðrið?"
+    fr: "Quel temps fait-il ?"
+    en: "What's the weather like?"
+
+# ---------------------------------------------------------------------------
+# Scène d'ouverture : un matin de pluie.
+# ---------------------------------------------------------------------------
+scene:
+  lieu: seydisfjordur-port
+  didascalie:
+    fr: "Le lendemain matin, la pluie tombe sur le port. Viktoriya grelotte sous son capuchon. Superpuffin, lui, adore ce temps-là."
+    en: "Next morning, rain is falling on the harbour. Viktoriya is shivering under her hood. Superpuffin loves this kind of weather."
+  repliques:
+    - { locuteur: viktoriya,   phrase: ph-n1p2-131 }
+    - { locuteur: superpuffin, phrase: ph-n1p2-132 }
+    - { locuteur: viktoriya,   phrase: ph-n1p2-133 }
+    - { locuteur: superpuffin, phrase: ph-n1p2-134 }
+    - { locuteur: viktoriya,   phrase: ph-n1p2-135 }
+    - { locuteur: superpuffin, phrase: ph-n1p2-136 }
+    - { locuteur: viktoriya,   phrase: ph-n1p2-137 }
+
+# ---------------------------------------------------------------------------
+# Carte de grammaire.
+# ---------------------------------------------------------------------------
+explication:
+  id: gr-vedrid
+  introduite_par: viktoriya
+  question:
+    fr: "Pourquoi « mér er kalt », et pas « ég er kalt » ?"
+    en: "Why “mér er kalt” and not “ég er kalt”?"
+  reponse:
+    fr: "Pour la météo, l'islandais dit « það er… » : það er rigning, það er sól, það er kalt. Pour dire que toi, tu as froid, on dit « mér er kalt » : mot à mot, « à moi, il fait froid ». Retiens-le comme un bloc."
+    en: "For the weather, Icelandic says “það er…”: það er rigning, það er sól, það er kalt. To say that you are cold, you say “mér er kalt”: word for word, “to me it is cold”. Learn it as one block."
+  tableau:
+    - { is: "Það er rigning.", fr: "Il pleut.",                  en: "It's raining." }
+    - { is: "Það er sól.",     fr: "Il y a du soleil.",          en: "It's sunny." }
+    - { is: "Það er kalt.",    fr: "Il fait froid.",             en: "It's cold." }
+    - { is: "Það er hlýtt.",   fr: "Il fait bon.",               en: "It's warm." }
+    - { is: "Mér er kalt.",    fr: "J'ai froid.",                en: "I'm cold." }
+
+# ---------------------------------------------------------------------------
+# Exercices (10).
+# ---------------------------------------------------------------------------
+exercices:
+  - id: ex-n1p2l4-01
+    type: reconnaitre
+    support: audio_et_texte
+    question: ph-n1p2-132
+    consigne:
+      fr: "Quel temps fait-il ?"
+      en: "What's the weather like?"
+    choix:
+      - { fr: "Pluie, vent, et il fait froid.", en: "Rain, wind, and it's cold.", correct: true }
+      - { fr: "Soleil, et il fait bon.",        en: "Sun, and it's warm." }
+      - { fr: "Il neige.",                      en: "It's snowing." }
+
+  - id: ex-n1p2l4-02
+    type: associer
+    consigne:
+      fr: "Relie les paires."
+      en: "Match the pairs."
+    paires:
+      - { mot: w-rigning }
+      - { mot: w-sol }
+      - { mot: w-vindur }
+      - { mot: w-snjor }
+      - { mot: w-hlytt }
+
+  - id: ex-n1p2l4-03
+    type: reconnaitre
+    support: audio
+    question: ph-n1p2-138
+    consigne:
+      fr: "Écoute. Quel temps fait-il ?"
+      en: "Listen. What's the weather like?"
+    choix:
+      - { fr: "Il neige.",     en: "It's snowing.", correct: true }
+      - { fr: "Il pleut.",     en: "It's raining." }
+      - { fr: "Il fait beau.", en: "The weather's nice." }
+
+  - id: ex-n1p2l4-04
+    type: retrouver
+    consigne:
+      fr: "Tu as froid. Que dis-tu ?"
+      en: "You're cold. What do you say?"
+    choix:
+      - { is: "Mér er kalt.", correct: true }
+      - { is: "Ég er kalt." }
+      - { is: "Það er hlýtt." }
+
+  - id: ex-n1p2l4-05
+    type: ecouter_dialogue
+    repliques:
+      - { locuteur: viktoriya,   phrase: ph-n1p2-133 }
+      - { locuteur: superpuffin, phrase: ph-n1p2-134 }
+    consigne:
+      fr: "Que corrige Superpuffin ?"
+      en: "What does Superpuffin correct?"
+    choix:
+      - { fr: "On dit « mér er kalt », pas « ég er kalt ».", en: "You say “mér er kalt”, not “ég er kalt”.", correct: true }
+      - { fr: "Il fait chaud, pas froid.",                   en: "It's warm, not cold." }
+      - { fr: "Il pleut, il ne neige pas.",                  en: "It's raining, not snowing." }
+
+  - id: ex-n1p2l4-06
+    type: accorder
+    consigne:
+      fr: "« Il fait bon aujourd'hui. » Choisis le bon mot."
+      en: "“It's warm today.” Pick the right word."
+    phrase_a_trous: "Það er ___ í dag."
+    choix:
+      - { is: "hlýtt", correct: true }
+      - { is: "kalt" }
+      - { is: "snjór" }
+    explication: gr-vedrid
+
+  - id: ex-n1p2l4-07
+    type: construire
+    consigne:
+      fr: "Remets dans l'ordre : « Il fait bon aujourd'hui. »"
+      en: "Put in order: “It's warm today.”"
+    blocs: ["Það", "er", "hlýtt", "í", "dag", "."]
+    reponse: ph-n1p2-139
+
+  - id: ex-n1p2l4-08
+    type: grille
+    consigne:
+      fr: "Touche les lettres dans l'ordre pour écrire le mot islandais."
+      en: "Tap the letters in order to write the Icelandic word."
+    sens: { fr: "la pluie", en: "rain" }
+    a_trouver: "rigning"
+
+  - id: ex-n1p2l4-09
+    type: grille
+    consigne:
+      fr: "Touche les lettres dans l'ordre pour écrire les mots islandais."
+      en: "Tap the letters in order to write the Icelandic words."
+    sens: { fr: "Beau temps !", en: "Nice weather!" }
+    a_trouver: "Gott veður!"
+
+  - id: ex-n1p2l4-10
+    type: produire
+    consigne:
+      fr: "Demande quel temps il fait, en islandais."
+      en: "Ask what the weather is like, in Icelandic."
+    reponses_acceptees: ["Hvernig er veðrið?", "Hvernig er veðrið í dag?"]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+fin:
+  locuteur: superpuffin
+  message:
+    fr: "Bravo ! Pluie, vent ou soleil, tu sais le dire. Prochaine étape : le point de passage de la Partie 2."
+    en: "Well done! Rain, wind or sun, you can say it. Next up: the Part 2 checkpoint."

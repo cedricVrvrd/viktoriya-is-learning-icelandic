@@ -1,13 +1,13 @@
-# Viktoriya is learning Icelandic — Niveau 1, Partie 2, Leçon 6
+# Viktoriya is learning Icelandic — Niveau 1, Partie 2, Leçon 3
 # Licence du contenu : CC BY-SA 4.0
 # Texte écrit de zéro à partir de la fiche de structure N1-P2.
 # Aucun texte, dialogue, exercice ni personnage du manuel Íslenska fyrir alla.
 
 schema: superpuffin/lecon@1
-id: n1-p2-l6
+id: n1-p2-l3
 niveau: 1
 partie: 2
-ordre: 6
+ordre: 3
 duree_minutes: 5
 titre:
   fr: "Je n'ai pas compris"
@@ -15,7 +15,7 @@ titre:
 objectif:
   fr: "Dire qu'on ne comprend pas, et demander de répéter, de ralentir, ou ce qu'un mot veut dire."
   en: "Say you don't understand, and ask someone to repeat, slow down, or explain a word."
-personnages: [bara, kolla, viktoriya, austri]
+personnages: [superpuffin, viktoriya]
 
 # ---------------------------------------------------------------------------
 # Mots nouveaux (10). Phrases de survie apprises en blocs.
@@ -92,9 +92,9 @@ phrases:
     fr: "Bonjour à tous !"
     en: "Hello everyone!"
   - id: ph-n1p2-062
-    is: "Komdu sæl, Bára!"
-    fr: "Bonjour, Bára !"
-    en: "Hello, Bára!"
+    is: "Komdu sæll, Superpuffin!"
+    fr: "Bonjour, Superpuffin !"
+    en: "Hello, Superpuffin!"
   - id: ph-n1p2-063
     is: "Í dag lærum við um veðrið á Austurlandi."
     fr: "Aujourd'hui, nous apprenons le temps qu'il fait dans l'Est."
@@ -105,9 +105,9 @@ phrases:
     en: "(mistake) I don't understand…"
     erreur_volontaire: true
   - id: ph-n1p2-065
-    is: "Ég skil ekki!"
-    fr: "Je ne comprends pas !"
-    en: "I don't understand!"
+    is: "Nei, nei: ég skil ekki!"
+    fr: "Non, non : « ég skil ekki » !"
+    en: "No, no: “ég skil ekki”!"
   - id: ph-n1p2-066
     is: "Ég skil ekki. Aðeins hægar, takk!"
     fr: "Je ne comprends pas. Un peu plus lentement, s'il te plaît !"
@@ -142,25 +142,25 @@ phrases:
     en: "How do you say “bók” in Danish?"
 
 # ---------------------------------------------------------------------------
-# Scène d'ouverture : Bára parle trop vite.
+# Scène d'ouverture : Superpuffin parle trop vite.
 # ---------------------------------------------------------------------------
 scene:
   lieu: ecole-salle-de-classe
   didascalie:
-    fr: "Troisième cours du soir : toute la bande est là. Bára arrive en coup de vent, salue la classe et se lance à toute vitesse. Dehors, il pleut à verse."
-    en: "Third evening class: the whole gang is there. Bára rushes in, greets the class and launches in at full speed. Outside, it's pouring with rain."
+    fr: "Ce soir, la classe est pleine. Superpuffin arrive en coup de vent, salue tout le monde et se lance à toute vitesse. Dehors, il pleut à verse."
+    en: "Tonight the class is full. Superpuffin rushes in, greets everyone and launches in at full speed. Outside, it's pouring with rain."
   repliques:
-    - { locuteur: bara,      phrase: ph-n1p2-061 }
-    - { locuteur: kolla,     phrase: ph-n1p2-062 }
-    - { locuteur: bara,      phrase: ph-n1p2-063 }
-    - { locuteur: viktoriya, phrase: ph-n1p2-064 }
-    - { locuteur: kolla,     phrase: ph-n1p2-065 }
-    - { locuteur: viktoriya, phrase: ph-n1p2-066 }
-    - { locuteur: bara,      phrase: ph-n1p2-067 }
-    - { locuteur: viktoriya, phrase: ph-n1p2-068 }
-    - { locuteur: austri,    phrase: ph-n1p2-069 }
-    - { locuteur: viktoriya, phrase: ph-n1p2-070 }
-    - { locuteur: bara,      phrase: ph-n1p2-071 }
+    - { locuteur: superpuffin, phrase: ph-n1p2-061 }
+    - { locuteur: viktoriya,   phrase: ph-n1p2-062 }
+    - { locuteur: superpuffin, phrase: ph-n1p2-063 }
+    - { locuteur: viktoriya,   phrase: ph-n1p2-064 }
+    - { locuteur: superpuffin, phrase: ph-n1p2-065 }
+    - { locuteur: viktoriya,   phrase: ph-n1p2-066 }
+    - { locuteur: superpuffin, phrase: ph-n1p2-067 }
+    - { locuteur: viktoriya,   phrase: ph-n1p2-068 }
+    - { locuteur: superpuffin, phrase: ph-n1p2-069 }
+    - { locuteur: viktoriya,   phrase: ph-n1p2-070 }
+    - { locuteur: superpuffin, phrase: ph-n1p2-071 }
 
 # ---------------------------------------------------------------------------
 # Carte de grammaire.
@@ -185,32 +185,32 @@ explication:
 # Exercices (11).
 # ---------------------------------------------------------------------------
 exercices:
-  - id: ex-n1p2l6-01
+  - id: ex-n1p2l3-01
     type: reconnaitre
     support: audio_et_texte
     question: ph-n1p2-061
     consigne:
-      fr: "Que dit Bára en entrant ?"
-      en: "What does Bára say as she comes in?"
+      fr: "Que dit Superpuffin en entrant ?"
+      en: "What does Superpuffin say as he comes in?"
     choix:
       - { fr: "Bonjour à tous !",  en: "Hello everyone!", correct: true }
       - { fr: "Au revoir !",       en: "Goodbye!" }
       - { fr: "Merci beaucoup !",  en: "Thank you very much!" }
 
-  - id: ex-n1p2l6-02
+  - id: ex-n1p2l3-02
     type: ecouter_dialogue
     repliques:
       - { locuteur: viktoriya, phrase: ph-n1p2-064 }
-      - { locuteur: kolla,     phrase: ph-n1p2-065 }
+      - { locuteur: superpuffin, phrase: ph-n1p2-065 }
     consigne:
-      fr: "Que corrige Kolla ?"
-      en: "What does Kolla correct?"
+      fr: "Que corrige Superpuffin ?"
+      en: "What does Superpuffin correct?"
     choix:
       - { fr: "La place de ekki : après le verbe.", en: "Where ekki goes: after the verb.", correct: true }
       - { fr: "Le vouvoiement.",                    en: "Being too formal." }
       - { fr: "La prononciation de skil.",          en: "How skil is pronounced." }
 
-  - id: ex-n1p2l6-03
+  - id: ex-n1p2l3-03
     type: associer
     consigne:
       fr: "Relie les paires."
@@ -222,7 +222,7 @@ exercices:
       - { mot: w-adeins-haegar }
       - { mot: w-regnhlif }
 
-  - id: ex-n1p2l6-04
+  - id: ex-n1p2l3-04
     type: accorder
     consigne:
       fr: "Choisis la bonne forme."
@@ -233,7 +233,7 @@ exercices:
       - { is: "skilur" }
     explication: gr-ekki
 
-  - id: ex-n1p2l6-05
+  - id: ex-n1p2l3-05
     type: retrouver
     consigne:
       fr: "Tu n'as pas compris. Que dis-tu ?"
@@ -243,17 +243,17 @@ exercices:
       - { is: "Ég ekki skil." }
       - { is: "Ég skil." }
 
-  - id: ex-n1p2l6-06
+  - id: ex-n1p2l3-06
     type: retrouver
     consigne:
-      fr: "Bára parle trop vite. Que lui dis-tu ?"
-      en: "Bára is speaking too fast. What do you tell her?"
+      fr: "Superpuffin parle trop vite. Que lui dis-tu ?"
+      en: "Superpuffin is speaking too fast. What do you tell him?"
     choix:
       - { is: "Aðeins hægar, takk.", correct: true }
       - { is: "Komið þið sæl." }
       - { is: "Það er gaman." }
 
-  - id: ex-n1p2l6-07
+  - id: ex-n1p2l3-07
     type: reconnaitre
     support: audio
     question: ph-n1p2-072
@@ -265,7 +265,7 @@ exercices:
       - { fr: "Comment s'écrit le mot ?", en: "How is the word spelt?" }
       - { fr: "Où est le mot ?",          en: "Where is the word?" }
 
-  - id: ex-n1p2l6-08
+  - id: ex-n1p2l3-08
     type: construire
     consigne:
       fr: "Remets dans l'ordre : « Comment dit-on bók en danois ? »"
@@ -273,7 +273,7 @@ exercices:
     blocs: ["Hvernig", "segir", "maður", "bók", "á", "dönsku", "?"]
     reponse: ph-n1p2-073
 
-  - id: ex-n1p2l6-09
+  - id: ex-n1p2l3-09
     type: produire
     consigne:
       fr: "Écris en islandais : « Je ne comprends pas. »"
@@ -284,7 +284,7 @@ exercices:
       ponctuation_finale: ignorer
       majuscule_initiale: ignorer
 
-  - id: ex-n1p2l6-10
+  - id: ex-n1p2l3-10
     type: produire
     consigne:
       fr: "Demande ce que veut dire « regnhlíf »."
@@ -295,20 +295,16 @@ exercices:
       ponctuation_finale: ignorer
       majuscule_initiale: ignorer
 
-  - id: ex-n1p2l6-11
-    type: dictee
+  - id: ex-n1p2l3-11
+    type: grille
     consigne:
-      fr: "Écoute les noms des lettres, puis écris le mot."
-      en: "Listen to the letter names, then write the word."
-    a_epeler: "aftur"
-    sens: { fr: "encore, de nouveau", en: "again" }
-    tolerance:
-      accents: exiger
-      ponctuation_finale: ignorer
-      majuscule_initiale: ignorer
+      fr: "Touche les lettres dans l'ordre pour écrire la phrase islandaise."
+      en: "Tap the letters in order to write the Icelandic sentence."
+    sens: { fr: "Je ne comprends pas.", en: "I don't understand." }
+    a_trouver: "Ég skil ekki."
 
 fin:
-  locuteur: bara
+  locuteur: superpuffin
   message:
-    fr: "Bravo ! Avec ces phrases, tu ne seras plus jamais perdue en cours. Prochaine étape : le point de passage de la Partie 2."
-    en: "Well done! With these phrases, you'll never be lost in class again. Next up: the Part 2 checkpoint."
+    fr: "Bravo ! Avec ces phrases, tu ne seras plus jamais perdue en cours. Prochaine leçon : la pluie et le beau temps."
+    en: "Well done! With these phrases, you'll never be lost in class again. Next lesson: rain and sunshine."

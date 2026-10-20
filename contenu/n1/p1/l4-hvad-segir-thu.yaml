@@ -15,7 +15,7 @@ titre:
 objectif:
   fr: "Prendre des nouvelles et prendre congé."
   en: "Ask how someone is, and say goodbye."
-personnages: [kolla, superpuffin, viktoriya]
+personnages: [superpuffin, viktoriya]
 
 mots:
   - id: w-segja
@@ -80,14 +80,10 @@ phrases:
     is: "Góðan daginn, Superpuffin! Hvað segir þú gott?"
     fr: "Bonjour, Superpuffin ! Comment ça va ?"
     en: "Good morning, Superpuffin! How are you?"
-  - id: ph-n1p1-034
-    is: "Allt fínt, takk! En þú?"
-    fr: "Très bien, merci ! Et toi ?"
-    en: "All fine, thanks! And you?"
   - id: ph-n1p1-035
-    is: "Allt gott! Og þú, Viktoriya? Hvað segir þú?"
-    fr: "Tout va bien ! Et toi, Viktoriya ? Comment ça va ?"
-    en: "All good! And you, Viktoriya? How are you?"
+    is: "Allt fínt, takk! En þú, Viktoriya? Hvað segir þú?"
+    fr: "Très bien, merci ! Et toi, Viktoriya ? Comment ça va ?"
+    en: "All fine, thanks! And you, Viktoriya? How are you?"
   - id: ph-n1p1-036
     is: "Ég segir allt ágætt."
     fr: "(erreur) Ça va, pas mal."
@@ -114,9 +110,9 @@ phrases:
     fr: "Comment ça va ?"
     en: "How are you?"
   - id: ph-n1p1-042
-    is: "Hvað segir þú, Kolla?"
-    fr: "Comment ça va, Kolla ?"
-    en: "How are you, Kolla?"
+    is: "Hvað segir þú, Superpuffin?"
+    fr: "Comment ça va, Superpuffin ?"
+    en: "How are you, Superpuffin?"
   - id: ph-n1p1-043
     is: "Allt sæmilegt."
     fr: "Couci-couça."
@@ -127,19 +123,18 @@ phrases:
     en: "See you tomorrow!"
 
 scene:
-  lieu: ferme-kolla
+  lieu: ferme-fjord
   didascalie:
-    fr: "Au retour du port, Kolla attend la bande devant sa bergerie, une botte de foin entre les dents."
-    en: "Back from the harbour, Kolla is waiting outside her sheep shed, a bunch of hay between her teeth."
+    fr: "Au retour du port, Viktoriya retrouve Superpuffin perché sur la barrière d'une ferme, au-dessus du fjord."
+    en: "Back from the harbour, Viktoriya finds Superpuffin perched on a farm gate above the fjord."
   repliques:
-    - { locuteur: kolla,       phrase: ph-n1p1-033 }
-    - { locuteur: superpuffin, phrase: ph-n1p1-034 }
-    - { locuteur: kolla,       phrase: ph-n1p1-035 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-033 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-035 }
     - { locuteur: viktoriya,   phrase: ph-n1p1-036 }
     - { locuteur: superpuffin, phrase: ph-n1p1-037 }
     - { locuteur: viktoriya,   phrase: ph-n1p1-038 }
-    - { locuteur: kolla,       phrase: ph-n1p1-039 }
-    - { locuteur: superpuffin, phrase: ph-n1p1-040 }
+    - { locuteur: superpuffin, phrase: ph-n1p1-039 }
+    - { locuteur: viktoriya,   phrase: ph-n1p1-040 }
 
 explication:
   id: gr-segja
@@ -216,11 +211,11 @@ exercices:
   - id: ex-n1p1l4-06
     type: ecouter_dialogue
     repliques:
-      - { locuteur: superpuffin, phrase: ph-n1p1-042 }
-      - { locuteur: kolla,       phrase: ph-n1p1-043 }
+      - { locuteur: viktoriya,   phrase: ph-n1p1-042 }
+      - { locuteur: superpuffin, phrase: ph-n1p1-043 }
     consigne:
-      fr: "Comment va Kolla ?"
-      en: "How is Kolla?"
+      fr: "Comment va Superpuffin ?"
+      en: "How is Superpuffin?"
     choix:
       - { fr: "Couci-couça", en: "So-so", correct: true }
       - { fr: "Très bien", en: "Very well" }
@@ -247,9 +242,9 @@ exercices:
   - id: ex-n1p1l4-09
     type: produire
     consigne:
-      fr: "Demande à Kolla comment ça va, en islandais."
-      en: "Ask Kolla how she is, in Icelandic."
-    reponses_acceptees: ["Hvað segir þú gott?", "Hvað segir þú?", "Hvað segir þú gott, Kolla?", "Hvað segir þú, Kolla?"]
+      fr: "Demande à Superpuffin comment ça va, en islandais."
+      en: "Ask Superpuffin how he is, in Icelandic."
+    reponses_acceptees: ["Hvað segir þú gott?", "Hvað segir þú?", "Hvað segir þú gott, Superpuffin?", "Hvað segir þú, Superpuffin?"]
     tolerance:
       accents: signaler
       ponctuation_finale: ignorer
@@ -267,7 +262,7 @@ exercices:
       majuscule_initiale: ignorer
 
 fin:
-  locuteur: kolla
+  locuteur: superpuffin
   message:
-    fr: "Bravo ! Allez, je file : les moutons ne vont pas se garder tout seuls."
-    en: "Well done! Right, I'm off: the sheep won't look after themselves."
+    fr: "Bravo ! Allez, je file pêcher : un macareux a toujours faim."
+    en: "Well done! Right, I'm off fishing: a puffin is always hungry."

@@ -1,0 +1,317 @@
+# Viktoriya is learning Icelandic — Niveau 1, Partie 2, Leçon 1
+# Licence du contenu : CC BY-SA 4.0
+# Texte écrit de zéro. Aucun texte, dialogue, exercice ni personnage du manuel Íslenska fyrir alla.
+# Les remarques de prononciation passent par des mots entiers, jamais par des lettres isolées.
+
+schema: superpuffin/lecon@1
+id: n1-p2-l1
+niveau: 1
+partie: 2
+ordre: 1
+duree_minutes: 5
+titre:
+  fr: "En ville"
+  en: "In town"
+objectif:
+  fr: "Demander où se trouve un lieu, et répondre « ici » ou « là-bas »."
+  en: "Ask where a place is, and answer “here” or “over there”."
+personnages: [superpuffin, viktoriya]
+
+# ---------------------------------------------------------------------------
+# Mots nouveaux (10). Les notes donnent la prononciation des mots qui surprennent.
+# ---------------------------------------------------------------------------
+mots:
+  - id: w-hvar
+    lemme: "hvar"
+    categorie: interrogatif
+    fr: "où"
+    en: "where"
+    note:
+      fr: "hv se prononce « kv » : « kvar »."
+      en: "hv sounds like “kv”: “kvar”."
+  - id: w-her
+    lemme: "hér"
+    categorie: adverbe
+    fr: "ici"
+    en: "here"
+    note:
+      fr: "é se prononce « yè », comme dans « ég »."
+      en: "é sounds like “ye” in “yes”."
+  - id: w-tharna
+    lemme: "þarna"
+    categorie: adverbe
+    fr: "là, là-bas"
+    en: "there, over there"
+  - id: w-kirkja
+    lemme: "kirkja"
+    categorie: nom
+    genre: f
+    formes: ["kirkjan"]
+    fr: "église"
+    en: "church"
+  - id: w-hofn
+    lemme: "höfn"
+    categorie: nom
+    genre: f
+    formes: ["höfnin"]
+    fr: "port"
+    en: "harbour"
+    note:
+      fr: "fn se prononce « pn » : « heupn »."
+      en: "fn sounds like “pn”."
+  - id: w-bud
+    lemme: "búð"
+    categorie: nom
+    genre: f
+    formes: ["búðin"]
+    fr: "magasin, boutique"
+    en: "shop"
+  - id: w-banki
+    lemme: "banki"
+    categorie: nom
+    genre: m
+    formes: ["bankinn"]
+    fr: "banque"
+    en: "bank"
+    note:
+      fr: "Devant nk ou ng, le a sonne comme á : « baounki »."
+      en: "Before nk or ng, a sounds like á: “bownki”."
+  - id: w-bill
+    lemme: "bíll"
+    categorie: nom
+    genre: m
+    formes: ["bíllinn"]
+    fr: "voiture"
+    en: "car"
+    note:
+      fr: "ll se prononce « tl » : « bitl »."
+      en: "ll sounds like “tl”: “beetl”."
+  - id: w-ferja
+    lemme: "ferja"
+    categorie: nom
+    genre: f
+    formes: ["ferjan"]
+    fr: "ferry"
+    en: "ferry"
+    note:
+      fr: "j se prononce comme le y de « yaourt » : « férya »."
+      en: "j sounds like the y in “yes”."
+  - id: w-bla
+    lemme: "blár"
+    categorie: adjectif
+    formes: ["blá"]
+    fr: "bleu"
+    en: "blue"
+    note:
+      fr: "á sonne « aou », comme dans « caoutchouc » : « blaour »."
+      en: "á sounds like “ow” in “now”."
+
+# ---------------------------------------------------------------------------
+# Phrases.
+# ---------------------------------------------------------------------------
+phrases:
+  - id: ph-n1p2-101
+    is: "Halló, Viktoriya! Komdu! Hér er höfnin."
+    fr: "Salut, Viktoriya ! Viens ! Voici le port."
+    en: "Hi, Viktoriya! Come on! Here's the harbour."
+  - id: ph-n1p2-102
+    is: "Og hvar er kirkjan?"
+    fr: "Et où est l'église ?"
+    en: "And where's the church?"
+  - id: ph-n1p2-103
+    is: "Kirkjan er þarna. Hún er blá!"
+    fr: "L'église est là-bas. Elle est bleue !"
+    en: "The church is over there. It's blue!"
+  - id: ph-n1p2-104
+    is: "Og þetta? Er þetta banki?"
+    fr: "Et ça ? C'est une banque ?"
+    en: "And this? Is this a bank?"
+  - id: ph-n1p2-105
+    is: "Nei, þetta er búð. Bankinn er hér."
+    fr: "Non, c'est un magasin. La banque est ici."
+    en: "No, this is a shop. The bank is here."
+  - id: ph-n1p2-106
+    is: "Hvar er ferjan?"
+    fr: "Où est le ferry ?"
+    en: "Where is the ferry?"
+  - id: ph-n1p2-107
+    is: "Ferjan? Hún er þarna!"
+    fr: "Le ferry ? Il est là-bas !"
+    en: "The ferry? It's over there!"
+  - id: ph-n1p2-108
+    is: "Og hvar er bílinn?"
+    fr: "(erreur) Et où est la voiture ?"
+    en: "(mistake) And where's the car?"
+    erreur_volontaire: true
+  - id: ph-n1p2-109
+    is: "Nei, nei: bíllinn! Hann er hér."
+    fr: "Non, non : bíllinn ! Elle est ici."
+    en: "No, no: bíllinn! It's here."
+  - id: ph-n1p2-110
+    is: "Bíllinn er hér. Takk, Superpuffin!"
+    fr: "La voiture est ici. Merci, Superpuffin !"
+    en: "The car is here. Thanks, Superpuffin!"
+  - id: ph-n1p2-111
+    is: "Kirkjan er þarna."
+    fr: "L'église est là-bas."
+    en: "The church is over there."
+  - id: ph-n1p2-112
+    is: "Höfn."
+    fr: "Port."
+    en: "Harbour."
+
+# ---------------------------------------------------------------------------
+# Scène d'ouverture : promenade dans Seyðisfjörður.
+# ---------------------------------------------------------------------------
+scene:
+  lieu: seydisfjordur-rue
+  didascalie:
+    fr: "Un matin de beau temps, Superpuffin fait découvrir Seyðisfjörður à Viktoriya. Au bout de la rue arc-en-ciel, on aperçoit une petite église toute bleue."
+    en: "One fine morning, Superpuffin shows Viktoriya around Seyðisfjörður. At the end of the rainbow street, there's a little church painted all blue."
+  repliques:
+    - { locuteur: superpuffin, phrase: ph-n1p2-101 }
+    - { locuteur: viktoriya,   phrase: ph-n1p2-102 }
+    - { locuteur: superpuffin, phrase: ph-n1p2-103 }
+    - { locuteur: viktoriya,   phrase: ph-n1p2-104 }
+    - { locuteur: superpuffin, phrase: ph-n1p2-105 }
+    - { locuteur: viktoriya,   phrase: ph-n1p2-106 }
+    - { locuteur: superpuffin, phrase: ph-n1p2-107 }
+    - { locuteur: viktoriya,   phrase: ph-n1p2-108 }
+    - { locuteur: superpuffin, phrase: ph-n1p2-109 }
+    - { locuteur: viktoriya,   phrase: ph-n1p2-110 }
+
+# ---------------------------------------------------------------------------
+# Carte de grammaire : réemploi de l'article collé, et hann / hún / það pour les choses.
+# ---------------------------------------------------------------------------
+explication:
+  id: gr-hvar-hlutir
+  introduite_par: viktoriya
+  question:
+    fr: "Pourquoi « hún » pour l'église ? Ce n'est pas une personne !"
+    en: "Why “hún” for the church? It isn't a person!"
+  reponse:
+    fr: "En islandais, une chose a un genre, comme une personne. On la reprend donc par hann (masculin), hún (féminin) ou það (neutre). Kirkja est féminin : « Hvar er kirkjan? Hún er þarna. » Bíll est masculin : « Hvar er bíllinn? Hann er hér. »"
+    en: "In Icelandic, a thing has a gender, just like a person. So you refer to it with hann (masculine), hún (feminine) or það (neuter). Kirkja is feminine: “Hvar er kirkjan? Hún er þarna.” Bíll is masculine: “Hvar er bíllinn? Hann er hér.”"
+  tableau:
+    - { is: "Hvar er kirkjan? Hún er þarna.", fr: "Où est l'église ? Elle est là-bas.",  en: "Where's the church? It's over there." }
+    - { is: "Hvar er bíllinn? Hann er hér.",  fr: "Où est la voiture ? Elle est ici.",   en: "Where's the car? It's here." }
+    - { is: "Hvar er kaffið? Það er hér.",    fr: "Où est le café ? Il est ici.",         en: "Where's the coffee? It's here." }
+
+# ---------------------------------------------------------------------------
+# Exercices (10).
+# ---------------------------------------------------------------------------
+exercices:
+  - id: ex-n1p2l1-01
+    type: reconnaitre
+    support: audio_et_texte
+    question: ph-n1p2-103
+    consigne:
+      fr: "Que dit Superpuffin de l'église ?"
+      en: "What does Superpuffin say about the church?"
+    choix:
+      - { fr: "Elle est là-bas, et elle est bleue.", en: "It's over there, and it's blue.", correct: true }
+      - { fr: "Elle est ici, et elle est blanche.",  en: "It's here, and it's white." }
+      - { fr: "Elle est fermée aujourd'hui.",        en: "It's closed today." }
+
+  - id: ex-n1p2l1-02
+    type: associer
+    consigne:
+      fr: "Relie les paires."
+      en: "Match the pairs."
+    paires:
+      - { mot: w-kirkja }
+      - { mot: w-hofn }
+      - { mot: w-bud }
+      - { mot: w-banki }
+      - { mot: w-bill }
+
+  - id: ex-n1p2l1-03
+    type: reconnaitre
+    support: audio
+    question: ph-n1p2-112
+    consigne:
+      fr: "Écoute. Quel mot entends-tu ?"
+      en: "Listen. Which word do you hear?"
+    choix:
+      - { fr: "le port",     en: "the harbour", correct: true }
+      - { fr: "le magasin",  en: "the shop" }
+      - { fr: "la banque",   en: "the bank" }
+
+  - id: ex-n1p2l1-04
+    type: accorder
+    consigne:
+      fr: "Il, elle ? Choisis le bon mot."
+      en: "Which pronoun? Pick the right word."
+    phrase_a_trous: "Kirkjan er þarna. ___ er blá."
+    choix:
+      - { is: "Hún", correct: true }
+      - { is: "Hann" }
+      - { is: "Það" }
+    explication: gr-hvar-hlutir
+
+  - id: ex-n1p2l1-05
+    type: accorder
+    consigne:
+      fr: "Où est la voiture ? Choisis la bonne forme."
+      en: "Where is the car? Pick the right form."
+    phrase_a_trous: "Hvar er ___?"
+    choix:
+      - { is: "bíllinn", correct: true }
+      - { is: "bílinn" }
+      - { is: "bíll" }
+
+  - id: ex-n1p2l1-06
+    type: retrouver
+    consigne:
+      fr: "Comment dit-on « Où est le port ? »"
+      en: "How do you say “Where is the harbour?”"
+    choix:
+      - { is: "Hvar er höfnin?", correct: true }
+      - { is: "Hvað er höfnin?" }
+      - { is: "Hvaðan er höfnin?" }
+
+  - id: ex-n1p2l1-07
+    type: ecouter_dialogue
+    repliques:
+      - { locuteur: viktoriya,   phrase: ph-n1p2-106 }
+      - { locuteur: superpuffin, phrase: ph-n1p2-107 }
+    consigne:
+      fr: "Où est le ferry ?"
+      en: "Where is the ferry?"
+    choix:
+      - { fr: "Là-bas",          en: "Over there", correct: true }
+      - { fr: "Ici",             en: "Here" }
+      - { fr: "Devant l'église", en: "In front of the church" }
+
+  - id: ex-n1p2l1-08
+    type: construire
+    consigne:
+      fr: "Remets dans l'ordre : « L'église est là-bas. »"
+      en: "Put in order: “The church is over there.”"
+    blocs: ["Kirkjan", "er", "þarna", "."]
+    reponse: ph-n1p2-111
+
+  - id: ex-n1p2l1-09
+    type: grille
+    consigne:
+      fr: "Touche les lettres dans l'ordre pour écrire le mot islandais."
+      en: "Tap the letters in order to write the Icelandic word."
+    sens: { fr: "le magasin", en: "the shop" }
+    a_trouver: "búðin"
+
+  - id: ex-n1p2l1-10
+    type: produire
+    consigne:
+      fr: "Écris en islandais : « Où est le port ? »"
+      en: "Write in Icelandic: “Where is the harbour?”"
+    reponses_acceptees: ["Hvar er höfnin?"]
+    tolerance:
+      accents: signaler
+      ponctuation_finale: ignorer
+      majuscule_initiale: ignorer
+
+fin:
+  locuteur: superpuffin
+  message:
+    fr: "Bravo ! Tu ne te perdras plus à Seyðisfjörður. Ce soir, je t'attends à l'école : apporte ton sac !"
+    en: "Well done! You won't get lost in Seyðisfjörður any more. Tonight I'll wait for you at school: bring your bag!"
