@@ -19,10 +19,10 @@
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^26.6.5",
     "js-yaml": "^5.5.0",
-    "svelte": "^5.57.2",
+    "svelte": "^5.57.3",
     "svelte-check": "^4.7.7",
-    "typescript": "^6.0.3",
-    "vite": "^8.3.4",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
     "zod": "^4.6.7"
   },
   "imports": {
@@ -30,6 +30,6 @@
     "#lib/*": "./src/lib/*"
   },
   "dependencies": {
-    "ts-fsrs": "^5.4.2"
+    "ts-fsrs": "^6.0.0"
   }
 }
